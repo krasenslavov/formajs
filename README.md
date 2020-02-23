@@ -1,6 +1,8 @@
 # FormaJS
 jQuery extension for creating dynamic and interactive forms.
 
+Check out the [documentation](https://formajs.com/) page with complete ... about usage and features.
+
 # Quick start
 
 Copy-paste the stylesheet `<link>` into your `<head>`.
@@ -12,7 +14,7 @@ Place the following `<script>` near the end of your pages, right before the clos
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="forma-0.0.1.min.js"></script>
 
-## Build your form
+## [Build your form](https://formajs.com/#build)
 
 There are couple structure rules you need to follow when building your forms. 
 
@@ -30,9 +32,7 @@ Then each form element must be structured as an example below, where `<span>` ho
       <button type="submit">Submit</button>
     </form>
 
-Read more about form building on our [documentation](https://formajs.com/#build) page.
-
-## Initialize FormaJS
+## [Initialize FormaJS](https://formajs.com/#options)
 
 Once we have our form we are ready to initiate our form. 
 
@@ -42,9 +42,7 @@ Once we have our form we are ready to initiate our form.
 
 Note: Must be added after the `forma-0.0.1.min.js`.
 
-Read more about form options on our [documentation](https://formajs.com/#options) page.
-
-## Customize your form
+## [Customize your form](https://formajs.com/#customize)
 
 For customizing and styling your form you need to take a look at the `forma.css` file. 
 
@@ -67,5 +65,3 @@ In addition you can easily extend and change the structure of your form.
 Take a look the end of the CSS file starting with `/* _forma-extend.css */`.
 
 Note: You can create your own CSS. All you need to include is `forma-base.css` which holds some required style rules.
-
-Read more about form cusomization on our [documentation](https://formajs.com/#customize) page.
