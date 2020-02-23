@@ -30,6 +30,8 @@ Then each form element must be structured as an example below, where `<span>` ho
       <button type="submit">Submit</button>
     </form>
 
+Read more about form building on our [documentation](https://formajs.com/#build) page.
+
 ## Initialize FormaJS
 
 Once we have our form we are ready to initiate our form. 
@@ -38,7 +40,9 @@ Once we have our form we are ready to initiate our form.
       $.forma();
     </script>
 
-Note: Must be added after the `<script src="forma-0.0.1.min.js"></script>`
+Note: Must be added after the `forma-0.0.1.min.js`.
+
+Read more about form options on our [documentation](https://formajs.com/#options) page.
 
 ## Customize your form
 
@@ -63,3 +67,5 @@ In addition you can easily extend and change the structure of your form.
 Take a look the end of the CSS file starting with `/* _forma-extend.css */`.
 
 Note: You can create your own CSS. All you need to include is `forma-base.css` which holds some required style rules.
+
+Read more about form cusomization on our [documentation](https://formajs.com/#customize) page.
