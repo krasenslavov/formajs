@@ -1,7 +1,7 @@
 # FormaJS
 jQuery extension for creating dynamic and interactive forms.
 
-Full [documentation](https://formajs.com/) and examples about usage and features.
+Go to our docs page for complete [documentation](https://formajs.com/), examples, usage and features.
 
 ## Quick start
 
