@@ -61,7 +61,7 @@ Below is an example set with globally available variables specified within the `
 
 ```css
 :root {
-  --font: 400 normal 16px/1.6 'Monaco', 'Candara', 'Gill Sans', 'Helvetica', 'Arial', monospace;
+  --font: 400 normal 16px/1.6 Monaco, Consolas, 'Andale Mono', 'Ubuntu Mono', monospace;
   --primary-color: #D65DB1;
   --secondary-color: #845EC2;
   --error-color: #FF6F91;
