@@ -1,5 +1,5 @@
 /* _forma-extend.css */
-/*.forma-1 label {
+.forma-1 label {
     align-items: stretch;
     flex-direction: row;
 }
@@ -17,4 +17,4 @@
 }
 .forma-2 label:not(.forma-open) {
     display: none;
-}*/
+}

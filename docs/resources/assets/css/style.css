@@ -49,7 +49,6 @@ header.header {
 }
 /* _navbar.css */
 nav.navbar {
-
 }
 .navbar {
 	display: flex;
@@ -71,14 +70,15 @@ nav.navbar {
 }
 .navbar a:hover,
 .navbar a:focus,
-.navbar a:active {
+.navbar a:active,
+.navbar a.active {
 	background-color: rgba(var(--black-rgb-color), .1);
 	outline: 2px solid var(--primary-color);
 }
 .navbar .subnav {
 	background-color: rgba(var(--white-rgb-color), 1);
 	display: flex;
-	display: none;
+	/*display: none;*/
 	flex-direction: column;
 }
 .navbar .subnav a {
@@ -88,8 +88,9 @@ nav.navbar {
 }
 .navbar .subnav a:hover,
 .navbar .subnav a:focus,
-.navbar .subnav a:active {
-	outline: none;
+.navbar .subnav a:active,
+.navbar .subnav a.active {
+	outline: 0;
 }
 /* _content.css */
 
