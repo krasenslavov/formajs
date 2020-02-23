@@ -3,7 +3,7 @@ jQuery extension for creating dynamic and interactive forms.
 
 Go to our docs page for complete [documentation](https://formajs.com/), examples, usage and features.
 
-**This project is still in its infancy; no a good idea to use it in production.**
+**This project is still in its infancy; not a good idea to use it in production.**
 
 ## [Quick start](https://formajs.com/index.html#usage)
 
@@ -36,7 +36,7 @@ Then each form element must be structured as an example below, where `<span>` ho
       <input type="text" />
     </div>
   </label>
-  <button type="submit">Login</button>
+  <button type="submit"></button>
 </form>
 ```
 

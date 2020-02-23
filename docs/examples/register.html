@@ -8,6 +8,11 @@
         <link href="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/themes/prism.css" rel="stylesheet" />
         <link href="/resources/assets/css/style.css" rel="stylesheet" />
         <link href="/resources/assets/css/forma.css" rel="stylesheet" />
+        <style>
+            .forma-register label:not(.forma-open) {
+                display: none;
+            }
+        </style>
     </head>
     <body>
         <header class="header">
@@ -40,15 +45,15 @@
                     <a href="/examples/example-custom-validation.html">Custom validation</a>
                     <a href="/examples/example-multiple-forms.html">Multiple forms</a>
                     <a href="/examples/login.html">Login form</a>
-                    <a href="/examples/register.html">Register form</a>
+                    <a href="/examples/register.html" class="active">Register form</a>
                 </div>
             </nav>
         </header>
         <main class="content">
             <div class="container">
                 <h2>Register form (real-world example)</h2>
-                <p>Generic real-world registration form.<br /> 
-                 Using forma extended CSS with which the user is prompt only one field at a time, moving to the next using the tab navigation. Once all the fields are complete with valid data the button is enabled for submission.</p>
+                <p>Generic real-world registration form.<p>
+                <p>Using forma extended CSS with which the user is prompt only one field at a time, moving to the next using the tab navigation. Once all the fields are complete with valid data the button is enabled for submission.</p>
                 <form class="forma forma-register">
                     <label for="email">
                         <span>Email address</span>
@@ -147,10 +152,5 @@
                 auto: true
             });
         </script>
-        <style>
-            .forma-register label:not(.forma-open) {
-                display: none;
-            }
-        </style>
     </body>
 </html>
