@@ -5,12 +5,12 @@ jQuery extension for creating dynamic and interactive forms.
 
 Copy-paste the stylesheet `<link>` into your `<head>`.
 
-  <link rel="stylesheet" src="forma.css" />
+    <link rel="stylesheet" src="forma.css" />
 
 Place the following `<script>` near the end of your pages, right before the closing `</body>` tag, to enable them. jQuery must come first.
 
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-  <script src="forma-0.0.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="forma-0.0.1.min.js"></script>
 
 ## Build your form
 
