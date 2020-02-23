@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link href="../favicon.ico" rel="icon" />
+        <title>FormaJS - Creating dynamic and interactive forms.</title>
+        <link href="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/themes/prism.css" rel="stylesheet" />
+        <link href="../resources/assets/css/style.css" rel="stylesheet" />
+        <link href="../../src/css/forma.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="logo-wrap">
+                <a href="../index.html">
+                    <img src="../resources/assets/img/logo.png" alt="" class="logo" height="75" />
+                </a>
+            </div>
+            <nav class="navbar">
+                <h5>Documentation</h5>
+                <a href="../index.html" class="toplvl">FormaJS</a>
+                <div class="subnav">
+                    <a href="../index.html#usage">Basic usage</a>
+                    <a href="../index.html#structure">Form structure</a>
+                    <a href="../index.html#options">Custom options</a>
+                    <a href="../index.html#style">Custom styling</a>
+                    <a href="../index.html#contribute">Contribute</a>
+                    <a href="../index.html#license">License</a>
+                </div>
+                <h5>Playground</h5>
+                <a href="./index.html" class="toplvl">Basic Examples</a>
+                <div class="subnav">
+                    <a href="./example-no.html">No options</a>
+                    <a href="./example-auto.html">auto:true</a>
+                    <a href="./example-manual.html">manual:true</a>
+                    <a href="./example-show.html">show:true</a>
+                    <a href="./example-all.html">All options</a>
+                    <a href="./example-disabled-button.html">Disabled button</a>
+                    <a href="./example-builtin-validation.html">Built-in validation</a>
+                    <a href="./example-custom-validation.html">Custom validation</a>
+                    <a href="./example-multiple-forms.html">Multiple forms</a>
+                    <a href="./login.html">Login form</a>
+                    <a href="./register.html">Register form</a>
+                </div>
+            </nav>
+        </header>
+        <main class="content">
+            <div class="container">
+                <h2>All options</h2>
+                <p>Sample form where all <mark>auto</mark>, <mark>manual</mark> and <mark>show</mark> are set to <mark>true</mark></p>
+                <form class="forma">
+                    <label>
+                        <span>Username</span>
+                        <div class="fieldset">
+                            <input type="text" />
+                        </div>
+                    </label>
+                    <label>
+                        <span>Password</span>
+                        <div class="fieldset">
+                            <input type="password" />
+                        </div>
+                    </label>
+                    <button type="submit">Login</button>
+                </form>
+                <h3>HTML</h3>
+<pre><code class="language-html">&lt;form class="forma"&gt;
+    &lt;label&gt;
+        &lt;span&gt;Username&lt;/span&gt;
+        &lt;div class="fieldset"&gt;
+            &lt;input type="text" /&gt;
+        &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;span&gt;Password&lt;/span&gt;
+        &lt;div class="fieldset"&gt;
+            &lt;input type="password" /&gt;
+        &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                <h3>JavaScript</h3>
+                <pre><code class="language-js">$.forma({
+    auto: true,
+    manual: true,
+    show: true
+});</code></pre>
+            </div>
+        </main>
+        <footer class="footer">
+            <p>Copyright &copy; 2020</p>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/prism.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/plugins/autoloader/prism-autoloader.min.js"></script>
+        <script src="../resources/lib/jquery-3.4.1.min.js"></script>
+        <script src="../resources/assets/js/script.js"></script>
+        <script src="../../src/js/forma-0.0.1.js"></script>
+        <script>
+            $.forma({
+                auto: true,
+                manual: true,
+                show: true
+            });
+        </script>
+    </body>
+</html>
