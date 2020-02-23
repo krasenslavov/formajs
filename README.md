@@ -10,17 +10,17 @@ Go to our docs page for complete [documentation](https://formajs.com/), [example
 Copy-paste the stylesheet `<link>` into your `<head>`.
 
 ```html
-<link rel="stylesheet" src="forma.css" />
+<link rel="stylesheet" src="path/to/js/forma.css" />
 ```
 
 Place the following `<script>` near the end of your pages, right before the closing `</body>` tag, to enable them. jQuery must come first.
 
 ```html
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-<script src="forma-0.0.1.min.js"></script>
+<script src="path/to/js/forma-0.0.1.min.js"></script>
 ```
 
-### [Build your form](https://formajs.com/index.html#build)
+### [Build your form](https://formajs.com/index.html#structure)
 
 There are couple structure rules you need to follow when building your forms. 
 
@@ -78,6 +78,6 @@ Take a look the end of the CSS file starting with `/* _forma-extend.css */`.
 
 Note: You can create your own CSS. All you need to include is `forma-base.css` which holds some required style rules.
 
-## [Contribute](https://formajs.com/index.html#Contribute)
+### [Contribute](https://formajs.com/index.html#contribute)
 
-## [License](https://formajs.com/index.html#license)
+### [License](https://formajs.com/index.html#license)
