@@ -1,0 +1,134 @@
+/* _root.css */
+:root {
+    --font: 400 normal 16px/1.6 'Monaco', 'Candara', 'Gill Sans', 'Helvetica', 'Arial', monospace;
+    --primary-color: #D65DB1;
+    --secondary-color: #845EC2;
+    --white-rgb-color: 250, 250, 250; /* #FAFAFA */
+    --black-rgb-color: 25, 25, 25; /* #191919 */
+}
+/* _global.css */
+*, 
+*:before, 
+*:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+	display: flex;
+	font: var(--font);
+}
+a {
+	color: var(--secondary-color);
+}
+/* _header.css */
+header.header {
+	background-color: var(--primary-color);
+	flex: 0 0 240px;
+}
+.header {
+	min-height: 100vh;
+}
+.header .logo-wrap:before {
+    border-radius: 10rem;
+    box-shadow: 0 0 0 40rem rgba(0, 0, 0, .03);
+    content: '';
+    height: 75px;
+    left: var(--space);
+    padding: var(--space);
+    position: absolute;
+    top: var(--space);
+    width: 75px;
+    z-index: 0;
+}
+.header .logo {
+	border-radius: 10rem;
+	margin: 1rem;
+}
+/* _navbar.css */
+nav.navbar {
+
+}
+.navbar {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+.navbar h5 {
+	border-bottom: 1px solid rgba(var(--black-rgb-color), .1);
+	letter-spacing: 1px;
+	padding: 1rem;
+	text-transform: uppercase;
+}
+.navbar a {
+	border-bottom: 1px solid rgba(var(--black-rgb-color), .1);
+	color: rgba(var(--white-rgb-color), 1);
+	outline: 2px solid transparent;
+	padding: 1rem;
+	text-decoration: none;
+}
+.navbar a:hover,
+.navbar a:focus,
+.navbar a:active {
+	background-color: rgba(var(--black-rgb-color), .1);
+	outline: 2px solid var(--primary-color);
+}
+.navbar .subnav {
+	background-color: rgba(var(--white-rgb-color), 1);
+	display: flex;
+	display: none;
+	flex-direction: column;
+}
+.navbar .subnav a {
+	border-bottom: 0;
+	color: rgba(var(--black-rgb-color), 1);
+	padding-left: 2rem;
+}
+.navbar .subnav a:hover,
+.navbar .subnav a:focus,
+.navbar .subnav a:active {
+	outline: none;
+}
+/* _content.css */
+
+main.content {
+	flex: 0 0 75%;
+	padding: 1rem;
+}
+.content h2,
+.content h3 {
+	padding: 1rem;
+}
+.content h2 {
+	border-bottom: 1px solid rgba(var(--black-rgb-color), .1);
+	margin: 0 0 1rem;
+}
+.content p {
+	line-height: 2;
+	padding: 0 1rem 1rem;
+}
+.content ul {
+	padding: 0 3rem 1rem;	
+}
+.content mark {
+	background-color: var(--secondary-color);
+	border-radius: 4px;
+	color: rgba(var(--white-rgb-color), 1);
+	padding: .3rem;
+}
+/* _footer.css */
+footer.footer {
+	align-items: center;
+	display: flex;
+	display: none;
+	justify-content: center;
+}
+.footer p {
+
+}
+/* _utils.css */
+[style*="display: block"] {
+	display: flex !important;
+}

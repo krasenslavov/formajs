@@ -3,7 +3,9 @@ jQuery extension for creating dynamic and interactive forms.
 
 Go to our docs page for complete [documentation](https://formajs.com/), examples, usage and features.
 
-## Quick start
+**This project is still in its infancy; no a good idea to use it in production.**
+
+## [Quick start](https://formajs.com/index.html#usage)
 
 Copy-paste the stylesheet `<link>` into your `<head>`.
 
@@ -18,7 +20,7 @@ Place the following `<script>` near the end of your pages, right before the clos
 <script src="forma-0.0.1.min.js"></script>
 ```
 
-### [Build your form](https://formajs.com/#build)
+### [Build your form](https://formajs.com/index.html#build)
 
 There are couple structure rules you need to follow when building your forms. 
 
@@ -34,11 +36,11 @@ Then each form element must be structured as an example below, where `<span>` ho
       <input type="text" />
     </div>
   </label>
-  <button type="submit">Submit</button>
+  <button type="submit">Login</button>
 </form>
 ```
 
-### [Initialize FormaJS](https://formajs.com/#options)
+### [Initialize FormaJS](https://formajs.com/index.html#options)
 
 Once we have our form we are ready to initiate our form. 
 
@@ -50,11 +52,11 @@ Once we have our form we are ready to initiate our form.
 
 Note: Must be added after the `forma-0.0.1.min.js`.
 
-### [Customize your form](https://formajs.com/#customize)
+### [Customize your form](https://formajs.com/index.html#style)
 
-For customizing and styling your form you need to take a look at the `forma.css` file. 
+For customizing and styling your form take a look at the `forma.css` file. 
 
-Below is the example set with global variable within the `:root` selector.
+Below is the example set with globally available variables specified within the `:root` selector.
 
 ```css
 :root {
@@ -76,4 +78,6 @@ Take a look the end of the CSS file starting with `/* _forma-extend.css */`.
 
 Note: You can create your own CSS. All you need to include is `forma-base.css` which holds some required style rules.
 
-## License
+## [Contribute](https://formajs.com/index.html#Contribute)
+
+## [License](https://formajs.com/index.html#license)

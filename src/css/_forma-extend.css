@@ -1,0 +1,20 @@
+/* _forma-extend.css */
+/*.forma-1 label {
+    align-items: stretch;
+    flex-direction: row;
+}
+.forma-1 span {
+    flex: 1 0 320px;
+    justify-content: center;
+}
+.forma-1 .fieldset {
+    align-self: flex-end;
+    flex: 1 1 100%;
+}
+.forma-1 span.invalid:before {
+    position: relative;
+    right: auto;
+}
+.forma-2 label:not(.forma-open) {
+    display: none;
+}*/
