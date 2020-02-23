@@ -153,19 +153,10 @@
 	body {
 		display: block;
 	}
-	header.header {
-		overflow: hidden;
-		position: fixed;
-		width: 125px;
+	.header {
+		min-height: auto;
 	}
-	.navbar h5,
-	.navbar a,
-	.navbar .subnav a {
-		font-size: 75%;
-		padding: .5rem;
-	}
-	main.content {
-		margin-left: 126px;
-		padding: .5rem;
+	.navbar {
+		position: relative;
 	}
 }

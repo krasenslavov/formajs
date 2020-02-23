@@ -1,9 +1,11 @@
 # FormaJS
-jQuery extension for creating dynamic and interactive forms with better UX.
+jQuery extension plugin for creating dynamic and interactive forms with better UX.
 
 Check out our GitHub page for complete [documentation](https://formajs.com/), [examples](https://formajs.com/examples/index.html), usage and features.
 
 **This project is still in its infancy; put it together over the weekend, not really ready for production.**
+
+Couple of major issues not addressed are cross browser compatiblity & mobile usage.
 
 ## [Quick start](https://formajs.com/index.html#usage)
 
