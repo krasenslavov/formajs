@@ -1,0 +1,93 @@
+/* _root.css */
+:root {
+}
+
+/* _forma.css */
+.forma {}
+
+.forma label {
+}
+.forma label:after {
+}
+.forma label.forma-open:after {
+}
+
+.forma span {
+}
+.forma span em {
+}
+.forma span.invalid {
+}
+.forma span.invalid:before {
+}
+
+.forma strong {
+}
+.forma strong.valid {
+}
+.forma strong.invalid {
+}
+
+.forma .fieldset {
+}
+
+.forma input[type="text"],
+.forma input[type="email"],
+.forma input[type="password"],
+.forma input[type="url"],
+.forma input[type="number"],
+.forma select,
+.forma textarea {
+}
+
+.forma select {
+}
+
+.forma input[type="text"]:focus,
+.forma input[type="email"]:focus,
+.forma input[type="password"]:focus,
+.forma input[type="url"]:focus,
+.forma input[type="number"]:focus,
+.forma select:focus,
+.forma textarea:focus {
+}
+
+.forma input[type="text"]:focus:valid,
+.forma input[type="email"]:focus:valid,
+.forma input[type="password"]:focus:valid,
+.forma input[type="url"]:focus:valid,
+.forma input[type="number"]:focus:valid,
+.forma select:focus:valid,
+.forma textarea:focus:valid {
+}
+
+.forma input[type="text"]:focus:invalid,
+.forma input[type="email"]:focus:invalid,
+.forma input[type="password"]:focus:invalid,
+.forma input[type="url"]:focus:invalid,
+.forma input[type="number"]:focus:invalid,
+.forma select:focus:invalid,
+.forma textarea:focus:invalid {
+}
+
+.forma input[type="submit"],
+.forma input[type="reset"],
+.forma button[type="submit"] {
+}
+
+.forma input[type="submit"]:disabled,
+.forma input[type="reset"]:disabled,
+.forma button[type="submit"]:disabled {
+}
+
+.forma-open input,
+.forma-open select,
+.forma-open textarea {
+}
+.forma-open .fieldset {
+}
+
+label.forma-manual:before {
+}
+label.forma-open.forma-manual:before {
+}

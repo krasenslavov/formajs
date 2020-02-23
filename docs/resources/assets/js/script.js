@@ -8,5 +8,11 @@
 				self.next().slideToggle();
 			}
 		});
+		$(window).on({
+			hashchange: (event) => {
+				$('nav.navbar .subnav a').removeClass('active');
+				$(`a[href$="${window.location.hash}"]`).addClass('active');
+			}
+		})
 	});
 })(jQuery);

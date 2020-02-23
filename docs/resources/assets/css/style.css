@@ -22,6 +22,12 @@ body {
 }
 a {
 	color: var(--secondary-color);
+	outline: 0;
+}
+hr {
+	border: 0;
+	border-bottom: 1px solid rgba(var(--black-rgb-color), .1);
+	margin: 0 0 2rem 0;
 }
 /* _header.css */
 header.header {
@@ -33,7 +39,7 @@ header.header {
 }
 .header .logo-wrap:before {
     border-radius: 10rem;
-    box-shadow: 0 0 0 40rem rgba(0, 0, 0, .03);
+    box-shadow: 0 0 0 40rem rgba(var(--black-rgb-color), .05);
     content: '';
     height: 75px;
     left: var(--space);
@@ -53,6 +59,9 @@ nav.navbar {
 .navbar {
 	display: flex;
 	flex-direction: column;
+	-webkit-position: sticky;
+            position: sticky;
+	top: 0;
 	width: 100%;
 }
 .navbar h5 {
@@ -77,9 +86,11 @@ nav.navbar {
 }
 .navbar .subnav {
 	background-color: rgba(var(--white-rgb-color), 1);
-	display: flex;
-	/*display: none;*/
+	display: none;
 	flex-direction: column;
+}
+.navbar .subnav.active {
+	display: flex;
 }
 .navbar .subnav a {
 	border-bottom: 0;
@@ -110,8 +121,13 @@ main.content {
 	line-height: 2;
 	padding: 0 1rem 1rem;
 }
-.content ul {
+.content ul,
+.content ol {
 	padding: 0 3rem 1rem;	
+}
+.content li {
+	line-height: 2;
+	margin-bottom: 1rem;
 }
 .content mark {
 	background-color: var(--secondary-color);
