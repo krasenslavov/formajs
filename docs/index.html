@@ -65,6 +65,7 @@
                         <li>Initialize the script and specify additional options. (<a href="/index.html#options">see custom options details</a>)</li>
                         <li>Customize and style you form; either by using the pre-built stylesheets inside <mark>/dist/css</mark> and tweak the <mark>:root</mark> values or create your own stylesheet form scratch using the <mark>/dist/css/forma-boileplate.css</mark> as your starting point. (<a href="/index.html#style">see styling details</a>)</li>
                     </ul>   
+                    <hr />
                     <h3>Starter template</h3>
                     <p>Use the code below as your starting point, for testing or development.</p>
 <pre><code class="language-markup">&lt;!doctype html&gt;
@@ -226,7 +227,7 @@
                     <p>To do this take a look at the boilerplate CSS file <mark>/dist/css/forma-boilerplate.css</mark>. This will give you a head start to style and customize your form.</p>
                     <p>Here is link to the GitHub repo <a href="https://github.com/krasenslavov/forma/blob/master/dist/css/forma-boilerplate.css" target="_blank">/dist/css/forma-boilerplate.css</a>.
                     <hr />
-                     <h3>Extending <mark>forma.css</mark></h3>
+                    <h3>Extending <mark>forma.css</mark></h3>
                     <p>You can easily extend the <mark>forma.css</mark> and modify your form layout. Take a look at the <a href="examples/register.html">Register</a> form example.</p> 
                     <p>With only 1 additional CSS rule you can make your form to turn into, one at time field, and switch between fields with the tab key.</p>
 <pre><code class="language-css">.forma label:not(.forma-open) {
@@ -240,6 +241,7 @@
                 <section>
                     <h2 id="validation">Validation</h2>
                     <p>There are two types of validations; built-in validations with generic messages and custom validations that use regular expressions. (by utilizing the <mark>pattern</mark> and <mark>title</mark> attributes)</p>  
+                    <hr />
                     <h3>Built-in validations</h3>
                     <p>These will display based on the type of the input field; for example, <mark>&lt;input type="email" /&gt;</mark> will require a valid email address and output the following message if the email address isn't a correct format <mark>Enter a valid email address</mark>.</p>
                     <p>You can also add additional attributes to most form elements for validation, for example:</p>
@@ -256,6 +258,7 @@
   &lt;/div&gt;
 &lt;/label&gt;</code></pre>
                     <p>* <u>Example</u>: Form  with built-in validations can be found <a href="/examples/example-builtin-validation.html">here</a>.  
+                    <hr />
                     <h3>Custom validations</h3>
                     <p>For real-world forms the built-in checks aren't enough so you would need to use some regular expression magic.</p> 
                     <p>Use the <mark>pattern</mark>, and <mark>title</mark> attributes to set your custom error message text. More information can be found at <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern">MDN Web Docs</a>.</p>   
