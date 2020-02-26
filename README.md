@@ -11,7 +11,7 @@ There are few different starting points once you load up and initialize the scri
 1. Copy-paste the stylesheet `<link>` into your HTML document`<head>`. There are few starting stylesheets that are included in the `/dist/css` folder.
 
 ```html
-<link rel="stylesheet" src="path/to/css/forma.css" />
+<link rel="stylesheet" href="path/to/css/forma.css" />
 ```
 
 2. Create your form by using the structure below 
