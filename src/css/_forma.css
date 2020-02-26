@@ -1,162 +1,127 @@
 /* _forma.css */
-.forma {}
-
+body {
+    font: var(--font-mono);
+}
+.forma input,
+.forma select,
+.forma textarea,
+.forma button {
+    font: var(--font-mono);
+    padding: var(--space);
+}
 .forma label {
-    border-top: 1px solid rgba(var(--black-rgb-color), .1);
     cursor: pointer;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--space);
     position: relative;
 }
-.forma label:after {
-    background-color: rgba(var(--black-rgb-color), .03);
-    border: 1px solid rgba(var(--black-rgb-color), .1);
-    bottom: 2rem;
-    content: 'Hit Tab'; 
-    display: none;
-    font-size: 85%;
-    padding: .2rem .5rem;
-    position: absolute;
-    right: 2rem;
+.forma label span {
+    flex: 0 0 30%;
+    order: 1;
 }
-.forma label.forma-open:after {
-    display: block;
-}
-
-.forma span {
-    background-color: rgba(var(--black-rgb-color), .15);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1rem;
-}
-.forma span em {
-    color: rgba(var(--black-rgb-color), .3);
-    display: block;
-    font-size: 85%; 
-}
-.forma span.invalid {
-    color: var(--error-color);
-}
-.forma span.invalid:before {
-    background-color: rgba(var(--white-rgb-color), 1);
-    border: 1px solid rgba(var(--black-rgb-color), .1);
-    color: rgba(var(--black-rgb-color), 1);
-    content: 'Hint: ' attr(data-rules);
-    display: block;
-    font-size: 85%;
-    margin-bottom: .5rem;
-    padding: .25rem .5rem;
-    position: absolute;
-    right: 1rem;
-}
-
-.forma strong {
-    font-weight: 700;
-}
-.forma strong.valid {
+.forma label span.forma-valid {
     color: var(--success-color);
 }
-.forma strong.invalid {
+.forma label span.forma-invalid {
     color: var(--error-color);
 }
-
-.forma .fieldset {
-    background-color: rgba(var(--black-rgb-color), .05);
+.forma label span .forma-description {
+     color: rgba(var(--black-rgb-color), .5);
+}
+.forma label span .forma-input {
+}
+.forma label span .forma-message {
+    font-size: 85%;
+}
+.forma label span .forma-message:before {
+}
+.forma label .forma-fieldset {
     display: none;
-    padding: 1rem;
+    flex: 1 1 auto;
+    order: 2;
+    position: relative;
 }
-
-.forma input[type="text"],
-.forma input[type="email"],
-.forma input[type="password"],
-.forma input[type="url"],
-.forma input[type="number"],
-.forma select,
-.forma textarea {
-    border: 1px solid rgba(var(--black-rgb-color), .1);
-    width: 100%;
-}
-
-.forma select {
-    height: 4rem;
-    min-height: 4rem;
-}
-
-.forma input[type="text"]:focus,
-.forma input[type="email"]:focus,
-.forma input[type="password"]:focus,
-.forma input[type="url"]:focus,
-.forma input[type="number"]:focus,
-.forma select:focus,
-.forma textarea:focus {
-    outline: 4px solid transparent;
-}
-
-.forma input[type="text"]:focus:valid,
-.forma input[type="email"]:focus:valid,
-.forma input[type="password"]:focus:valid,
-.forma input[type="url"]:focus:valid,
-.forma input[type="number"]:focus:valid,
-.forma select:focus:valid,
-.forma textarea:focus:valid {
-    outline: 4px solid var(--success-color);
-}
-
-.forma input[type="text"]:focus:invalid,
-.forma input[type="email"]:focus:invalid,
-.forma input[type="password"]:focus:invalid,
-.forma input[type="url"]:focus:invalid,
-.forma input[type="number"]:focus:invalid,
-.forma select:focus:invalid,
-.forma textarea:focus:invalid {
-    outline: 4px solid var(--error-color);
-}
-
-.forma input[type="submit"],
-.forma input[type="reset"],
-.forma button[type="submit"] {
-    background-color: var(--primary-color);
-    border: 0;
-    color: rgba(var(--white-rgb-color), .85);
-    cursor: pointer;
-    display: block;
-    outline: 2px solid transparent;
-    width: 100%;
-}
-
-.forma input[type="submit"]:disabled,
-.forma input[type="reset"]:disabled,
-.forma button[type="submit"]:disabled {
-    background-color: rgba(var(--black-rgb-color), .1);
-    color: rgba(var(--black-rgb-color), .1);
-    cursor: not-allowed;
-}
-
-.forma-open .fieldset {
-    display: block;
-}
-.forma-open input,
-.forma-open select,
-.forma-open textarea {
-    display: block; 
-}
-
-label.forma-manual:before {
+.forma label.forma-open .forma-fieldset {
     align-items: center;
-    background-color: rgba(var(--black-rgb-color), .03);
-    bottom: 0;
+    display: flex;
+}
+.forma label.forma-open .forma-fieldset:after {
+    align-items: center;
+    background-color: rgba(var(--white-rgb-color), 1);
+    border: 1px solid rgba(var(--black-rgb-color), .1);
+    content: 'Hit tab';
+    display: flex; 
+    font-size: 85%;
+    padding: .3rem;
+    position: absolute;
+    right: 1rem;
+    z-index: 10;
+}
+.forma label.forma-open.forma-manual:before {
+    content: '-';
+}
+.forma label.forma-manual:before {
+    align-items: center;
     content: '+';
     display: flex;
+    flex: 0 0 auto;
     justify-content: center;
-    line-height: 1;
-    position: absolute;
-    right: -3rem;
-    text-align: center;
-    top: 0;
-    vertical-align: middle;
-    width: 3rem;
+    order: 99; /* Make sure this is at the end of everything else. */
+    padding: 0 var(--space);
 }
-label.forma-open.forma-manual:before {
-    content: '-';
+.forma label .forma-fieldset * {
+    width: calc(100% - 2rem - 2px); /* Fix fields width substract border & padding extra spacing. */
+}
+.forma label .forma-fieldset input,
+.forma label .forma-fieldset select,
+.forma label .forma-fieldset textarea,
+.forma label .forma-fieldset button {
+    border: 1px solid rgba(var(--black-rgb-color), .1);
+    outline: 4px solid transparent;
+}
+.forma label .forma-fieldset input:focus,
+.forma label .forma-fieldset select:focus,
+.forma label .forma-fieldset textarea:focus,
+.forma label .forma-fieldset button:focus {
+    outline: 4px solid rgba(var(--black-rgb-color), .1);
+}
+.forma label .forma-fieldset input:focus:valid,
+.forma label .forma-fieldset select:focus:valid,
+.forma label .forma-fieldset textarea:focus:valid,
+.forma label .forma-fieldset button:focus:valid {
+    outline: 4px solid var(--success-color);
+}
+.forma label .forma-fieldset input:focus:invalid,
+.forma label .forma-fieldset select:focus:invalid,
+.forma label .forma-fieldset textarea:focus:invalid,
+.forma label .forma-fieldset button:focus:invalid {
+    outline: 4px solid var(--error-color);
+}
+.forma label .forma-fieldset select {
+    bottom: 0;
+    height: inherit;
+    height: 3rem;
+    max-height: 4rem;
+    top: 0;
+    width: 100%;
+}
+.forma [type="submit"] {
+    background-color: var(--secondary-color);
+    border: 0;
+    color: rgba(var(--white-rgb-color), 1);
+    cursor: pointer;
+    margin: var(--space);
+    outline: 0;
+    width: calc(100% - 2rem - 2px); /* Fix fields width substract border & padding extra spacing. */
+}
+.forma [type="submit"]:focus,
+.forma [type="submit"]:active,
+.forma [type="submit"]:hover {
+    background-color: var(--primary-color);
+}
+.forma [type="submit"]:disabled {
+    background-color: rgba(var(--black-rgb-color), .2);
+    color: rgba(var(--black-rgb-color), .4);
+    cursor: not-allowed;
 }
