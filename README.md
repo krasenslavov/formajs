@@ -1,92 +1,142 @@
 # FormaJS
-jQuery extension plugin for creating dynamic and interactive forms with better UX.
 
-Check out our GitHub page for complete [documentation](https://formajs.com/), [examples](https://formajs.com/examples/index.html), usage and features.
+FormaJS will help you to create dynamic and iteractive forms with better end user experience.
 
-**This project is still in its infancy; put it together over the weekend, not really ready for production.**
+There are several starting points once you load up and initialize the script. Check out our GitHub page for complete [documentation](https://formajs.com/) with [examples](https://formajs.com/examples/index.html), usage and features.
 
-Couple of major issues not addressed are cross browser compatiblity & mobile usage.
+*This project is still in alpha version so be careful if you use for live site and in production.*
 
 ## [Quick start](https://formajs.com/index.html#usage)
 
-Copy-paste the stylesheet `<link>` into your HTML document`<head>` element.
+1. Copy-paste the stylesheet `<link>` into your HTML document`<head>`. There are several starting stylesheets that are included in the `/dist/css` folder.
 
 ```html
-<link rel="stylesheet" src="path/to/js/forma.css" />
+<link rel="stylesheet" src="path/to/css/forma.css" />
 ```
 
-Place the following `<script>`'s near the end of your pages, right before the closing `</body>` tag. jQuery must come first.
+2. Create your form by using the structure below 
+
+!!! Don't forget to use `forma` as you main form class and wrap your form elements within div that has `forma-fieldset` class !!!
 
 ```html
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-<script src="path/to/js/forma-0.0.1.min.js"></script>
+<form class="forma">
+  <label>
+    <span></span>
+    <div class="forma-fieldset">
+      <input />
+    </div>
+  </label>
+  <button></button>
+</form>
+```
+
+3. Place the following `<script>`'s near the end of your pages, right before the closing `</body>` tag.
+
+```html
+<script src="path/to/js/forma.min.js"></script>
+<script>forma();</script>
 ```
 
 ### [Build your form](https://formajs.com/index.html#structure)
 
 There are a few structure rules you need to follow when building your forms. 
 
-1. First add the `forma` class attribute to your target form tag. 
-2. Next each form element must be structured as an example below, where `<span>` holds the text and `<div class="fieldset">...</div>` your form elements.
+1. First add the `forma` class attribute to your target form tag. This is required if you plan to use the dist css files as you starting point for customization.
+2. Next each form row (field) must be structured as the example below, where `<span>` holds the text and `<div class="forma-fieldset">...</div>` for your form elements.
+
+An example login form.
 
 ```html
-<form class="forma">
-  <label>
-    <span></span>
-    <div class="fieldset">
-      <input type="text" />
-    </div>
-  </label>
-  <button type="submit"></button>
+<form class="forma forma-login">
+    <label for="username">
+        <span>Username</span>
+        <div class="fieldset">
+            <input type="text" name="username" pattern="[a-z]{3,32}" 
+            title="Username must be lowercase between 3 and 32 characters." required />
+        </div>
+    </label>
+    <label for="password">
+        <span>Password</span>
+        <div class="fieldset">
+            <input type="password" name="password" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" 
+            title="Password must have minimum 8 characters, at least one letter and one number" required />
+        </div>
+    </label>
+    <button type="submit" disabled>Login</button>
 </form>
 ```
 
 ### [Initialize FormaJS](https://formajs.com/index.html#options)
 
-Once we have our form created we are ready to initialize our form. 
+Once we have our form created we are ready to initialize and run our script. 
 
-Below is the most basic way without any additional options. 
+Below is the most basic way to do that without any additional options. 
 
 ```html
 <script>
-  $.forma();
+  forma();
 </script>
 ```
 
-Note: The script must be added after `<script src="path/to/js/forma-0.0.1.min.js"></script>`.
+Note: The init function must be added after `<script src="path/to/js/forma.min.js"></script>`.
+
+Below is the full format for our init function (with default values). 
+
+```html
+<script>
+  forma({
+    container: '.forma',
+    prefix: 'Enter ',
+    suffix: '...',
+    tab: false,
+    auto: false,
+    show: false,
+    manual: false,
+    submit: false,
+    support: []
+  });
+</script>
+```
+
+Take a look at the [documentaion](https://formajs.com/index.html#options) page for more information about user-defined options.
 
 ### [Customize your form](https://formajs.com/index.html#style)
 
-For customizing and styling your form take a look at the `forma.css` and `forma-base.css` files. 
+There are several different approaches when it comes to customizing and styling your forms.
 
-Below is an example set with globally available variables specified within the `:root` selector.
+You can either use the pre-built stylesheets that come inside the `dist/css` folder, or build your own form CSS from scratch (Note: need to take into consideration some JS defined CSS classes; take a look at `dist/css/forma-boilerplate.css` ).
+
+If you decide you want to use the pre-built stylesheets the simplest way to customize your form look and feel is to update the `:root` values. See the example below.
 
 ```css
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 :root {
-  --font: 400 normal 16px/1.6 Monaco, Consolas, 'Andale Mono', 'Ubuntu Mono', monospace;
-  --primary-color: #D65DB1;
-  --secondary-color: #845EC2;
-  --error-color: #FF6F91;
-  --success-color: #008F7A;
-  --warning-color: #FF9671;
-  --info-color: #0081CF;
-  --white-rgb-color: 250, 250, 250; /* #FAFAFA */
-  --black-rgb-color: 25, 25, 25; /* #191919 */
+    --font-mono: 400 normal 16px/1.6 'Monaco', 'Consolas', 'Andale Mono', 'Ubuntu Mono', monospace;
+    --font-google: 400 normal 16px/1.6 'Source Sans Pro', sans-serif;
+    --primary-color: #d65db1;
+    --secondary-color: #845ec2;
+    --error-color: #ff6f91;
+    --success-color: #008f7a;
+    --warning-color: #ff9671;
+    --info-color: #0081cf;
+    --white-rgb-color: 250, 250, 250; /* #fafafa */
+    --black-rgb-color: 25, 25, 25; /* #191919 */
+    --space: 1rem;
 }
-```
+``` 
 
-In addition, you can easily extend and change the structure of your form, take a look at the Register form [here](https://formajs.com/examples/register.html). 
-
-Take a look the end of the CSS file starting with `/* _forma-extend.css */`.
-
-Note: You can create your own CSS. All you need to include is `forma-base.css` which holds some required style rules.
+In addition, you can easily extend and change the structure of your form, take a look at the Register form example [here](https://formajs.com/examples/register.html). 
 
 ### [Form validations](https://formajs.com/index.html#validation)
 
-There are two types of validations, built-in validations with generic messages and custom validations that use regular expressions (by utilizing the `pattern` and `title` attributes).
+There are two types of validations, built-in validations with generic messages and custom validations that use regular expressions (this is done by utilizing the `pattern` and `title` attributes for each form element).
 
-More about validation and examples can be found [here](https://formajs.com/index.html#validation).
+More about form validation with examples can be found [here](https://formajs.com/index.html#validation).
 
 ### [Contribute](https://formajs.com/index.html#contribute)
 
+Check out the [GitHub](https://formajs.com/index.html#contribute) page for the different ways you can contribute to this project.
+
 ### [License](https://formajs.com/index.html#license)
+
+(c) Krasen Slavov | Code released under the [MIT License](https://opensource.org/licenses/MIT).
