@@ -1,10 +1,10 @@
 # FormaJS
 
-FormaJS will help you to create dynamic and iteractive forms with better end user experience.
+FormaJS will help you to create dynamic and interactive forms with a better end user experience.
 
-There are several starting points once you load up and initialize the script. Check out our GitHub page for complete [documentation](https://formajs.com/) with [examples](https://formajs.com/examples/index.html), usage and features.
+There are several starting points once you load up and initialize the script. Check out our GitHub page for complete [documentation](https://formajs.com/) with [examples](https://formajs.com/examples/index.html), usage, and features.
 
-*This project is still in alpha version so be careful if you use for live site and in production.*
+*This project is still in alpha version so be careful if you use it for live sites or in production environments.*
 
 ## [Quick start](https://formajs.com/index.html#usage)
 
@@ -16,7 +16,7 @@ There are several starting points once you load up and initialize the script. Ch
 
 2. Create your form by using the structure below 
 
-!!! Don't forget to use `forma` as you main form class and wrap your form elements within div that has `forma-fieldset` class !!!
+!!! Don't forget to use `forma` as your main form class and wrap your form elements within div that has `forma-fieldset` class !!!
 
 ```html
 <form class="forma">
@@ -41,7 +41,7 @@ There are several starting points once you load up and initialize the script. Ch
 
 There are a few structure rules you need to follow when building your forms. 
 
-1. First add the `forma` class attribute to your target form tag. This is required if you plan to use the dist css files as you starting point for customization.
+1. First, add the `forma` class attribute to your target form tag. This is required if you plan to use the `/dist/css` files as your starting point for customization.
 2. Next each form row (field) must be structured as the example below, where `<span>` holds the text and `<div class="forma-fieldset">...</div>` for your form elements.
 
 An example login form.
@@ -104,7 +104,7 @@ Take a look at the [documentaion](https://formajs.com/index.html#options) page f
 
 There are several different approaches when it comes to customizing and styling your forms.
 
-You can either use the pre-built stylesheets that come inside the `dist/css` folder, or build your own form CSS from scratch (Note: need to take into consideration some JS defined CSS classes; take a look at `dist/css/forma-boilerplate.css` ).
+You can either use the pre-built stylesheets that come inside the `/dist/css` folder, or build your own CSS from scratch (Note: need to take into consideration some JS defined CSS classes; take a look at `/dist/css/forma-boilerplate.css` ).
 
 If you decide you want to use the pre-built stylesheets the simplest way to customize your form look and feel is to update the `:root` values. See the example below.
 
