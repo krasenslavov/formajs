@@ -12,9 +12,9 @@
 	*, 
 	*:before, 
 	*:after {
-	    -webkit-box-sizing: border-box;
-	       -moz-box-sizing: border-box;
 	            box-sizing: border-box;
+	       -moz-box-sizing: border-box;
+	    -webkit-box-sizing: border-box;
 	    margin: 0;
 	    padding: 0;
 	}
@@ -40,8 +40,12 @@
 		min-height: 100vh;
 	}
 	.header .logo-wrap:before {
-	    border-radius: 10rem;
-	    box-shadow: 0 0 0 40rem rgba(var(--black-rgb-color), .05);
+	            border-radius: 10rem;
+	       -moz-border-radius: 10rem;
+	    -webkit-border-radius: 10rem;
+	            box-shadow: 0 0 0 40rem rgba(var(--black-rgb-color), .05);
+	       -moz-box-shadow: 0 0 0 40rem rgba(var(--black-rgb-color), .05);
+	    -webkit-box-shadow: 0 0 0 40rem rgba(var(--black-rgb-color), .05);
 	    content: '';
 	    height: 75px;
 	    left: var(--space);
@@ -52,7 +56,9 @@
 	    z-index: 0;
 	}
 	.header .logo {
-		border-radius: 10rem;
+		        border-radius: 10rem;
+	       -moz-border-radius: 10rem;
+	    -webkit-border-radius: 10rem;
 		margin: 1rem;
 	}
 /* _navbar.css */
@@ -61,8 +67,8 @@
 	.navbar {
 		display: flex;
 		flex-direction: column;
-		-webkit-position: sticky;
 	            position: sticky;
+		-webkit-position: sticky;
 		top: 0;
 		width: 100%;
 	}
@@ -119,10 +125,13 @@
 		margin: 0 0 1rem;
 	}
 	.content p {
-		line-height: 2.6;
+		line-height: 2.4;
 		padding: 0 1rem 1rem;
 	}
 	.content pre {
+		        border-radius: 4px;
+		   -moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
 		margin: 0 0 1rem 0;
 	}
 	.content ul,
@@ -130,13 +139,34 @@
 		padding: 0 3rem 1rem;	
 	}
 	.content li {
-		line-height: 2.6;
+		line-height: 2.4;
 	}
 	.content mark {
 		background-color: var(--secondary-color);
-		border-radius: 4px;
+		        border-radius: 4px;
+		   -moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
 		color: rgba(var(--white-rgb-color), 1);
 		padding: .3rem;
+	}
+	.content .bubble {
+		background-color: var(--success-color);
+				border-radius: 4px;
+		   -moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		color: rgba(var(--white-rgb-color), 1);
+		padding: var(--space);
+	}
+	.content .bubble p:last-of-type {
+		margin-bottom: 0;
+		padding-bottom: 0;		
+	}
+	.content .bubble a {
+		border-bottom: 3px solid rgba(var(--white-rgb-color), .5);
+		color: rgba(var(--white-rgb-color), 1);
+		padding: .1rem;
+		text-decoration: none;
+		transition: all .3s;
 	}
 /* _footer.css */
 	footer.footer {
@@ -146,7 +176,6 @@
 		justify-content: center;
 	}
 	.footer p {
-
 	}
 /* _utils.css */
 	[style*="display: block"] {
