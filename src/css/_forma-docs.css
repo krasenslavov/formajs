@@ -1,0 +1,147 @@
+/* _forma-docs.css */
+body {
+    font: var(--font-mono);
+}
+.forma input,
+.forma select,
+.forma textarea,
+.forma button {
+    font: var(--font-mono);
+    padding: var(--space);
+}
+.forma label {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+.forma label span {
+    background-color: rgba(var(--black-rgb-color), .15);
+    border-bottom: 1px solid rgba(var(--white-rgb-color), 1);
+    border-right: 1px solid rgba(var(--white-rgb-color), 1);
+    flex: 0 0 30%;
+    order: 1;
+    padding: var(--space);
+}
+.forma label span.forma-valid {
+    color: var(--success-color);
+}
+.forma label span.forma-invalid {
+    color: var(--error-color);
+}
+.forma label span .forma-description {
+    color: rgba(var(--black-rgb-color), .5);
+}
+.forma label span .forma-input {
+}
+.forma label span .forma-message {
+    background-color: rgba(var(--white-rgb-color), 1);
+    border: 1px solid rgba(var(--black-rgb-color), .2);
+    color: rgba(var(--black-rgb-color), 1);
+    font-size: 85%;
+    padding: .25rem .5rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+.forma label span .forma-message:before {
+    content: 'Hint: ';
+}
+.forma label .forma-fieldset {
+    background-color: rgba(var(--black-rgb-color), .05);
+    display: none;
+    flex: 1 1 auto;
+    order: 2;
+    padding: var(--space);
+    position: relative;
+}
+.forma label.forma-open .forma-fieldset {
+    align-items: center;
+    display: flex;
+}
+.forma label.forma-open .forma-fieldset:after {
+    align-items: center;
+    background-color: rgba(var(--white-rgb-color), 1);
+    border: 1px solid rgba(var(--black-rgb-color), .1);
+    content: 'Hit tab';
+    display: flex; 
+    font-size: 85%;
+    padding: .3rem;
+    position: absolute;
+    right: 2rem;
+    z-index: 10;
+}
+.forma label.forma-open.forma-manual:before {
+    background-color: rgba(var(--black-rgb-color), .05);
+    content: '-';
+}
+.forma label.forma-manual:before {
+    align-items: center;
+    background-color: rgba(var(--black-rgb-color), .05);
+    background-color: rgba(var(--black-rgb-color), .15);
+    bottom: 0;
+    content: '+';
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    order: 99;
+    padding: 0;
+    position: absolute;
+    right: -2rem;
+    top: 0;
+    width: 2rem;
+}
+.forma label .forma-fieldset * {
+    width: calc(100% - 2rem - 2px);
+}
+.forma label .forma-fieldset input,
+.forma label .forma-fieldset select,
+.forma label .forma-fieldset textarea,
+.forma label .forma-fieldset button {
+    border: 1px solid rgba(var(--black-rgb-color), .1);
+    outline: 4px solid transparent;
+}
+.forma label .forma-fieldset input:focus,
+.forma label .forma-fieldset select:focus,
+.forma label .forma-fieldset textarea:focus,
+.forma label .forma-fieldset button:focus {
+    outline: 4px solid rgba(var(--black-rgb-color), .1);
+}
+.forma label .forma-fieldset input:focus:valid,
+.forma label .forma-fieldset select:focus:valid,
+.forma label .forma-fieldset textarea:focus:valid,
+.forma label .forma-fieldset button:focus:valid {
+    outline: 4px solid var(--success-color);
+}
+.forma label .forma-fieldset input:focus:invalid,
+.forma label .forma-fieldset select:focus:invalid,
+.forma label .forma-fieldset textarea:focus:invalid,
+.forma label .forma-fieldset button:focus:invalid {
+    outline: 4px solid var(--error-color);
+}
+.forma label .forma-fieldset select {
+    bottom: 0;
+    height: inherit;
+    height: 4rem;
+    top: 0;
+    width: 100%;
+}
+.forma [type="submit"] {
+    background-color: var(--secondary-color);
+    border: 0;
+    color: rgba(var(--white-rgb-color), 1);
+    cursor: pointer;
+    outline: 0;
+    width: 100%;
+}
+.forma [type="submit"]:focus,
+.forma [type="submit"]:active,
+.forma [type="submit"]:hover {
+    background-color: var(--primary-color);
+}
+.forma [type="submit"]:disabled {
+    background-color: rgba(var(--black-rgb-color), .2);
+    color: rgba(var(--black-rgb-color), .4);
+    cursor: not-allowed;
+}
