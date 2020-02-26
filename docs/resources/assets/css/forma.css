@@ -1,6 +1,6 @@
 /* _root.css */
 :root {
-    --font: 400 normal 16px/1.6 Monaco, Consolas, 'Andale Mono', 'Ubuntu Mono', monospace;
+    --font: 400 normal 14px/1.4 Monaco, Consolas, 'Andale Mono', 'Ubuntu Mono', monospace;
     --primary-color: #D65DB1;
     --secondary-color: #845EC2;
     --error-color: #FF6F91;
