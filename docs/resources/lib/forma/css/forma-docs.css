@@ -4,7 +4,7 @@
 :root {
     --font-mono: 400 normal 16px/1.6 'Monaco', 'Consolas', 'Andale Mono', 'Ubuntu Mono', monospace;
     --font-google: 400 normal 16px/1.6 'Source Sans Pro', sans-serif;
-    --primary-color: #d65db1;
+    --primary-color: #d65bd1;
     --secondary-color: #845ec2;
     --error-color: #ff6f91;
     --success-color: #008f7a;

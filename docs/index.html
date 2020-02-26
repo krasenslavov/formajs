@@ -17,7 +17,9 @@
                 </a>
             </div>
             <nav class="navbar">
-                <a href="https://github.com/krasenslavov/forma/releases/tag/v0.0.2-alpha">Latest v0.0.2-alpha</a>
+                <h5>Github</h5>
+                <a href="https://github.com/krasenslavov/forma/" target="_blank">Repo</a>
+                <a href="https://github.com/krasenslavov/forma/releases/tag/v0.0.2-alpha" target="_blank"> v0.0.2-alpha (latest)</a>
                 <h5>Documentation</h5>
                 <a href="/index.html" class="toplvl">FormaJS</a>
                 <div class="subnav active">
@@ -48,6 +50,231 @@
         </header>
         <main class="content">
             <div class="container">
+                <section>
+                    <p>You can download the latest <mark>/dist</mark> code directly from the <a href="https://github.com/krasenslavov/forma/releases/tag/v0.0.2-alpha">GitHub repo</a>.</p> 
+                    <p>Don't forget to give us a ⭐ if you think this script is worthwhile and we should continue improving on it.</p>
+                </section>
+                <section>
+                    <h2 id="usage">Basic usage</h2>
+                    <p>FormaJS is very easy to setup and customize, however, it's flexible and could be used in many different scenarios.</p>
+                    <p>Below are the things you need to keep in mind when use the script.</p>
+                    <ul>
+                        <li>Add the variation of <mark>forma.css</mark> stylesheet inside the document <mark>&lt;head&gt;</mark> tag.</li>
+                        <li>Add the <mark>forma.min.js</mark> script near the end of your document before the closing <mark>&lt;/body&gt;</mark> tag.</li>
+                        <li>Create your form. (<a href="/index.html#structure">see form structure details</a>)</li>
+                        <li>Initialize the script and specify additional options. (<a href="/index.html#options">see custom options details</a>)</li>
+                        <li>Customize and style you form; either by using the pre-built stylesheets inside <mark>/dist/css</mark> and tweak the <mark>:root</mark> values or create your own stylesheet form scratch using the <mark>/dist/css/forma-boileplate.css</mark> as your starting point. (<a href="/index.html#style">see styling details</a>)</li>
+                    </ul>   
+                    <h3>Starter template</h3>
+                    <p>Use the code below as your starting point, for testing or development.</p>
+<pre><code class="language-markup">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+ &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /&gt;
+    &lt;title&gt;FormaJS - Create dynamic and interactive forms with a better UX.&lt;/title&gt;
+    &lt;!-- Include FormaJS stylesheet variation. --&gt;
+    &lt;link href="path/to/css/forma.css" rel="stylesheet" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Add your form structure, class="forma" is required if you don't specify other container! --&gt;
+    &lt;form class="forma"&gt;
+      &lt;label&gt;
+        &lt;span&gt;Text&lt;/span&gt;
+        &lt;div class="forma-fieldset"&gt;
+          &lt;input type="text" /&gt;
+        &lt;/div&gt;
+      &lt;/label&gt;
+      &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;!-- Include FormaJS plugin script. --&gt;
+    &lt;script src="path/to/js/forma.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+      $forma();
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>            
+                </section>
+                <section>
+                    <h2 id="structure">Form structure</h2>
+                    <p>There is a certain structure you need to follow when you create your forms.</p>
+                    <ol>
+                        <li>Don't forget to add <mark>forma</mark> class to your target form tag & use div with <mark>forma-fieldset</mark> class to wrap your form elements.</li>
+                        <li>Each field (row) need to be inside a <mark>&lt;label&gt;</mark> tag.</li>
+                        <li>Use the <mark>&lt;span&gt;</mark> tag for text (this where all the validation/description & live input content is appended).</li>
+                        <li>Lastly, put your form elements inside a <mark>&lt;div class="forma-fieldset"&gt;...&lt;/div&gt;</mark> tag. You can have multiple elements inside.</li>
+                    </ol>
+<pre><code class="language-markup">&lt;form class="forma"&gt;
+  &lt;label&gt;
+    &lt;span&gt;Text&lt;/span&gt;
+      &lt;div class="forma-fieldset"&gt;
+        &lt;input type="text" /&gt;
+      &lt;/div&gt;
+    &lt;/label&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                    <p>* <u>Note</u>: The submit button doesn't need to be inside a label tag. You can also use <mark>&lt;input type="submit" /&gt;</mark> as your submit button.</p>
+                </section>
+                <section>
+                    <h2 id="options">Custom options</h2>
+                    <p>When you initialize your form you can specify several different options. Below are the default values for all the options with detailed description for each one.</p>
+<pre><code class="language-javascript">forma({
+  container: '.forma',
+  prefix: 'Enter ',
+  suffix: '...',
+  tab: false,
+  auto: false,
+  show: false,
+  manual: false,
+  submit: false,
+  support: []
+});</code></pre>          
+                <h3><mark>container</mark> - Form target.</h3>
+                <ul>
+                    <li>Usually defined with class attribute but you can also use id or data attributes as well. (useful when you have multiple forms on the same page)</li>
+                    <li>Must be of a string type.</li>
+                    <li>Default value is <mark>'.forma'</mark>.</li>
+                </ul>
+                <h3><mark>prefix</mark> - Text added before the auto-generated text.</h3> 
+                <ul>
+                    <li>Prepend text when you auto-generate additional text.</li>
+                    <li>Must be of a string type.</li>
+                    <li>Default value is <mark>Enter </mark>.</li>
+                </ul>
+                <h3><mark>suffix</mark> - Text added after the auto-generated text.</h3> 
+                <ul>
+                    <li>Append text when you auto-generate additional text.</li>
+                    <li>Must be of a string type.</li>
+                    <li>Default value is <mark>...</mark>.</li>
+                </ul>
+                <h3><mark>tab</mark> - Navigate between rows (fields) with tab key; make only the current element visible, if true. </h3>
+                <ul>
+                    <li>Tab navigation will make visible only the current row (field) and turn off the rest.</li>
+                    <li>Must be of a boolean type; accepted values <mark>true</mark> or <mark>false</mark>.</li>
+                    <li>Default value is <mark>false</mark>.</li>
+                </ul>
+                <h3><mark>auto</mark> - Display additional auto-generated text, if true.</h3> 
+                <ul>
+                    <li>Show additionally auto-generated description and placeholder text, for each field, using the label text and specified <mark>prefix</mark> and <mark>suffix</mark>.</li>
+                    <li>Must be of a boolean type; accepted values <mark>true</mark> or <mark>false</mark>.</li>
+                    <li>Default value is <mark>false</mark>.</li>
+                </ul>
+                <h3><mark>show</mark> - Auto-open all form rows (fields) on load, if true.</h3> 
+                <ul>
+                    <li>By default only 1st field is opened and focused on page load.</li>
+                    <li>Must be of a boolean type; accepted values <mark>true</mark> or <mark>false</mark>.</li>
+                    <li>Default value is <mark>false</mark>.</li>
+                </ul>
+                <h3><mark>manual</mark> - Add an open/close state button for each form row (field), if true.</h3> 
+                <ul>
+                    <li>By default to navigate between fields the user is required to use the tab key.</li>
+                    <li>Must be of a boolean type; accepted values <mark>true</mark> or <mark>false</mark>.</li>
+                    <li>Default value is <mark>false</mark>.</li>
+                </ul>
+                <h3><mark>submit</mark> - Disable submit button, if true.</h3> 
+                <ul>
+                    <li>Disable submit button until all validations have passed.</li>
+                    <li>Must be of a boolean type; accepted values <mark>true</mark> or <mark>false</mark>.</li>
+                    <li>Default value is <mark>false</mark>.</li>
+                </ul>
+                <hr />
+                <h3><mark>support</mark> - Add additional element support.</h3> 
+                <p>Must be of an array type. <u>You can add other form element support by passing another types.</u></p>
+                <p>Script supported form elements:</p>
+                <ul>
+                    <li>input</li>
+                    <li>select</li>
+                    <li>textarea</li>
+                    <li>button</li>
+                    <li>input[type="text"]</li>
+                    <li>input[type="email"]</li>
+                    <li>input[type="password"]</li>
+                    <li>select[type="select-one"]</li>
+                    <li>textarea[type="textarea"]</li>
+                    <li>button[type="submit"]</li>
+                </ul>    
+                <p>* <u>Hint</u>: You will get a <mark>console.error</mark> message if the form element isn't supported.</p>
+                </section>
+                <section>
+                    <h2 id="style">Styling</h2>
+                    <p>The easiest way to customize the form is to change the <mark>:root</mark> values that come with all the pre-built <mark>forma.css</mark> files. Add your own colors, fonts etc...</p> 
+                    <p>Below you can see the default values included in all pre-built stylesheets inside <mark>/dist/css</mark>.</p>
+<pre><code class="language-css">@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+:root {
+  --font-mono: 400 normal 16px/1.6 'Monaco', 'Consolas', 'Andale Mono', 'Ubuntu Mono', monospace;
+  --font-google: 400 normal 16px/1.6 'Source Sans Pro', sans-serif;
+  --primary-color: #d65bd1;
+  --secondary-color: #845ec2;
+  --error-color: #ff6f91;
+  --success-color: #008f7a;
+  --warning-color: #ff9671;
+  --info-color: #0081cf;
+  --white-rgb-color: 250, 250, 250; /* #fafafa */
+  --black-rgb-color: 25, 25, 25; /* #191919 */
+  --space: 1rem;
+}</code></pre>
+                    <p><u>Note</u>: You can additionally take a look at the stylesheet files inside <mark>/dist/css</mark> and with some basic knowledge of CSS customize additionally the layout of your form.</p>
+                    <hr />
+                    <h3>Create your custom CSS</h3>
+                    <p>To do this take a look at the boilerplate CSS file <mark>/dist/css/forma-boilerplate.css</mark>. This will give you a head start to style and customize your form.</p>
+                    <p>Here is link to the GitHub repo <a href="https://github.com/krasenslavov/forma/blob/master/dist/css/forma-boilerplate.css" target="_blank">/dist/css/forma-boilerplate.css</a>.
+                    <hr />
+                     <h3>Extending <mark>forma.css</mark></h3>
+                    <p>You can easily extend the <mark>forma.css</mark> and modify your form layout. Take a look at the <a href="examples/register.html">Register</a> form example.</p> 
+                    <p>With only 1 additional CSS rule you can make your form to turn into, one at time field, and switch between fields with the tab key.</p>
+<pre><code class="language-css">.forma label:not(.forma-open) {
+  display: none;
+}
+</code></pre>
+                    <h3>Create your own stylesheet form scratch</h3>
+                    <p>This is the most advanced method to customize your forms. However, if you feel comfortable with HTML/CSS you will be able to create your own styles from scratch easily.</p> 
+                    <p>Take a look at both <mark>/dist/css/forma.css</mark> and <mark>/dist/css/forma-boilerplate.css</mark> first; there are some additional classes added via JavaScript that you may want to style as well.</p>
+                </section>
+                <section>
+                    <h2 id="validation">Validation</h2>
+                    <p>There are two types of validations; built-in validations with generic messages and custom validations that use regular expressions. (by utilizing the <mark>pattern</mark> and <mark>title</mark> attributes)</p>  
+                    <h3>Built-in validations</h3>
+                    <p>These will display based on the type of the input field; for example, <mark>&lt;input type="email" /&gt;</mark> will require a valid email address and output the following message if the email address isn't a correct format <mark>Enter a valid email address</mark>.</p>
+                    <p>You can also add additional attributes to most form elements for validation, for example:</p>
+                    <ul>
+                        <li>required;</li>
+                        <li>minlength and maxlength;</li>
+                        <li>min, max, and step (for numbers);</li>
+                        <li>etc...</li>
+                    </ul>   
+<pre><code class="language-markup">&lt;label for="username"&gt;
+  &lt;span&gt;Username&lt;/span&gt;
+  &lt;div class="forma-fieldset"&gt;
+    &lt;input type="text" name="username" minlength="3" maxlength="32" required /&gt;
+  &lt;/div&gt;
+&lt;/label&gt;</code></pre>
+                    <p>* <u>Example</u>: Form  with built-in validations can be found <a href="/examples/example-builtin-validation.html">here</a>.  
+                    <h3>Custom validations</h3>
+                    <p>For real-world forms the built-in checks aren't enough so you would need to use some regular expression magic.</p> 
+                    <p>Use the <mark>pattern</mark>, and <mark>title</mark> attributes to set your custom error message text. More information can be found at <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern">MDN Web Docs</a>.</p>   
+
+<pre><code class="language-markup">&lt;label for="password"&gt;
+  &lt;span&gt;Password&lt;/span&gt;
+  &lt;div class="forma-fieldset"&gt;
+    &lt;input type="password" name="password" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" 
+      title="Password must have minimum 8 characters, at least one letter and one number" required /&gt;
+  &lt;/div&gt;
+&lt;/label&gt;</code></pre>
+                    <p>* <u>Example</u>: Form with custom validations can be found <a href="/examples/example-custom-validation.html">here</a>.</p>   
+                    <p>* <u>Hint</u>: Not good wit regexp? Jump over to <a href="https://stackoverflow.com/questions/tagged/regex?sort=MostVotes&edited=true">StackOverflow</a>; 99% of the use cases can be found there.</p>   
+                </section>
+                <section>
+                    <h2 id="contribute">Contribute</h2>
+                    <p>You can contribute in several ways.</p>
+                    <p><u>Issues</u>: Provide a detailed report of any bugs you encounter and open an issue on GitHub.</p>
+                    <p><u>Documentation</u>: If you'd like to fix a typo or beef up the docs, you can fork the project, make your changes, and submit a pull request.</p>
+                    <p><u>Code</u>: Make a fix and submit it as a pull request.</p>
+                </section>
+                <section>
+                    <h2 id="license">License</h2>
+                    <p>Copyright &copy; 2020 <a href="https://github.com/krasenslavov" target="_blank">Krasen Slavov</a>.</p>
+                    <p>Code released under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>.</p>
+                </section>
             </div>
         </main>
         <footer class="footer">
