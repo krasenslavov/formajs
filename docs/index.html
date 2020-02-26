@@ -129,71 +129,78 @@
   submit: false,
   support: []
 });</code></pre>          
-                <h3><mark>container</mark> - Form target.</h3>
-                <ul>
-                    <li>Usually defined with class attribute but you can also use id or data attributes as well. (useful when you have multiple forms on the same page)</li>
-                    <li>Must be of a string type.</li>
-                    <li>Default value is <mark>'.forma'</mark>.</li>
-                </ul>
-                <h3><mark>prefix</mark> - Text added before the auto-generated text.</h3> 
-                <ul>
-                    <li>Prepend text when you auto-generate additional text.</li>
-                    <li>Must be of a string type.</li>
-                    <li>Default value is <mark>Enter </mark>.</li>
-                </ul>
-                <h3><mark>suffix</mark> - Text added after the auto-generated text.</h3> 
-                <ul>
-                    <li>Append text when you auto-generate additional text.</li>
-                    <li>Must be of a string type.</li>
-                    <li>Default value is <mark>...</mark>.</li>
-                </ul>
-                <h3><mark>tab</mark> - Navigate between rows (fields) with tab key; make only the current element visible, if true. </h3>
-                <ul>
-                    <li>Tab navigation will make visible only the current row (field) and turn off the rest.</li>
-                    <li>Must be of a boolean type; accepted values <mark>true</mark> or <mark>false</mark>.</li>
-                    <li>Default value is <mark>false</mark>.</li>
-                </ul>
-                <h3><mark>auto</mark> - Display additional auto-generated text, if true.</h3> 
-                <ul>
-                    <li>Show additionally auto-generated description and placeholder text, for each field, using the label text and specified <mark>prefix</mark> and <mark>suffix</mark>.</li>
-                    <li>Must be of a boolean type; accepted values <mark>true</mark> or <mark>false</mark>.</li>
-                    <li>Default value is <mark>false</mark>.</li>
-                </ul>
-                <h3><mark>show</mark> - Auto-open all form rows (fields) on load, if true.</h3> 
-                <ul>
-                    <li>By default only 1st field is opened and focused on page load.</li>
-                    <li>Must be of a boolean type; accepted values <mark>true</mark> or <mark>false</mark>.</li>
-                    <li>Default value is <mark>false</mark>.</li>
-                </ul>
-                <h3><mark>manual</mark> - Add an open/close state button for each form row (field), if true.</h3> 
-                <ul>
-                    <li>By default to navigate between fields the user is required to use the tab key.</li>
-                    <li>Must be of a boolean type; accepted values <mark>true</mark> or <mark>false</mark>.</li>
-                    <li>Default value is <mark>false</mark>.</li>
-                </ul>
-                <h3><mark>submit</mark> - Disable submit button, if true.</h3> 
-                <ul>
-                    <li>Disable submit button until all validations have passed.</li>
-                    <li>Must be of a boolean type; accepted values <mark>true</mark> or <mark>false</mark>.</li>
-                    <li>Default value is <mark>false</mark>.</li>
-                </ul>
-                <hr />
-                <h3><mark>support</mark> - Add additional element support.</h3> 
-                <p>Must be of an array type. <u>You can add other form element support by passing another types.</u></p>
-                <p>Script supported form elements:</p>
-                <ul>
-                    <li>input</li>
-                    <li>select</li>
-                    <li>textarea</li>
-                    <li>button</li>
-                    <li>input[type="text"]</li>
-                    <li>input[type="email"]</li>
-                    <li>input[type="password"]</li>
-                    <li>select[type="select-one"]</li>
-                    <li>textarea[type="textarea"]</li>
-                    <li>button[type="submit"]</li>
-                </ul>    
-                <p>* <u>Hint</u>: You will get a <mark>console.error</mark> message if the form element isn't supported.</p>
+                    <h3><mark>container</mark> - Form target.</h3>
+                    <ul>
+                        <li>Usually defined with class attribute but you can also use id or data attributes as well. (useful when you have multiple forms on the same page)</li>
+                        <li>Must be of a string type.</li>
+                        <li>Default value is <mark>'.forma'</mark>.</li>
+                    </ul>
+                    <hr />
+                    <h3><mark>prefix</mark> - Text added before the auto-generated text.</h3> 
+                    <ul>
+                        <li>Prepend text when you auto-generate additional text.</li>
+                        <li>Must be of a string type.</li>
+                        <li>Default value is <mark>Enter </mark>.</li>
+                    </ul>
+                    <hr />
+                    <h3><mark>suffix</mark> - Text added after the auto-generated text.</h3> 
+                    <ul>
+                        <li>Append text when you auto-generate additional text.</li>
+                        <li>Must be of a string type.</li>
+                        <li>Default value is <mark>...</mark>.</li>
+                    </ul>
+                    <hr />
+                    <h3><mark>tab</mark> - Navigate between rows (fields) with tab key; make only the current element visible, if true. </h3>
+                    <ul>
+                        <li>Tab navigation will make visible only the current row (field) and turn off the rest.</li>
+                        <li>Must be of a boolean type; accepted values <mark>true</mark> or <mark>false</mark>.</li>
+                        <li>Default value is <mark>false</mark>.</li>
+                    </ul>
+                    <hr />
+                    <h3><mark>auto</mark> - Display additional auto-generated text, if true.</h3> 
+                    <ul>
+                        <li>Show additionally auto-generated description and placeholder text, for each field, using the label text and specified <mark>prefix</mark> and <mark>suffix</mark>.</li>
+                        <li>Must be of a boolean type; accepted values <mark>true</mark> or <mark>false</mark>.</li>
+                        <li>Default value is <mark>false</mark>.</li>
+                    </ul>
+                    <hr />
+                    <h3><mark>show</mark> - Auto-open all form rows (fields) on load, if true.</h3> 
+                    <ul>
+                        <li>By default only 1st field is opened and focused on page load.</li>
+                        <li>Must be of a boolean type; accepted values <mark>true</mark> or <mark>false</mark>.</li>
+                        <li>Default value is <mark>false</mark>.</li>
+                    </ul>
+                    <hr />
+                    <h3><mark>manual</mark> - Add an open/close state button for each form row (field), if true.</h3> 
+                    <ul>
+                        <li>By default to navigate between fields the user is required to use the tab key.</li>
+                        <li>Must be of a boolean type; accepted values <mark>true</mark> or <mark>false</mark>.</li>
+                        <li>Default value is <mark>false</mark>.</li>
+                    </ul>
+                    <hr />
+                    <h3><mark>submit</mark> - Disable submit button, if true.</h3> 
+                    <ul>
+                        <li>Disable submit button until all validations have passed.</li>
+                        <li>Must be of a boolean type; accepted values <mark>true</mark> or <mark>false</mark>.</li>
+                        <li>Default value is <mark>false</mark>.</li>
+                    </ul>
+                    <hr />
+                    <h3><mark>support</mark> - Add additional element support.</h3> 
+                    <p>Must be of an array type. <u>You can add other form element support by passing another types.</u></p>
+                    <p>Script supported form elements:</p>
+                    <ul>
+                        <li>input</li>
+                        <li>select</li>
+                        <li>textarea</li>
+                        <li>button</li>
+                        <li>input[type="text"]</li>
+                        <li>input[type="email"]</li>
+                        <li>input[type="password"]</li>
+                        <li>select[type="select-one"]</li>
+                        <li>textarea[type="textarea"]</li>
+                        <li>button[type="submit"]</li>
+                    </ul>    
+                    <p>* <u>Hint</u>: You will get a <mark>console.error</mark> message if the form element isn't supported.</p>
                 </section>
                 <section>
                     <h2 id="style">Styling</h2>
