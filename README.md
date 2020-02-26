@@ -113,17 +113,17 @@ If you decide you want to use the pre-built stylesheets the simplest way to cust
 ```css
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 :root {
-    --font-mono: 400 normal 16px/1.6 'Monaco', 'Consolas', 'Andale Mono', 'Ubuntu Mono', monospace;
-    --font-google: 400 normal 16px/1.6 'Source Sans Pro', sans-serif;
-    --primary-color: #d65db1;
-    --secondary-color: #845ec2;
-    --error-color: #ff6f91;
-    --success-color: #008f7a;
-    --warning-color: #ff9671;
-    --info-color: #0081cf;
-    --white-rgb-color: 250, 250, 250; /* #fafafa */
-    --black-rgb-color: 25, 25, 25; /* #191919 */
-    --space: 1rem;
+  --font-mono: 400 normal 16px/1.6 'Monaco', 'Consolas', 'Andale Mono', 'Ubuntu Mono', monospace;
+  --font-google: 400 normal 16px/1.6 'Source Sans Pro', sans-serif;
+  --primary-color: #d65bd1;
+  --secondary-color: #845ec2;
+  --error-color: #ff6f91;
+  --success-color: #008f7a;
+  --warning-color: #ff9671;
+  --info-color: #0081cf;
+  --white-rgb-color: 250, 250, 250; /* #fafafa */
+  --black-rgb-color: 25, 25, 25; /* #191919 */
+  --space: 1rem;
 }
 ``` 
 
