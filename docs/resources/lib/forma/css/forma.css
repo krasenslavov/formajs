@@ -1,143 +1,131 @@
 /* _font.css */
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
 /* _root.css */
 :root {
-    --font-mono: 400 normal 16px/1.6 'Monaco', 'Consolas', 'Andale Mono', 'Ubuntu Mono', monospace;
-    --font-google: 400 normal 16px/1.6 'Source Sans Pro', sans-serif;
-    --primary-color: #d65bd1;
-    --secondary-color: #845ec2;
-    --error-color: #fc4444;
-    --success-color: #008f7a;
-    --warning-color: #ff9671;
-    --info-color: #0081cf;
-    --white-rgb-color: 250, 250, 250; /* #fafafa */
-    --black-rgb-color: 25, 25, 25; /* #191919 */
-    --space: 1rem;
-}
-/* _forma.css */
+  --font-mono: 400 normal 16px/1.6 Monaco, Consolas, Andale Mono, Ubuntu Mono, monospace;
+  --font-google: 400 normal 16px/1.6 Source Sans Pro, sans-serif;
+  --primary-color: #d65bd1;
+  --secondary-color: #845ec2;
+  --error-color: #fc4444;
+  --success-color: #008f7a;
+  --warning-color: #ff9671;
+  --info-color: #0081cf;
+  --white-rgb-color: #fafafa;
+  --black-rgb-color: #191919;
+  --space: 1rem; }
+
+/* _global.css */
+*,
+*:before,
+*:after {
+  box-sizing: none;
+  -moz-box-sizing: none;
+  -webkit-box-sizing: none;
+  margin: 0;
+  padding: 0; }
+
 body {
-    font: var(--font-mono);
-}
+  font: 400 normal 16px/1.6 "Monaco", "Consolas", "Andale Mono", "Ubuntu Mono", monospace; }
+
+/* _forma-complete.css */
 .forma input,
 .forma select,
 .forma textarea,
 .forma button {
-    font: var(--font-mono);
-    padding: var(--space);
-}
+  font: 400 normal 16px/1.6 "Monaco", "Consolas", "Andale Mono", "Ubuntu Mono", monospace;
+  padding: 1rem; }
 .forma label {
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    padding: var(--space);
-    position: relative;
-}
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  position: relative; }
 .forma label span {
-    flex: 0 0 30%;
-    order: 1;
-}
+  flex: 0 0 30%;
+  order: 1; }
 .forma label span.forma-valid {
-    color: var(--success-color);
-}
+  color: #008f7a; }
 .forma label span.forma-invalid {
-    color: var(--error-color);
-}
+  color: #fc4444; }
 .forma label span .forma-description {
-     color: rgba(var(--black-rgb-color), .5);
-}
-.forma label span .forma-input {
-}
+  color: rgba(25, 25, 25, 0.5); }
 .forma label span .forma-message {
-    font-size: 85%;
-}
-.forma label span .forma-message:before {
-}
+  font-size: 85%; }
 .forma label .forma-fieldset {
-    display: none;
-    flex: 1 1 auto;
-    order: 2;
-    position: relative;
-}
+  display: none;
+  flex: 1 1 auto;
+  order: 2;
+  position: relative; }
 .forma label.forma-open .forma-fieldset {
-    align-items: center;
-    display: flex;
-}
+  align-items: center;
+  display: flex; }
 .forma label.forma-open .forma-fieldset:after {
-    align-items: center;
-    background-color: rgba(var(--white-rgb-color), 1);
-    border: 1px solid rgba(var(--black-rgb-color), .1);
-    content: 'Hit tab';
-    display: flex; 
-    font-size: 85%;
-    padding: .3rem;
-    position: absolute;
-    right: 1rem;
-    z-index: 10;
-}
+  align-items: center;
+  background-color: #fafafa;
+  border: 1px solid rgba(25, 25, 25, 0.1);
+  content: 'Hit tab';
+  display: flex;
+  font-size: 85%;
+  padding: .3rem;
+  position: absolute;
+  right: 1rem;
+  z-index: 10; }
 .forma label.forma-open.forma-manual:before {
-    content: '-';
-}
+  content: '-'; }
 .forma label.forma-manual:before {
-    align-items: center;
-    content: '+';
-    display: flex;
-    flex: 0 0 auto;
-    justify-content: center;
-    order: 99; /* Make sure this is at the end of everything else. */
-    padding: 0 var(--space);
-}
+  align-items: center;
+  content: '+';
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  order: 99;
+  /* Make sure this is at the end of everything else. */
+  padding: 0 1rem; }
 .forma label .forma-fieldset * {
-    width: calc(100% - 2rem - 2px); /* Fix fields width substract border & padding extra spacing. */
-}
+  width: calc(100% - 2rem - 2px);
+  /* Fix fields width substract border & padding extra spacing. */ }
 .forma label .forma-fieldset input,
 .forma label .forma-fieldset select,
 .forma label .forma-fieldset textarea,
 .forma label .forma-fieldset button {
-    border: 1px solid rgba(var(--black-rgb-color), .1);
-    outline: 4px solid transparent;
-}
+  border: 1px solid rgba(25, 25, 25, 0.1);
+  outline: 4px solid transparent; }
 .forma label .forma-fieldset input:focus,
 .forma label .forma-fieldset select:focus,
 .forma label .forma-fieldset textarea:focus,
 .forma label .forma-fieldset button:focus {
-    outline: 4px solid rgba(var(--black-rgb-color), .1);
-}
+  outline: 4px solid rgba(25, 25, 25, 0.1); }
 .forma label .forma-fieldset input:focus:valid,
 .forma label .forma-fieldset select:focus:valid,
 .forma label .forma-fieldset textarea:focus:valid,
 .forma label .forma-fieldset button:focus:valid {
-    outline: 4px solid var(--success-color);
-}
+  outline: 4px solid #008f7a; }
 .forma label .forma-fieldset input:focus:invalid,
 .forma label .forma-fieldset select:focus:invalid,
 .forma label .forma-fieldset textarea:focus:invalid,
 .forma label .forma-fieldset button:focus:invalid {
-    outline: 4px solid var(--error-color);
-}
+  outline: 4px solid #fc4444; }
 .forma label .forma-fieldset select {
-    bottom: 0;
-    height: inherit;
-    height: 3rem;
-    max-height: 4rem;
-    top: 0;
-    width: 100%;
-}
+  bottom: 0;
+  height: inherit;
+  height: 3rem;
+  max-height: 4rem;
+  top: 0;
+  width: 100%; }
 .forma [type="submit"] {
-    background-color: var(--secondary-color);
-    border: 0;
-    color: rgba(var(--white-rgb-color), 1);
-    cursor: pointer;
-    margin: var(--space);
-    outline: 0;
-    width: calc(100% - 2rem - 2px); /* Fix fields width substract border & padding extra spacing. */
-}
+  background-color: #845ec2;
+  border: 0;
+  color: #fafafa;
+  cursor: pointer;
+  margin: 1rem;
+  outline: 0;
+  width: calc(100% - 2rem - 2px);
+  /* Fix fields width substract border & padding extra spacing. */ }
 .forma [type="submit"]:focus,
 .forma [type="submit"]:active,
 .forma [type="submit"]:hover {
-    background-color: var(--primary-color);
-}
+  background-color: #d65bd1; }
 .forma [type="submit"]:disabled {
-    background-color: rgba(var(--black-rgb-color), .2);
-    color: rgba(var(--black-rgb-color), .4);
-    cursor: not-allowed;
-}
+  background-color: rgba(25, 25, 25, 0.2);
+  color: rgba(25, 25, 25, 0.4);
+  cursor: not-allowed; }

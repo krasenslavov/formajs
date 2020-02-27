@@ -1,0 +1,15 @@
+// _forma-variables.scss
+/* _font.css */
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+/* _root.css */
+$font-mono: 400 normal 16px/1.6 'Monaco', 'Consolas', 'Andale Mono', 'Ubuntu Mono', monospace;
+$font-google: 400 normal 16px/1.6 'Source Sans Pro', sans-serif;
+$primary-color: #d65bd1;
+$secondary-color: #845ec2;
+$error-color: #fc4444;
+$success-color: #008f7a;
+$warning-color: #ff9671;
+$info-color: #0081cf;
+$white-rgb-color: #fafafa; //250, 250, 250
+$black-rgb-color: #191919; //25, 25, 25
+$space: 1rem;

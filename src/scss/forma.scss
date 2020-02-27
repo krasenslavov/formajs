@@ -1,0 +1,25 @@
+// forma.scss
+
+// _form-variables.scss
+// Define global variables.
+@import 'forma-variables';
+
+// _forma-boilerplate.scss
+// Starting from scratch (strcuture only).
+@import 'forma-boilerplate';
+
+// _forma-barebone.scss
+// Get some structure with limited funcitionality and styling.
+// @import 'forma-barebone';
+
+// _forma-base.scss 
+// Getting a bit more structure, functionality, and styling than _forma-barebone.scss.
+// @import 'forma-base';
+
+// _forma-complete.scss
+// Fully integrated styleheet that can be customized wtih minimal effort and modification.
+// @import 'forma-complete';
+
+// _forma-docs.scss
+// Take a look at our custom stylesheet we use for https://formajs.com/
+// @import 'forma-docs';
