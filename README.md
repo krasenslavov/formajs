@@ -165,8 +165,7 @@ Below is the main `forma.scss`; take a look at the files under `/src/scss` for m
 
 If you download the master after uncommneting your stylesheet starting point run the following command in the terminal and the CSS will be generated.
 
-  sass --watch src/scss/:src/scss/css
-
+    sass --watch src/scss/:src/scss/css
 
 ### [Form validations](https://formajs.com/index.html#validation)
 
