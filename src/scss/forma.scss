@@ -6,7 +6,7 @@
 
 // _forma-boilerplate.scss
 // Starting from scratch (strcuture only).
-@import 'forma-boilerplate';
+// @import 'forma-boilerplate';
 
 // _forma-barebone.scss
 // Get some structure with limited funcitionality and styling.
@@ -22,4 +22,4 @@
 
 // _forma-docs.scss
 // Take a look at our custom stylesheet we use for https://formajs.com/
-// @import 'forma-docs';
+@import 'forma-docs';
