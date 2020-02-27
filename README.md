@@ -163,7 +163,7 @@ Below is the main `forma.scss`; take a look at the files under `/src/scss` for m
 // @import 'forma-docs';
 ```
 
-If you download the master after uncommneting your stylesheet starting point run the following command in the terminal and the CSS will be generated.
+If you download the master after uncommenting your prefered stylesheet starting point run the following command in the terminal and the CSS will be generated. (assuming your inside the master directory and you have [SASS](https://sass-lang.com/install) installed on your system)
 
     sass --watch src/scss/:src/scss/css
 
