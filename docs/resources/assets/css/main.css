@@ -60,6 +60,8 @@
 	       -moz-border-radius: 10rem;
 	    -webkit-border-radius: 10rem;
 		margin: 1rem;
+		position: relative;
+		z-index: 90;
 	}
 /* _navbar.css */
 	nav.navbar {
