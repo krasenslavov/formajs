@@ -1,0 +1,23 @@
+{
+  "name": "forma",
+  "version": "1.0.0",
+  "description": "FormaJS will help you to create dynamic and interactive forms with a better end-user experience.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krasenslavov/forma.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krasenslavov/forma/issues"
+  },
+  "homepage": "https://github.com/krasenslavov/forma#readme"
+}
