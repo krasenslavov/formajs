@@ -27,7 +27,7 @@ body {
     color: var(--error-color);
 }
 .forma label span .forma-description {
-     color: rgba(var(--black-rgb-color), .5);
+    color: rgba(var(--black-rgb-color), .5);
 }
 .forma label span .forma-input {
 }

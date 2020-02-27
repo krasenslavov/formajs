@@ -129,6 +129,45 @@ If you decide you want to use the pre-built stylesheets the simplest way to cust
 
 In addition, you can easily extend and change the structure of your form, take a look at the Register form example [here](https://formajs.com/examples/register.html). 
 
+### [SCSS](https://formajs.com/scss.html)
+
+All stylesheets can be generated with SASS/SCSS; speed up your form customization process.
+
+Below is the main `forma.scss`; take a look at the files under `/src/scss` for more information. 
+
+```scss
+// forma.scss
+
+// _form-variables.scss
+// Define global variables.
+@import 'forma-variables';
+
+// _forma-boilerplate.scss
+// Starting from scratch (strcuture only).
+@import 'forma-boilerplate';
+
+// _forma-barebone.scss
+// Get some structure with limited funcitionality and styling.
+// @import 'forma-barebone';
+
+// _forma-base.scss 
+// Getting a bit more structure, functionality, and styling than _forma-barebone.scss.
+// @import 'forma-base';
+
+// _forma-complete.scss
+// Fully integrated styleheet that can be customized wtih minimal effort and modification.
+// @import 'forma-complete';
+
+// _forma-docs.scss
+// Take a look at our custom stylesheet we use for https://formajs.com/
+// @import 'forma-docs';
+```
+
+If you download the master after uncommneting your stylesheet starting point run the following command in the terminal and the CSS will be generated.
+
+  sass --watch src/scss/:src/scss/css
+
+
 ### [Form validations](https://formajs.com/index.html#validation)
 
 There are two types of validations, built-in validations with generic messages and custom validations that use regular expressions (this is done by utilizing the `pattern` and `title` attributes for each form element).
