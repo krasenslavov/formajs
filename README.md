@@ -129,7 +129,7 @@ If you decide you want to use the pre-built stylesheets the simplest way to cust
 
 In addition, you can easily extend and change the structure of your form, take a look at the Register form example [here](https://formajs.com/examples/register.html). 
 
-### [SCSS](https://formajs.com/scss.html)
+### [SASS/SCSS](https://formajs.com/scss.html)
 
 All stylesheets can be generated with SASS/SCSS; speed up your form customization process.
 
