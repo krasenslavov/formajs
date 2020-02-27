@@ -9,7 +9,7 @@ const formajs = {
         tab: false,
         auto: false,
         show: false,
-        manual: true,
+        manual: false,
         submit: false,
         support: []
     },

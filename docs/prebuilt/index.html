@@ -31,22 +31,22 @@
                     <a href="/index.html#contribute">Contribute</a>
                     <a href="/index.html#license">License</a>
                 </div>
-                <a href="/prebuilt/index.html" class="toplvl">Pre-built CSS</a>
-                <div class="subnav">
+                <a href="/prebuilt/index.html" class="toplvl active">Pre-built CSS</a>
+                <div class="subnav active">
                     <a href="/prebuilt/css-base.html">Base</a>
                     <a href="/prebuilt/css-barebone.html">Barebone</a>
                     <a href="/prebuilt/css-boilerplate.html">Boilerplate</a>
                     <a href="/prebuilt/css-forma.html">Forma</a>
                 </div>
                 <h5>Playground</h5>
-                <a href="/examples/index.html" class="toplvl active">Basic Examples</a>
-                <div class="subnav active">
+                <a href="/examples/index.html" class="toplvl">Basic Examples</a>
+                <div class="subnav">
                     <a href="/examples/example-no.html">No options</a>
                     <a href="/examples/example-auto.html">auto:true</a>
                     <a href="/examples/example-auto-modify.html">auto:true custom</a>
                     <a href="/examples/example-manual.html">manual:true</a>
                     <a href="/examples/example-show.html">show:true</a>
-                    <a href="/examples/example-all.html" class="active">All options</a>
+                    <a href="/examples/example-all.html">All options</a>
                     <a href="/examples/example-disabled-button.html">Disabled button</a>
                     <a href="/examples/example-builtin-validation.html">Built-in validation</a>
                     <a href="/examples/example-custom-validation.html">Custom validation</a>
@@ -59,47 +59,14 @@
         </header>
         <main class="content">
             <div class="container">
-                <h2>All options</h2>
-                <p>Sample form where <code>auto, manual, and show</code> options are set to <mark>true</mark>.</p>
-                <form class="forma">
-                    <label>
-                        <span>Username</span>
-                        <div class="forma-fieldset">
-                            <input type="text" />
-                        </div>
-                    </label>
-                    <label>
-                        <span>Password</span>
-                        <div class="forma-fieldset">
-                            <input type="password" />
-                        </div>
-                    </label>
-                    <button type="submit">Login</button>
-                </form>
-                <h3>CSS</h3>
-                <p class="bubble">This form is using a custom stylesheet build upon <mark>forma-boilerplate.css</mark>. Take a look at <a href="https://github.com/krasenslavov/forma/blob/master/src/css/_forma-docs.css" target="_blank">the code on the GitHub</a> repo.</p>
-                <h3>HTML</h3>
-<pre><code class="language-html">&lt;form class="forma"&gt;
-  &lt;label&gt;
-    &lt;span&gt;Username&lt;/span&gt;
-    &lt;div class="forma-fieldset"&gt;
-      &lt;input type="text" /&gt;
-    &lt;/div&gt;
-  &lt;/label&gt;
-  &lt;label&gt;
-    &lt;span&gt;Password&lt;/span&gt;
-    &lt;div class="forma-fieldset"&gt;
-      &lt;input type="password" /&gt;
-    &lt;/div&gt;
-  &lt;/label&gt;
-  &lt;button type="submit"&gt;Submit&lt;/button&gt;
-&lt;/form&gt;</code></pre>
-                <h3>JavaScript</h3>
-                <pre><code class="language-js">forma({
-  auto: true,
-  manual: true,
-  show: true
-});</code></pre>
+                <h2>Pre-built CSS</h2>
+                <p>FormaJS comes up with a few pre-built stylesheets that will give you a great jump start if you want to customize and style your forms.</p>
+                <ul>
+                    <li><a href="/prebuilt/css-base.html">Base</a></li>
+                    <li><a href="/prebuilt/css-barebone.html">Barebone</a></li>
+                    <li><a href="/prebuilt/css-boilerplate.html">Boilerplate</a></li>
+                    <li><a href="/prebuilt/css-forma.html">Forma</a></li>
+                </ul>
                 <section class="bubble">
                     <p>You can download the latest <mark>/dist</mark> code directly from the <a href="https://github.com/krasenslavov/forma/releases/tag/v0.0.2-alpha">GitHub repo</a>.</p> 
                     <p>Don't forget to give us a ⭐ if you think this script is worthwhile and we should continue improving on it.</p>
@@ -115,11 +82,7 @@
         <script src="/resources/lib/forma/js/forma-0.0.2.min.js"></script>
         <script src="/resources/assets/js/main.js"></script>
         <script>
-            forma({
-                auto: true,
-                manual: true,
-                show: true
-            });
+            forma();
         </script>
     </body>
 </html>

@@ -88,7 +88,7 @@ Below is the full format for our init function (with all default values).
     container: '.forma',
     prefix: 'Enter ',
     suffix: '...',
-    tab: false,
+    tab: true,
     auto: false,
     show: false,
     manual: false,
@@ -117,7 +117,7 @@ If you decide you want to use the pre-built stylesheets the simplest way to cust
   --font-google: 400 normal 16px/1.6 'Source Sans Pro', sans-serif;
   --primary-color: #d65bd1;
   --secondary-color: #845ec2;
-  --error-color: #ff6f91;
+  --error-color: #fc4444;
   --success-color: #008f7a;
   --warning-color: #ff9671;
   --info-color: #0081cf;

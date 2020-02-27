@@ -93,7 +93,7 @@ body {
     width: 2rem;
 }
 .forma label .forma-fieldset * {
-    width: calc(100% - 2rem - 2px);
+    width: calc(100%);
 }
 .forma label .forma-fieldset input,
 .forma label .forma-fieldset select,

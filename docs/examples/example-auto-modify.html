@@ -43,10 +43,10 @@
                 <div class="subnav active">
                     <a href="/examples/example-no.html">No options</a>
                     <a href="/examples/example-auto.html">auto:true</a>
-                    <a href="/examples/example-auto-modify.html">auto:true custom</a>
+                    <a href="/examples/example-auto-modify.html" class="active">auto:true custom</a>
                     <a href="/examples/example-manual.html">manual:true</a>
                     <a href="/examples/example-show.html">show:true</a>
-                    <a href="/examples/example-all.html" class="active">All options</a>
+                    <a href="/examples/example-all.html">All options</a>
                     <a href="/examples/example-disabled-button.html">Disabled button</a>
                     <a href="/examples/example-builtin-validation.html">Built-in validation</a>
                     <a href="/examples/example-custom-validation.html">Custom validation</a>
@@ -59,8 +59,8 @@
         </header>
         <main class="content">
             <div class="container">
-                <h2>All options</h2>
-                <p>Sample form where <code>auto, manual, and show</code> options are set to <mark>true</mark>.</p>
+                <h2><mark>auto:true</mark> with custom text</h2>
+                <p>Use the <code>prefix and suffix</code> options to overwrite the default text when you show auto-generated text.</p>
                 <form class="forma">
                     <label>
                         <span>Username</span>
@@ -97,10 +97,10 @@
                 <h3>JavaScript</h3>
                 <pre><code class="language-js">forma({
   auto: true,
-  manual: true,
-  show: true
+  prefix: 'Please fill in your ',
+  suffix: '.'
 });</code></pre>
-                <section class="bubble">
+                                <section class="bubble">
                     <p>You can download the latest <mark>/dist</mark> code directly from the <a href="https://github.com/krasenslavov/forma/releases/tag/v0.0.2-alpha">GitHub repo</a>.</p> 
                     <p>Don't forget to give us a ⭐ if you think this script is worthwhile and we should continue improving on it.</p>
                 </section>
@@ -117,8 +117,8 @@
         <script>
             forma({
                 auto: true,
-                manual: true,
-                show: true
+                prefix: 'Please fill in your ',
+                suffix: '.'
             });
         </script>
     </body>
