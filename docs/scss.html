@@ -66,7 +66,38 @@
                     <p>Don't forget to give us a ⭐ if you think this script is worthwhile and we should continue improving on it.</p>
                 </section>
                 <section>
-                    <h2 id="usage">SASS/SCSS customization</h2>
+                    <h2 id="sass">SASS/SCSS customization</h2>
+                    <p>To speed up your form customization we have added a SCSS support for all of our start up stylesheets. Head over to <mark>/src/scss</mark> and <a href="https://github.com/krasenslavov/forma/tree/master/src/scss" target="_blank">take a look at the files</a>.</p>
+                    <p>The main file <code>forma.scss</code> has some comments if you wonder which is the best start option for you.</p>
+                    <p>No matter which stylesheet you decide to use you have the full freedom and flexibility to extend and customize it to meet you needs.</p>
+                    <p class="bubble">* <u>Note:</u> <code>_forma-variables.scss</code> contains all the global variables applied to the <mark>:root</mark> and avaiable thoughout all the stylesheets.</p>
+                    <h3><mark>forma.scss</mark></h3>
+<pre><code class="language-css">// forma.scss
+
+// _form-variables.scss
+// Define global variables.
+@import 'forma-variables';
+
+// _forma-boilerplate.scss
+// Starting from scratch (strcuture only).
+@import 'forma-boilerplate';
+
+// _forma-barebone.scss
+// Get some structure with limited funcitionality and styling.
+// @import 'forma-barebone';
+
+// _forma-base.scss 
+// Getting a bit more structure, functionality, and styling than _forma-barebone.scss.
+// @import 'forma-base';
+
+// _forma-complete.scss
+// Fully integrated styleheet that can be customized wtih minimal effort and modification.
+// @import 'forma-complete';
+
+// _forma-docs.scss
+// Take a look at our custom stylesheet we use for https://formajs.com/
+// @import 'forma-docs';</code></pre>
+                    <p>Of course to utilize this feature you must have <a href="https://sass-lang.com/install" target="_blank">SASS</a> installed running on your system.</p>
                 </section>
             </div>
         </main>
