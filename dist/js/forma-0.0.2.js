@@ -6,10 +6,10 @@ const formajs = {
         container: '.forma',
         prefix: 'Enter ',
         suffix: '...',
-        tab: false,
+        tab: true,
         auto: false,
         show: false,
-        manual: true,
+        manual: false,
         submit: false,
         support: []
     },
@@ -45,7 +45,7 @@ const formajs = {
         this.elements = this.form.elements;
         this.support = [...new Set([...this.support,...this.options.support])];
         this.supportList = this.support.join(',');
-        
+
         // Keep forms usable for mobile devices & 
         // overwrite some of the options.
         if (this.utils.isMobile()) {
@@ -107,7 +107,10 @@ const formajs = {
                 let descText = (this.options.prefix + spanElem.textContent.toLowerCase() + this.options.suffix).trim();
 
                 this.utils.setProperties(elem, {'tabindex': idx, 'placeholder': descText});
-                this.utils.createAndAppend('div', 'forma-description', descText, spanElem);
+
+                (this.options.auto)
+                    ? this.utils.createAndAppend('div', 'forma-description', descText, spanElem)
+                    : '';
 
                 (this.options.manual) 
                     ? this.utils.setProperties(currLabel, {'class': currLabel.classList + ' forma-manual'}) 
@@ -206,7 +209,7 @@ const formajs = {
                             // this.utils.createAndAppend('div', 'forma-message', validationMessage + '<br />' + title, currSpan);
                         } else {
 
-                            this.utils.createAndAppend('div', 'message', validationMessage, currSpan);
+                            this.utils.createAndAppend('div', 'forma-message', validationMessage, currSpan);
                         }
 
                         this.utils.toggleClasses(currSpan, 'forma-valid', 'forma-invalid');
@@ -360,9 +363,5 @@ formajs.utils = {
 
 // Run init.
 function forma(options) {
-    (document.onreadystatechange = () => {    
-        if (document.readyState === 'complete') {   
-            formajs.init(options);
-        }
-    });
+    formajs.init(options);
 }

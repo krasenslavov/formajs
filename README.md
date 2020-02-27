@@ -48,21 +48,21 @@ A real-world example login form structure.
 
 ```html
 <form class="forma forma-login">
-    <label for="username">
-        <span>Username</span>
-        <div class="fieldset">
-            <input type="text" name="username" pattern="[a-z]{3,32}" 
-            title="Username must be lowercase between 3 and 32 characters." required />
-        </div>
-    </label>
-    <label for="password">
-        <span>Password</span>
-        <div class="fieldset">
-            <input type="password" name="password" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" 
-            title="Password must have minimum 8 characters, at least one letter and one number" required />
-        </div>
-    </label>
-    <button type="submit" disabled>Login</button>
+  <label for="username">
+    <span>Username</span>
+    <div class="fieldset">
+      <input type="text" name="username" pattern="[a-z]{3,32}" 
+        title="Username must be lowercase between 3 and 32 characters." required />
+    </div>
+  </label>
+  <label for="password">
+    <span>Password</span>
+    <div class="fieldset">
+      <input type="password" name="password" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" 
+        title="Password must have minimum 8 characters, at least one letter and one number" required />
+    </div>
+  </label>
+  <button type="submit" disabled>Login</button>
 </form>
 ```
 
