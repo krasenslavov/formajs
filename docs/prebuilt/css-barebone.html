@@ -6,7 +6,7 @@
         <link href="/favicon.ico" rel="icon" />
         <title>FormaJS - Create dynamic and interactive forms with a better UX.</title>
         <link href="/resources/lib/prism/css/prism.css" rel="stylesheet" />
-        <link href="/resources/lib/forma/css/forma-docs.css" rel="stylesheet" />
+        <link href="/resources/lib/forma/css/forma-barebone.css" rel="stylesheet" />
         <link href="/resources/assets/css/main.css" rel="stylesheet" />
     </head>
     <body>
@@ -31,22 +31,22 @@
                     <a href="/index.html#contribute">Contribute</a>
                     <a href="/index.html#license">License</a>
                 </div>
-                <a href="/prebuilt/index.html" class="toplvl">Pre-built CSS</a>
-                <div class="subnav">
+                <a href="/prebuilt/index.html" class="toplvl active">Pre-built CSS</a>
+                <div class="subnav active">
                     <a href="/prebuilt/css-base.html">Base</a>
-                    <a href="/prebuilt/css-barebone.html">Barebone</a>
+                    <a href="/prebuilt/css-barebone.html" class="active">Barebone</a>
                     <a href="/prebuilt/css-boilerplate.html">Boilerplate</a>
                     <a href="/prebuilt/css-forma.html">Forma</a>
                 </div>
                 <h5>Playground</h5>
-                <a href="/examples/index.html" class="toplvl active">Basic Examples</a>
-                <div class="subnav active">
+                <a href="/examples/index.html" class="toplvl">Basic Examples</a>
+                <div class="subnav">
                     <a href="/examples/example-no.html">No options</a>
                     <a href="/examples/example-auto.html">auto:true</a>
                     <a href="/examples/example-auto-modify.html">auto:true custom</a>
                     <a href="/examples/example-manual.html">manual:true</a>
                     <a href="/examples/example-show.html">show:true</a>
-                    <a href="/examples/example-all.html" class="active">All options</a>
+                    <a href="/examples/example-all.html">All options</a>
                     <a href="/examples/example-disabled-button.html">Disabled button</a>
                     <a href="/examples/example-builtin-validation.html">Built-in validation</a>
                     <a href="/examples/example-custom-validation.html">Custom validation</a>
@@ -59,37 +59,38 @@
         </header>
         <main class="content">
             <div class="container">
-                <h2>All options</h2>
-                <p>Sample form where <code>auto, manual, and show</code> options are set to <mark>true</mark>.</p>
+                <h2>Barebone CSS</h2>
+                <p>In additional to the basic structure some additional styles are added to this pre-built stylesheet.</p>
+                <p>Notices that now the tab label and manual toggler are visible (comparing it with the <a href="/prebuilt/css-base.html">Base</a> example).</p>
                 <form class="forma">
                     <label>
                         <span>Username</span>
                         <div class="forma-fieldset">
-                            <input type="text" />
+                            <input type="text" required />
                         </div>
                     </label>
                     <label>
                         <span>Password</span>
                         <div class="forma-fieldset">
-                            <input type="password" />
+                            <input type="password" required />
                         </div>
                     </label>
                     <button type="submit">Login</button>
                 </form>
                 <h3>CSS</h3>
-                <p class="bubble">This form is using a custom stylesheet build upon <mark>forma-boilerplate.css</mark>. Take a look at <a href="https://github.com/krasenslavov/forma/blob/master/src/css/_forma-docs.css" target="_blank">the code on the GitHub</a> repo.</p>
+                <p class="bubble">This form is using a pre-built stylesheet <mark>forma-barebone.css</mark>. Take a look at <a href="https://github.com/krasenslavov/forma/blob/master/src/css/_forma-barebone.css" target="_blank">the code on the GitHub</a> repo.</p>
                 <h3>HTML</h3>
 <pre><code class="language-html">&lt;form class="forma"&gt;
   &lt;label&gt;
     &lt;span&gt;Username&lt;/span&gt;
     &lt;div class="forma-fieldset"&gt;
-      &lt;input type="text" /&gt;
+      &lt;input type="text" required /&gt;
     &lt;/div&gt;
   &lt;/label&gt;
   &lt;label&gt;
     &lt;span&gt;Password&lt;/span&gt;
     &lt;div class="forma-fieldset"&gt;
-      &lt;input type="password" /&gt;
+      &lt;input type="password" required /&gt;
     &lt;/div&gt;
   &lt;/label&gt;
   &lt;button type="submit"&gt;Submit&lt;/button&gt;
@@ -116,9 +117,9 @@
         <script src="/resources/assets/js/main.js"></script>
         <script>
             forma({
-                auto: true,
-                manual: true,
-                show: true
+              auto: true,
+              manual: true,
+              show: true
             });
         </script>
     </body>

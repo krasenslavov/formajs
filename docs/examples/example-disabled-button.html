@@ -4,19 +4,22 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <link href="/favicon.ico" rel="icon" />
-        <title>FormaJS - Create dynamic and interactive forms with better UX.</title>
-        <link href="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/themes/prism.css" rel="stylesheet" />
-        <link href="/resources/assets/css/style.css" rel="stylesheet" />
-        <link href="/resources/assets/css/forma.css" rel="stylesheet" />
+        <title>FormaJS - Create dynamic and interactive forms with a better UX.</title>
+        <link href="/resources/lib/prism/css/prism.css" rel="stylesheet" />
+        <link href="/resources/lib/forma/css/forma-docs.css" rel="stylesheet" />
+        <link href="/resources/assets/css/main.css" rel="stylesheet" />
     </head>
     <body>
         <header class="header">
             <div class="logo-wrap">
-                <a href="/index.html">
+                <a href="/">
                     <img src="/resources/assets/img/logo.png" alt="" class="logo" height="75" />
                 </a>
             </div>
             <nav class="navbar">
+                <h5>Github</h5>
+                <a href="https://github.com/krasenslavov/forma/" target="_blank">Repo</a>
+                <a href="https://github.com/krasenslavov/forma/releases/tag/v0.0.2-alpha" target="_blank"> v0.0.2-alpha (latest)</a>
                 <h5>Documentation</h5>
                 <a href="/index.html" class="toplvl">FormaJS</a>
                 <div class="subnav">
@@ -28,11 +31,19 @@
                     <a href="/index.html#contribute">Contribute</a>
                     <a href="/index.html#license">License</a>
                 </div>
+                <a href="/prebuilt/index.html" class="toplvl">Pre-built CSS</a>
+                <div class="subnav">
+                    <a href="/prebuilt/css-base.html">Base</a>
+                    <a href="/prebuilt/css-barebone.html">Barebone</a>
+                    <a href="/prebuilt/css-boilerplate.html">Boilerplate</a>
+                    <a href="/prebuilt/css-forma.html">Forma</a>
+                </div>
                 <h5>Playground</h5>
-                <a href="/examples/index.html" class="toplvl">Basic Examples</a>
+                <a href="/examples/index.html" class="toplvl active">Basic Examples</a>
                 <div class="subnav active">
                     <a href="/examples/example-no.html">No options</a>
                     <a href="/examples/example-auto.html">auto:true</a>
+                    <a href="/examples/example-auto-modify.html">auto:true custom</a>
                     <a href="/examples/example-manual.html">manual:true</a>
                     <a href="/examples/example-show.html">show:true</a>
                     <a href="/examples/example-all.html">All options</a>
@@ -40,6 +51,7 @@
                     <a href="/examples/example-builtin-validation.html">Built-in validation</a>
                     <a href="/examples/example-custom-validation.html">Custom validation</a>
                     <a href="/examples/example-multiple-forms.html">Multiple forms</a>
+                    <a href="/examples/example-user-defined-support.html">User-defined support</a>
                     <a href="/examples/login.html">Login form</a>
                     <a href="/examples/register.html">Register form</a>
                 </div>
@@ -48,55 +60,64 @@
         <main class="content">
             <div class="container">
                 <h2>Disabled button</h2>
-                <p>In scenarions where you don't want to allow users to submit before all validation are met, you may want to set the <mark>disabled</mark> attribute to your submit button.</p>
+                <p>In scenarions where you don't want to allow users to submit before all validations are met, you may want to add <code>disabled</code> attribute to your submit button or add <code>submit</code> option to <mark>true</mark>.</p>
                 <p>Your button will be automatically enabled once all the form fields meet their validation rules.</p>
                 <form class="forma">
                     <label>
                         <span>Username</span>
-                        <div class="fieldset">
+                        <div class="forma-fieldset">
                             <input type="text" required />
                         </div>
                     </label>
                     <label>
                         <span>Password</span>
-                        <div class="fieldset">
+                        <div class="forma-fieldset">
                             <input type="password" required />
                         </div>
                     </label>
-                    <button type="submit" disabled>Login</button>
+                    <button type="submit">Login</button>
                 </form>
+                <h3>CSS</h3>
+                <p class="bubble">This form is using a custom stylesheet build upon <mark>forma-boilerplate.css</mark>. Take a look at <a href="https://github.com/krasenslavov/forma/blob/master/src/css/_forma-docs.css" target="_blank">the code on the GitHub</a> repo.</p>
                 <h3>HTML</h3>
 <pre><code class="language-html">&lt;form class="forma"&gt;
-    &lt;label&gt;
-        &lt;span&gt;Username&lt;/span&gt;
-        &lt;div class="fieldset"&gt;
-            &lt;input type="text" required /&gt;
-        &lt;/div&gt;
-    &lt;/label&gt;
-    &lt;label&gt;
-        &lt;span&gt;Password&lt;/span&gt;
-        &lt;div class="fieldset"&gt;
-            &lt;input type="password" required /&gt;
-        &lt;/div&gt;
-    &lt;/label&gt;
-    &lt;button type="submit" disabled&gt;Submit&lt;/button&gt;
+  &lt;label&gt;
+    &lt;span&gt;Username&lt;/span&gt;
+    &lt;div class="forma-fieldset"&gt;
+      &lt;input type="text" required /&gt;
+    &lt;/div&gt;
+  &lt;/label&gt;
+  &lt;label&gt;
+    &lt;span&gt;Password&lt;/span&gt;
+    &lt;div class="forma-fieldset"&gt;
+      &lt;input type="password" required /&gt;
+    &lt;/div&gt;
+  &lt;/label&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
 &lt;/form&gt;</code></pre>
                 <h3>JavaScript</h3>
-                <pre><code class="language-js">$.forma();</code></pre>
-                <p>You can download the source code directly from the <a href="https://github.com/krasenslavov/forma">GitHub repository</a>.</p> 
-                <p>The latest version can be found under the <mark>/prod</mark> folder. (don't forget to give us a ⭐ if you decide the plugin is worthwhile).</p>
+                <pre><code class="language-js">
+forma({
+  submit: true
+});</code></pre>
+                <section class="bubble">
+                    <p>You can download the latest <mark>/dist</mark> code directly from the <a href="https://github.com/krasenslavov/forma/releases/tag/v0.0.2-alpha">GitHub repo</a>.</p> 
+                    <p>Don't forget to give us a ⭐ if you think this script is worthwhile and we should continue improving on it.</p>
+                </section>
             </div>
         </main>
         <footer class="footer">
             <p>Copyright &copy; 2020</p>
         </footer>
-        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/prism.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/plugins/autoloader/prism-autoloader.min.js"></script>
         <script src="/resources/lib/jquery-3.4.1.min.js"></script>
-        <script src="/resources/assets/js/script.js"></script>
-        <script src="/resources/assets/js/forma-0.0.1.min.js"></script>
+        <script src="/resources/lib/prism/js/prism.min.js"></script>
+        <script src="/resources/lib/prism/js/prism-autoloader.min.js"></script>
+        <script src="/resources/lib/forma/js/forma-0.0.2.min.js"></script>
+        <script src="/resources/assets/js/main.js"></script>
         <script>
-            $.forma();
+            forma({
+                submit: true
+            });
         </script>
     </body>
 </html>

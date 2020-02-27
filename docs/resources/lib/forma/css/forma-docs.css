@@ -6,7 +6,7 @@
     --font-google: 400 normal 16px/1.6 'Source Sans Pro', sans-serif;
     --primary-color: #d65bd1;
     --secondary-color: #845ec2;
-    --error-color: #ff6f91;
+    --error-color: #fc4444;
     --success-color: #008f7a;
     --warning-color: #ff9671;
     --info-color: #0081cf;
@@ -109,7 +109,7 @@ body {
     width: 2rem;
 }
 .forma label .forma-fieldset * {
-    width: calc(100% - 2rem - 2px);
+    width: calc(100%);
 }
 .forma label .forma-fieldset input,
 .forma label .forma-fieldset select,

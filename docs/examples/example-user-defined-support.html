@@ -46,12 +46,12 @@
                     <a href="/examples/example-auto-modify.html">auto:true custom</a>
                     <a href="/examples/example-manual.html">manual:true</a>
                     <a href="/examples/example-show.html">show:true</a>
-                    <a href="/examples/example-all.html" class="active">All options</a>
+                    <a href="/examples/example-all.html">All options</a>
                     <a href="/examples/example-disabled-button.html">Disabled button</a>
                     <a href="/examples/example-builtin-validation.html">Built-in validation</a>
                     <a href="/examples/example-custom-validation.html">Custom validation</a>
                     <a href="/examples/example-multiple-forms.html">Multiple forms</a>
-                    <a href="/examples/example-user-defined-support.html">User-defined support</a>
+                    <a href="/examples/example-user-defined-support.html" class="active">User-defined support</a>
                     <a href="/examples/login.html">Login form</a>
                     <a href="/examples/register.html">Register form</a>
                 </div>
@@ -59,13 +59,19 @@
         </header>
         <main class="content">
             <div class="container">
-                <h2>All options</h2>
-                <p>Sample form where <code>auto, manual, and show</code> options are set to <mark>true</mark>.</p>
+                <h2>User-defined support</h2>
+                <p>Adding additional form elements support is very easy, all you need to do is pass the element tag with type (e.g <mark>input[type="number"]</mark>) using the <code>support</code> option (must be an array).</p>
                 <form class="forma">
                     <label>
-                        <span>Username</span>
+                        <span>Full Name</span>
                         <div class="forma-fieldset">
                             <input type="text" />
+                        </div>
+                    </label>
+                    <label>
+                        <span>Email</span>
+                        <div class="forma-fieldset">
+                            <input type="email" required />
                         </div>
                     </label>
                     <label>
@@ -74,16 +80,40 @@
                             <input type="password" />
                         </div>
                     </label>
-                    <button type="submit">Login</button>
+                    <label>
+                        <span>Age</span>
+                        <div class="forma-fieldset">
+                            <input type="number" />
+                        </div>
+                    </label>
+                    <label>
+                        <span>Website</span>
+                        <div class="forma-fieldset">
+                            <input type="url" required />
+                        </div>
+                    </label>
+                    <label>
+                        <span>Where were you born?</span>
+                        <div class="forma-fieldset">
+                            <input type="date" required />
+                        </div>
+                    </label>
+                    <button type="submit">Register</button>
                 </form>
                 <h3>CSS</h3>
                 <p class="bubble">This form is using a custom stylesheet build upon <mark>forma-boilerplate.css</mark>. Take a look at <a href="https://github.com/krasenslavov/forma/blob/master/src/css/_forma-docs.css" target="_blank">the code on the GitHub</a> repo.</p>
                 <h3>HTML</h3>
 <pre><code class="language-html">&lt;form class="forma"&gt;
   &lt;label&gt;
-    &lt;span&gt;Username&lt;/span&gt;
+    &lt;span&gt;Full Name&lt;/span&gt;
     &lt;div class="forma-fieldset"&gt;
       &lt;input type="text" /&gt;
+    &lt;/div&gt;
+  &lt;/label&gt;
+  &lt;label&gt;
+    &lt;span&gt;Email&lt;/span&gt;
+    &lt;div class="forma-fieldset"&gt;
+      &lt;input type="email" required /&gt;
     &lt;/div&gt;
   &lt;/label&gt;
   &lt;label&gt;
@@ -92,13 +122,35 @@
       &lt;input type="password" /&gt;
     &lt;/div&gt;
   &lt;/label&gt;
-  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+  &lt;label&gt;
+    &lt;span&gt;Age&lt;/span&gt;
+    &lt;div class="forma-fieldset"&gt;
+      &lt;input type="number" /&gt;
+    &lt;/div&gt;
+  &lt;/label&gt;
+  &lt;label&gt;
+    &lt;span&gt;Website&lt;/span&gt;
+    &lt;div class="forma-fieldset"&gt;
+      &lt;input type="url" required /&gt;
+    &lt;/div&gt;
+  &lt;/label&gt;
+  &lt;label&gt;
+    &lt;span&gt;Where were you born?&lt;/span&gt;
+    &lt;div class="forma-fieldset"&gt;
+      &lt;input type="date" required /&gt;
+    &lt;/div&gt;
+  &lt;/label&gt;
+  &lt;button type="submit"&gt;Register&lt;/button&gt;
 &lt;/form&gt;</code></pre>
                 <h3>JavaScript</h3>
-                <pre><code class="language-js">forma({
-  auto: true,
-  manual: true,
-  show: true
+                <pre><code class="language-js">
+forma({
+  support: [
+    'input[type="number"]',
+    'input[type="tel"]',
+    'input[type="url"]',
+    'input[type="date"]'
+  ]
 });</code></pre>
                 <section class="bubble">
                     <p>You can download the latest <mark>/dist</mark> code directly from the <a href="https://github.com/krasenslavov/forma/releases/tag/v0.0.2-alpha">GitHub repo</a>.</p> 
@@ -116,9 +168,12 @@
         <script src="/resources/assets/js/main.js"></script>
         <script>
             forma({
-                auto: true,
-                manual: true,
-                show: true
+                support: [
+                    'input[type="number"]',
+                    'input[type="tel"]',
+                    'input[type="url"]',
+                    'input[type="date"]',
+                ]
             });
         </script>
     </body>
