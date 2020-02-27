@@ -27,4 +27,34 @@
 body {
   font: 400 normal 16px/1.6 "Monaco", "Consolas", "Andale Mono", "Ubuntu Mono", monospace; }
 
-/* _forma-boilerplate.css */
+/* _forma-base.css */
+.forma input,
+.forma select,
+.forma textarea,
+.forma button {
+  font: 400 normal 16px/1.6 "Monaco", "Consolas", "Andale Mono", "Ubuntu Mono", monospace;
+  padding: 1rem; }
+.forma label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  position: relative; }
+.forma label span {
+  flex: 0 0 30%;
+  order: 1; }
+.forma label .forma-fieldset {
+  display: none;
+  flex: 1 1 auto;
+  order: 2;
+  position: relative; }
+.forma label.forma-open .forma-fieldset {
+  align-items: center;
+  display: flex; }
+.forma [type="submit"] {
+  background-color: rgba(25, 25, 25, 0.1);
+  border: 0;
+  cursor: pointer;
+  margin: 1rem;
+  outline: 0; }
