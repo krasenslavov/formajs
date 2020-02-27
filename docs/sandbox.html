@@ -39,11 +39,11 @@
                     <a href="/prebuilt/css-forma.html">Forma</a>
                 </div>
                 <h5>Playground</h5>
-                <a href="/examples/index.html" class="toplvl active">Basic Examples</a>
-                <div class="subnav active">
+                <a href="/examples/index.html" class="toplvl">Basic Examples</a>
+                <div class="subnav">
                     <a href="/examples/example-no.html">No options</a>
                     <a href="/examples/example-auto.html">auto:true</a>
-                    <a href="/examples/example-auto-modify.html" class="active">auto:true custom</a>
+                    <a href="/examples/example-auto-modify.html">auto:true custom</a>
                     <a href="/examples/example-manual.html">manual:true</a>
                     <a href="/examples/example-show.html">show:true</a>
                     <a href="/examples/example-all.html">All options</a>
@@ -55,57 +55,25 @@
                     <a href="/examples/login.html">Login form</a>
                     <a href="/examples/register.html">Register form</a>
                 </div>
-                <a href="/sandbox.html">Code Sandbox</a>
+                <a href="/sandbox.html" class="active">Code Sandbox</a>
             </nav>
         </header>
         <main class="content">
-            <div class="container">
-                <h2><mark>auto:true</mark> with custom text</h2>
-                <p>Use the <code>prefix and suffix</code> options to overwrite the default text when you show auto-generated text.</p>
-                <form class="forma">
-                    <label>
-                        <span>Username</span>
-                        <div class="forma-fieldset">
-                            <input type="text" />
-                        </div>
-                    </label>
-                    <label>
-                        <span>Password</span>
-                        <div class="forma-fieldset">
-                            <input type="password" />
-                        </div>
-                    </label>
-                    <button type="submit">Login</button>
-                </form>
-                <h3>CSS</h3>
-                <p class="bubble">This form is using a custom stylesheet build upon <mark>forma-boilerplate.css</mark>. Take a look at <a href="https://github.com/krasenslavov/forma/blob/master/src/css/_forma-docs.css" target="_blank">the code on the GitHub</a> repo.</p>
-                <h3>HTML</h3>
-<pre><code class="language-html">&lt;form class="forma"&gt;
-  &lt;label&gt;
-    &lt;span&gt;Username&lt;/span&gt;
-    &lt;div class="forma-fieldset"&gt;
-      &lt;input type="text" /&gt;
-    &lt;/div&gt;
-  &lt;/label&gt;
-  &lt;label&gt;
-    &lt;span&gt;Password&lt;/span&gt;
-    &lt;div class="forma-fieldset"&gt;
-      &lt;input type="password" /&gt;
-    &lt;/div&gt;
-  &lt;/label&gt;
-  &lt;button type="submit"&gt;Submit&lt;/button&gt;
-&lt;/form&gt;</code></pre>
-                <h3>JavaScript</h3>
-                <pre><code class="language-js">forma({
-  auto: true,
-  prefix: 'Please fill in your ',
-  suffix: '.'
-});</code></pre>
-                                <section class="bubble">
+			<div class="container">
+				<section class="bubble">
                     <p>You can download the latest <mark>/dist</mark> code directly from the <a href="https://github.com/krasenslavov/forma/releases/tag/v0.0.2-alpha">GitHub repo</a>.</p> 
                     <p>Don't forget to give us a ⭐ if you think this script is worthwhile and we should continue improving on it.</p>
                 </section>
-            </div>
+                <br />
+                <iframe
+				     src="https://codesandbox.io/embed/zealous-saha-3df3c?fontsize=14&hidenavigation=1&theme=dark"
+				     style="width:100%; height:800px; border:0; border-radius: 4px; overflow:hidden;"
+				     title="zealous-saha-3df3c"
+				     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+				     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+				   >
+				</iframe>
+			</div>            
         </main>
         <footer class="footer">
             <p>Copyright &copy; 2020</p>
@@ -115,12 +83,5 @@
         <script src="/resources/lib/prism/js/prism-autoloader.min.js"></script>
         <script src="/resources/lib/forma/js/forma-0.0.2.min.js"></script>
         <script src="/resources/assets/js/main.js"></script>
-        <script>
-            forma({
-                auto: true,
-                prefix: 'Please fill in your ',
-                suffix: '.'
-            });
-        </script>
     </body>
 </html>
