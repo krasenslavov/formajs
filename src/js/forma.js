@@ -11,6 +11,7 @@ const formajs = {
         submit: false,
         support: []
     },
+    settings: {},
     form: '',
     elements: [],
     support: [
@@ -39,28 +40,32 @@ const formajs = {
             return false;
         }
 
+        // This clone user-defined options into settings.
+        // (used when we have multiple forms on the the same page)
+        const settings = Object.assign({}, this.options, options);
+
         // Assign forma variables.
-        this.form = this.utils._(this.options.container);
+        this.form = this.utils._(settings.container);
         this.elements = this.form.elements;
-        this.support = [...new Set([...this.support,...this.options.support])];
+        this.support = [...new Set([...this.support,...settings.support])];
         this.supportList = this.support.join(',');
 
         // Keep forms usable for mobile devices & 
         // overwrite some of the options.
         if (this.utils.isMobile()) {
-            this.options.tab = false;
-            this.options.show = true;
-            this.options.manual = false;
+            settings.tab = false;
+            settings.show = true;
+            settings.manual = false;
         }
 
         // When tab & manual are off to make the 
         // form usable we should turn on the show option.
-        if (!this.options.tab && !this.options.manual) {
-            this.options.show = true;
+        if (!settings.tab && !settings.manual) {
+            settings.show = true;
         }
 
         // By default make visible only the first form field.
-        if (this.options.show) {
+        if (settings.show) {
             this.utils.setProperties(this.utils.__('label', this.form), {'class': 'forma-open'});
         } else {
             this.utils.setProperties(this.utils.__('label', this.form, 1), {'class': 'forma-open'});
@@ -68,13 +73,13 @@ const formajs = {
 
         // Disable form submit button,  
         // can be done also within HTML with disabled.
-        if (this.options.submit) {
+        if (settings.submit) {
             this.utils.setProperties(this.utils.__('[type="submit"]', this.form), {'disabled': 'disabled'});
         }
 
         // Add functionality for the end-user to be able 
         // to open/close each field manually; works great when tab is on.
-        if (this.options.manual) {
+        if (settings.manual) {
 
             Object.values(this.utils.__('label', this.form)).map(el => {
 
@@ -106,15 +111,15 @@ const formajs = {
             if (currLabel) {
 
                 let spanElem = this.utils._('span', currLabel);
-                let descText = (this.options.prefix + spanElem.textContent.toLowerCase() + this.options.suffix).trim();
+                let descText = (settings.prefix + spanElem.textContent.toLowerCase() + settings.suffix).trim();
 
                 this.utils.setProperties(elem, {'tabindex': idx, 'placeholder': descText});
 
-                if (this.options.auto) {
+                if (settings.auto) {
                     this.utils.createAndAppend('div', 'forma-description', descText, spanElem);
                 }
 
-                if (this.options.manual) {
+                if (settings.manual) {
                     this.utils.setProperties(currLabel, {'class': currLabel.classList + ' forma-manual'});
                 }
             }
@@ -124,7 +129,7 @@ const formajs = {
                 return false;
             }
 
-            this.listen(elem, currLabel);
+            this.listen(elem, currLabel, settings);
 
             return true;
         });
@@ -135,16 +140,18 @@ const formajs = {
         this.elements[0].focus();
     },
     // Listen forma.
-    listen: function(elem, currLabel) {
+    listen: function(elem, currLabel, settings) {
 
         ['click','change','keyup','keydown','blur','focus'].map(type => {
 
             elem.addEventListener(type, event => {
 
+                let form = this.utils._(settings.container);
+
                 if (type === 'keydown') {
                 
                     let key = event.keyCode || event.which;
-                
+
                     if (key === 9) {
 
                         event.preventDefault();
@@ -155,8 +162,8 @@ const formajs = {
 
                         // Apply the show/hide functionality on 
                         // fields only when the tab option is on.
-                        if (this.options.tab) {
-                            Object.values(this.utils.__('label', this.form)).map(el => 
+                        if (settings.tab) {
+                            Object.values(this.utils.__('label', form)).map(el => 
                                 el.classList.remove('forma-open'));
                         }
 
@@ -166,20 +173,20 @@ const formajs = {
                         }
 
                         if (nextLabel.localName !== 'label') {
-                            this.form.firstElementChild.classList.add('forma-open');
-                            this.utils._(this.support, this.form.firstElementChild).focus();
+                            form.firstElementChild.classList.add('forma-open');
+                            this.utils._(this.support, form.firstElementChild).focus();
                         }  
                     }
                 } else if (type === 'focus') {
 
                     // Toggle form submit button state based 
                     // on input data validation.
-                    if (this.options.submit) {
-                        if (this.utils.__('span.forma-invalid', this.form).length === 0 
+                    if (settings.submit) {
+                        if (this.utils.__('span.forma-invalid', form).length === 0 
                             && !elem.validationMessage) {
-                            this.utils._('[type="submit"]', this.form).disabled = false;
+                            this.utils._('[type="submit"]', form).disabled = false;
                         } else {
-                            this.utils._('[type="submit"]', this.form).disabled = true;
+                            this.utils._('[type="submit"]', form).disabled = true;
                         }
                     }
                 } else {
@@ -261,10 +268,10 @@ const formajs = {
 
         // If get here all the validation checks have passed
         // Let us add the passed user-defined options.
-        Object.keys(options).map(key => {
-            this.options[key] = options[key]; 
-            return true;
-        });
+        // Object.keys(options).map(key => {
+        //     this.options[key] = options[key]; 
+        //     return true;
+        // });
 
         return true;
     },
@@ -384,6 +391,6 @@ formajs.utils = {
 
 // Run init.
 function forma(options) {
-    formajs.init(options);
+    return formajs.init(options);
 }
 window.forma = forma;

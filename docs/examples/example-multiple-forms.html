@@ -71,7 +71,7 @@
                     <label>
                         <span>Username</span>
                         <div class="forma-fieldset">
-                            <input type="text" />
+                            <input type="text" minlength="6" />
                         </div>
                     </label>
                     <label>
@@ -87,7 +87,7 @@
                     <label>
                         <span>Email address</span>
                         <div class="forma-fieldset">
-                            <input type="email" />
+                            <input type="email" required />
                         </div>
                     </label>
                     <label>
@@ -190,7 +190,7 @@ $.forma({
         <script src="/resources/lib/forma/js/forma-0.0.2.min.js"></script>
         <script src="/resources/assets/js/main.js"></script>
         <script>
-           forma({
+            forma({
                 container: '.forma-0'
             });
             forma({
