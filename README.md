@@ -37,6 +37,44 @@ There are few different starting points once you load up and initialize the scri
 <script>forma();</script>
 ```
 
+### [Installation] (https://formajs.com/index.html#installation)
+
+FormaJS stylesheets files are written in SASS and compiled to CSS. You can compile them from source or you can drop the CSS & JS files into your code (as described above).
+
+#### CDN
+
+You can load up the FormaJS pre-built `dist` files directly from CDNs:
+
+JS (from jsdelivr)
+
+    https://cdn.jsdelivr.net/npm/a-formajs/dist/js/forma.min.js
+
+CSS (from jsdelivr)
+
+    https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma.css
+    https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma-barebone.css
+    https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma-base.css
+    https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma-boilerplate.css
+
+JS (from unpkg)
+
+    https://unpkg.com/a-formajs/dist/js/forma.min.js
+
+CSS (from unpkg)
+
+    https://unpkg.com/a-formajs/dist/css/forma.css
+    https://unpkg.com/a-formajs/dist/css/forma-barebone.css
+    https://unpkg.com/a-formajs/dist/css/forma-base.css
+    https://unpkg.com/a-formajs/dist/css/forma-boilerplate.css
+
+#### NPM
+
+You can install it from NPM into your project:
+
+    npm i a-formajs --save
+
+Note: the only dev dependency is SASS so you can customize and create your custom stylesheets.
+
 ### [Build your form](https://formajs.com/index.html#structure)
 
 There are a couple structure rules you need to follow when building your forms. 

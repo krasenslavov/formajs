@@ -1,23 +1,30 @@
 {
-  "name": "forma",
-  "version": "1.0.0",
-  "description": "FormaJS will help you to create dynamic and interactive forms with a better end-user experience.",
+  "name": "a-formajs",
+  "version": "0.0.2",
+  "description": "Create dynamic and interactive forms with a better end-user experience.",
   "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npm run development",
+    "prod": "npm run production",
+    "watch": "npm run development -- --watch",
+    "watch-poll": "npm run watch -- --watch-poll"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/krasenslavov/forma.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["form","dynamic","interactive","front-end"],
+  "author": "Krasen Slavov",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/krasenslavov/forma/issues"
   },
-  "homepage": "https://github.com/krasenslavov/forma#readme"
+  "homepage": "https://formajs.com",
+  "devDependencies": {
+    "sass": "^1.16.0",
+    "sass-loader": "^7.1.0"
+  }
 }
