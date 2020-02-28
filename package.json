@@ -1,6 +1,6 @@
 {
   "name": "a-formajs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Create dynamic and interactive forms with a better end-user experience.",
   "main": "index.js",
   "directories": {

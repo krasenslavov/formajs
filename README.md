@@ -45,27 +45,27 @@ FormaJS stylesheets files are written in SASS and compiled to CSS. You can compi
 
 You can load up the FormaJS pre-built `dist` files directly from CDNs:
 
-JS (from jsdelivr)
+**jsdelivr**
 
-    https://cdn.jsdelivr.net/npm/a-formajs/dist/js/forma.min.js
+```html
+<script src="https://cdn.jsdelivr.net/npm/a-formajs/dist/js/forma.min.js"></script>
 
-CSS (from jsdelivr)
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma-barebone.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma-base.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma-boilerplate.css" />
+```
 
-    https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma.css
-    https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma-barebone.css
-    https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma-base.css
-    https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma-boilerplate.css
+**unpkg**
 
-JS (from unpkg)
+```html
+<script src="https://unpkg.com/a-formajs/dist/js/forma.min.js"></script>
 
-    https://unpkg.com/a-formajs/dist/js/forma.min.js
-
-CSS (from unpkg)
-
-    https://unpkg.com/a-formajs/dist/css/forma.css
-    https://unpkg.com/a-formajs/dist/css/forma-barebone.css
-    https://unpkg.com/a-formajs/dist/css/forma-base.css
-    https://unpkg.com/a-formajs/dist/css/forma-boilerplate.css
+<link rel="stylesheet" href="https://unpkg.com/a-formajs/dist/css/forma.css" />
+<link rel="stylesheet" href="https://unpkg.com/a-formajs/dist/css/forma-barebone.css" />
+<link rel="stylesheet" href="https://unpkg.com/a-formajs/dist/css/forma-base.css" />
+<link rel="stylesheet" href="https://unpkg.com/a-formajs/dist/css/forma-boilerplate.css" />
+```
 
 #### NPM
 
