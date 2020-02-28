@@ -37,7 +37,7 @@ There are few different starting points once you load up and initialize the scri
 <script>forma();</script>
 ```
 
-### [Installation] (https://formajs.com/index.html#installation)
+### [Installation](https://formajs.com/index.html#installation)
 
 FormaJS stylesheets files are written in SASS and compiled to CSS. You can compile them from source or you can drop the CSS & JS files into your code (as described above).
 
