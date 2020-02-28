@@ -207,6 +207,19 @@ If you download the master after uncommenting your prefered stylesheet starting 
 
     sass --watch src/scss:src/scss/css
 
+#### NPM + SASS
+
+The following command line sequennce will install the FormaJS with SASS dependency and the you can easily start building/customizing your stylehseets. (assuming you have the latest npm + sass versions installed on your machine)
+
+    mkdir my-project
+    cd my-project
+    npm init
+    npm i aformajs --save
+    cd node_modules/aformajs
+    sass --watch src/scss:src/scss/css
+
+... and you are set! Editing `src/scss` files will generate your custom styles under `src/scss/css`.
+
 ### [Form validations](https://formajs.com/index.html#validation)
 
 There are two types of validations, built-in validations with generic messages and custom validations that use regular expressions (this is done by utilizing the `pattern` and `title` attributes for each form element).
