@@ -49,31 +49,31 @@ You can load up the FormaJS pre-built `dist` files directly from CDNs:
 
 ```html
 <!-- FormaJS plugin script. -->
-<script src="https://cdn.jsdelivr.net/npm/a-formajs/dist/js/forma.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aformajs/dist/js/forma.min.js"></script>
 <!-- FormaJS stylesheet variation. -->
-<link href="https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma.css" rel="stylesheet" />
-<link href="https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma-barebone.css" rel="stylesheet" />
-<link href="https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma-base.css" rel="stylesheet" />
-<link href="https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma-boilerplate.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/aformajs/dist/css/forma.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/aformajs/dist/css/forma-barebone.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/aformajs/dist/css/forma-base.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/aformajs/dist/css/forma-boilerplate.css" rel="stylesheet" />
 ```
 
 **Unpkg**
 
 ```html
 <!-- FormaJS plugin script. -->
-<script src="https://unpkg.com/a-formajs/dist/js/forma.min.js"></script>
+<script src="https://unpkg.com/aformajs/dist/js/forma.min.js"></script>
 <!-- FormaJS stylesheet variation. -->
-<link href="https://unpkg.com/a-formajs/dist/css/forma.css" rel="stylesheet" />
-<link href="https://unpkg.com/a-formajs/dist/css/forma-barebone.css" rel="stylesheet" />
-<link href="https://unpkg.com/a-formajs/dist/css/forma-base.css" rel="stylesheet" />
-<link href="https://unpkg.com/a-formajs/dist/css/forma-boilerplate.css" rel="stylesheet" />
+<link href="https://unpkg.com/aformajs/dist/css/forma.css" rel="stylesheet" />
+<link href="https://unpkg.com/aformajs/dist/css/forma-barebone.css" rel="stylesheet" />
+<link href="https://unpkg.com/aformajs/dist/css/forma-base.css" rel="stylesheet" />
+<link href="https://unpkg.com/aformajs/dist/css/forma-boilerplate.css" rel="stylesheet" />
 ```
 
 #### NPM
 
 You can install it from NPM into your project:
 
-    npm i a-formajs --save
+    npm i aformajs --save
 
 Note: the only dev dependency is with SASS to customize and create your custom stylesheets.
 

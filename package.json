@@ -1,5 +1,5 @@
 {
-  "name": "a-formajs",
+  "name": "aformajs",
   "version": "0.0.3",
   "description": "Create dynamic and interactive forms with a better end-user experience.",
   "main": "index.js",
@@ -23,7 +23,7 @@
     "url": "https://github.com/krasenslavov/forma/issues"
   },
   "homepage": "https://formajs.com",
-  "devDependencies": {
+  "dependencies": {
     "sass": "^1.16.0",
     "sass-loader": "^7.1.0"
   }
