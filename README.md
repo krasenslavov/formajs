@@ -11,7 +11,7 @@ There are few different starting points once you load up and initialize the scri
 1. Copy-paste the stylesheet `<link>` into your HTML document`<head>`. There are few starting stylesheets that are included in the `/dist/css` folder.
 
 ```html
-<link rel="stylesheet" href="path/to/css/forma.css" />
+<link href="path/to/css/forma.css" rel="stylesheet" />
 ```
 
 2. Create your form by using the structure below 
@@ -45,26 +45,28 @@ FormaJS stylesheets files are written in SASS and compiled to CSS. You can compi
 
 You can load up the FormaJS pre-built `dist` files directly from CDNs:
 
-**jsdelivr**
+**JSdelivr**
 
 ```html
+<!-- FormaJS plugin script. -->
 <script src="https://cdn.jsdelivr.net/npm/a-formajs/dist/js/forma.min.js"></script>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma-barebone.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma-base.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma-boilerplate.css" />
+<!-- FormaJS stylesheet variation. -->
+<link href="https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma-barebone.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma-base.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma-boilerplate.css" rel="stylesheet" />
 ```
 
-**unpkg**
+**Unpkg**
 
 ```html
+<!-- FormaJS plugin script. -->
 <script src="https://unpkg.com/a-formajs/dist/js/forma.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/a-formajs/dist/css/forma.css" />
-<link rel="stylesheet" href="https://unpkg.com/a-formajs/dist/css/forma-barebone.css" />
-<link rel="stylesheet" href="https://unpkg.com/a-formajs/dist/css/forma-base.css" />
-<link rel="stylesheet" href="https://unpkg.com/a-formajs/dist/css/forma-boilerplate.css" />
+<!-- FormaJS stylesheet variation. -->
+<link href="https://unpkg.com/a-formajs/dist/css/forma.css" rel="stylesheet" />
+<link href="https://unpkg.com/a-formajs/dist/css/forma-barebone.css" rel="stylesheet" />
+<link href="https://unpkg.com/a-formajs/dist/css/forma-base.css" rel="stylesheet" />
+<link href="https://unpkg.com/a-formajs/dist/css/forma-boilerplate.css" rel="stylesheet" />
 ```
 
 #### NPM
@@ -73,7 +75,7 @@ You can install it from NPM into your project:
 
     npm i a-formajs --save
 
-Note: the only dev dependency is SASS so you can customize and create your custom stylesheets.
+Note: the only dev dependency is with SASS to customize and create your custom stylesheets.
 
 ### [Build your form](https://formajs.com/index.html#structure)
 

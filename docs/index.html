@@ -24,6 +24,7 @@
                 <a href="/index.html" class="toplvl">FormaJS</a>
                 <div class="subnav active">
                     <a href="/index.html#usage">Basic usage</a>
+                    <a href="/index.html#installation">Installation</a>
                     <a href="/index.html#structure">Form structure</a>
                     <a href="/index.html#options">Custom options</a>
                     <a href="/index.html#style">Styling</a>
@@ -106,6 +107,33 @@
     &lt;/script&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>            
+                </section>
+                <section>
+                    <h2 id="installation">Installation</h2>
+                    <p>FormaJS stylesheets files are written in SASS and compiled to CSS. You can compile them from source or you can drop the CSS & JS files into your code (as described above).</p>
+                    <hr />
+                    <h3>CDN</h3>
+                    <p>You can load up the FormaJS pre-built <code>dist</code> files directly from CDNs:</p>
+                    <p><strong>JSdelivr</strong></p>
+<pre><code class="language-markup">&lt;!-- FormaJS plugin script. --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/a-formajs/dist/js/forma.min.js"&gt;&lt;/script&gt;
+&lt;!-- FormaJS stylesheet variation. --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma.css" rel="stylesheet" /&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma-barebone.css" rel="stylesheet" /&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma-base.css" rel="stylesheet" /&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/a-formajs/dist/css/forma-boilerplate.css" rel="stylesheet" /&gt;</code></pre>
+                    <p><strong>Unpkg</strong></p>
+<pre><code class="language-markup">&lt;!-- FormaJS plugin script. --&gt;
+&lt;script src="https://unpkg.com/a-formajs/dist/js/forma.min.js"&gt;&lt;/script&gt;
+&lt;!-- FormaJS stylesheet variation. --&gt;
+&lt;link href="https://unpkg.com/a-formajs/dist/css/forma.css" rel="stylesheet" /&gt;
+&lt;link href="https://unpkg.com/a-formajs/dist/css/forma-barebone.css" rel="stylesheet" /&gt;
+&lt;link href="https://unpkg.com/a-formajs/dist/css/forma-base.css" rel="stylesheet" /&gt;
+&lt;link href="https://unpkg.com/a-formajs/dist/css/forma-boilerplate.css" rel="stylesheet" /&gt;</code></pre>
+                    <h3>NPM</h3>
+                    <p>You can install it from NPM into your project:</p>
+                    <pre><code>npm i a-formajs --save</code></pre>
+                    <p class="bubble">* <u>Note</u>: the only dev dependency is with SASS to customize and create your custom stylesheets.</p>
                 </section>
                 <section>
                     <h2 id="structure">Form structure</h2>
