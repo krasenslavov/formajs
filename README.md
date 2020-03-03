@@ -16,7 +16,7 @@ Download the master (or the [latest release](https://github.com/krasenslavov/for
 <link href="path/to/css/forma.css" rel="stylesheet" />
 ```
 
-2. Build your form anywhere inside the `<body>` of you document. The example below shows up the minimum required attributes for your for elements.
+2. Build your form anywhere inside the `<body>` of you document. The example below shows up the minimum required attributes for your form elements.
 
 ```html
 <form>
@@ -55,10 +55,10 @@ Visit our main [website](https://formajs.com/) to learn more about customization
 
 ## [Contribute](https://formajs.com/index.html#contribute)
 
-Found a bug or want to propose some improvements or bug fixes? Vist our [website](https://formajs.com/index.html#contribute) and see all the different ways you can contribute to this project.
+Found a bug or want to propose some improvements or fixes to the documentation? Vist our [website](https://formajs.com/index.html#contribute) and see all the different ways you can contribute to this project.
 
 ## [License](https://formajs.com/index.html#license)
 
 (c) Krasen Slavov | Code released under the [MIT License](https://opensource.org/licenses/MIT).
 
-*(+) This project is still in alpha; use it for live or production environments on your own risk.*
+(\*) This project is still in alpha; use it for live or production environments on your own risk.
