@@ -161,6 +161,7 @@
 	}
 	.content .bubble-warning {
 		background-color: var(--warning-color);
+		color: rgba(var(--black-rgb-color), 1);
 	}
 	.content .bubble p:last-of-type {
 		margin-bottom: 0;
