@@ -1,60 +1,44 @@
 /* _forma-boilerplate.css */
-body {
-}
-.forma input,
-.forma select,
-.forma textarea,
-.forma button {
+.forma .forma-control,
+.forma [type="submit"] {
 }
 .forma label {
 }
-.forma label span {
+.forma .forma-label {
 }
-.forma label span.forma-valid {
+.forma .forma-valid {
 }
-.forma label span.forma-invalid {
+.forma .forma-invalid {
 }
-.forma label span .forma-description {
+.forma .forma-description {
 }
-.forma label span .forma-input {
+.forma .forma-input {
 }
-.forma label span .forma-message {
+.forma .forma-message {
 }
-.forma label span .forma-message:before {
+.forma .forma-message:before {
 }
-.forma label .forma-fieldset {
+.forma .forma-fieldset {
 }
-.forma label.forma-open .forma-fieldset {
+.forma .forma-open .forma-fieldset {
 }
-.forma label.forma-open .forma-fieldset:after {
+.forma .forma-open .forma-fieldset:after {
 }
-.forma label.forma-open.forma-manual:before {
+.forma .forma-open.forma-manual:before {
 }
-.forma label.forma-manual:before {
+.forma .forma-manual:before {
 }
-.forma label .forma-fieldset * {
+.forma .forma-fieldset * {
 }
-.forma label .forma-fieldset input,
-.forma label .forma-fieldset select,
-.forma label .forma-fieldset textarea,
-.forma label .forma-fieldset button {
+.forma .forma-fieldset .forma-control {
 }
-.forma label .forma-fieldset input:focus,
-.forma label .forma-fieldset select:focus,
-.forma label .forma-fieldset textarea:focus,
-.forma label .forma-fieldset button:focus {
+.forma .forma-fieldset .forma-control:focus {
 }
-.forma label .forma-fieldset input:focus:valid,
-.forma label .forma-fieldset select:focus:valid,
-.forma label .forma-fieldset textarea:focus:valid,
-.forma label .forma-fieldset button:focus:valid {
+.forma .forma-fieldset .forma-control:focus:valid {
 }
-.forma label .forma-fieldset input:focus:invalid,
-.forma label .forma-fieldset select:focus:invalid,
-.forma label .forma-fieldset textarea:focus:invalid,
-.forma label .forma-fieldset button:focus:invalid {
+.forma .forma-fieldset .forma-control:focus:invalid {
 }
-.forma label .forma-fieldset select {
+.forma .forma-fieldset select {
 }
 .forma [type="submit"] {
 }

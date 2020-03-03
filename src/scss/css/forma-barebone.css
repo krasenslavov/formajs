@@ -35,7 +35,7 @@ fieldset.forma legend {
   margin-left: 1rem;
   padding: 0 1rem; }
 
-/* _forma-complete.css */
+/* _forma-barebone.css */
 .forma .forma-control,
 .forma [type="submit"] {
   font: 400 normal 16px/1.6 "Monaco", "Consolas", "Andale Mono", "Ubuntu Mono", monospace;
@@ -49,14 +49,6 @@ fieldset.forma legend {
 .forma .forma-label {
   flex: 0 0 30%;
   order: 1; }
-.forma .forma-valid {
-  color: #008f7a; }
-.forma .forma-invalid {
-  color: #fc4444; }
-.forma .forma-description {
-  color: rgba(25, 25, 25, 0.5); }
-.forma .forma-message {
-  font-size: 85%; }
 .forma .forma-fieldset {
   display: none;
   flex: 1 1 auto;
@@ -67,8 +59,6 @@ fieldset.forma legend {
   display: flex; }
 .forma .forma-open .forma-fieldset:after {
   align-items: center;
-  background-color: #fafafa;
-  border: 1px solid rgba(25, 25, 25, 0.1);
   content: 'Hit tab';
   display: flex;
   font-size: 85%;
@@ -76,7 +66,7 @@ fieldset.forma legend {
   position: absolute;
   right: 1rem;
   z-index: 10; }
-.forma .forma-open .forma-manual:before {
+.forma .forma-open.forma-manual:before {
   content: '-'; }
 .forma .forma-manual:before {
   align-items: center;
@@ -93,35 +83,24 @@ fieldset.forma legend {
 .forma .forma-fieldset .forma-control {
   border: 1px solid rgba(25, 25, 25, 0.1);
   outline: 4px solid transparent; }
-.forma .forma-fieldset .forma-control:focus {
-  outline: 4px solid rgba(25, 25, 25, 0.1); }
-.forma .forma-fieldset .forma-control:focus:valid {
-  outline: 4px solid #008f7a; }
-.forma .forma-fieldset .forma-control:focus:invalid {
-  outline: 4px solid #fc4444; }
-.forma .forma-fieldset select.forma-control {
+.forma .forma-fieldset select {
   bottom: 0;
   height: inherit;
-  height: 3rem;
   max-height: 4rem;
+  position: absolute;
   top: 0;
   width: 100%; }
 .forma [type="submit"] {
-  background-color: #845ec2;
+  background-color: rgba(25, 25, 25, 0.1);
   border: 0;
-  color: #fafafa;
   cursor: pointer;
   margin: 1rem;
   outline: 0;
   width: calc(100% - 2rem - 2px);
   /* Fix fields width substract border & padding extra spacing. */ }
-.forma [type="submit"]:focus,
-.forma [type="submit"]:active,
-.forma [type="submit"]:hover {
-  background-color: #d65bd1; }
 .forma [type="submit"]:disabled {
   background-color: rgba(25, 25, 25, 0.2);
   color: rgba(25, 25, 25, 0.4);
   cursor: not-allowed; }
 
-/*# sourceMappingURL=forma.css.map */
+/*# sourceMappingURL=forma-barebone.css.map */

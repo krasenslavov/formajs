@@ -1,51 +1,44 @@
-/* _forma-barebone.css */
-body {
-    font: var(--font-mono);
-}
-.forma input,
-.forma select,
-.forma textarea,
-.forma button {
-    font: var(--font-mono);
-    padding: var(--space);
+/* _forma-boilerplate.css */
+.forma .forma-control,
+.forma [type="submit"] {
+	font: var(--font-mono);
+	padding: var(--space);
 }
 .forma label {
-    cursor: pointer;
+	cursor: pointer;
     display: flex;
     justify-content: space-between;
     padding: var(--space);
     position: relative;
 }
-.forma label span {
-    flex: 0 0 30%;
+.forma .forma-label {
+	flex: 0 0 30%;
     order: 1;
 }
-.forma label span.forma-valid {
+.forma .forma-valid {
 }
-.forma label span.forma-invalid {
+.forma .forma-invalid {
 }
-.forma label span .forma-description {
+.forma .forma-description {
 }
-.forma label span .forma-input {
+.forma .forma-input {
 }
-.forma label span .forma-message {
+.forma .forma-message {
 }
-.forma label span .forma-message:before {
+.forma .forma-message:before {
 }
-.forma label .forma-fieldset {
-    display: none;
+.forma .forma-fieldset {
+	display: none;
     flex: 1 1 auto;
     order: 2;
     position: relative;
 }
-.forma label.forma-open .forma-fieldset {
-    align-items: center;
+.forma .forma-open .forma-fieldset {
+	align-items: center;
     display: flex;
 }
-.forma label.forma-open .forma-fieldset:after {
-    align-items: center;
-    background-color: rgba(var(--white-rgb-color), 1);
-    border: 1px solid rgba(var(--black-rgb-color), .1);
+.forma .forma-open .forma-fieldset:after {
+	align-items: center;
     content: 'Hit tab';
     display: flex; 
     font-size: 85%;
@@ -54,11 +47,11 @@ body {
     right: 1rem;
     z-index: 10;
 }
-.forma label.forma-open.forma-manual:before {
-    content: '-';
+.forma .forma-open.forma-manual:before {
+	content: '-';
 }
-.forma label.forma-manual:before {
-    align-items: center;
+.forma .forma-manual:before {
+	align-items: center;
     content: '+';
     display: flex;
     flex: 0 0 auto;
@@ -66,33 +59,21 @@ body {
     order: 99; /* Make sure this is at the end of everything else. */
     padding: 0 var(--space);
 }
-.forma label .forma-fieldset * {
-    width: calc(100% - 2rem - 2px); /* Fix fields width substract border & padding extra spacing. */
+.forma .forma-fieldset * {
+	width: calc(100% - 2rem - 2px); /* Fix fields width substract border & padding extra spacing. */
 }
-.forma label .forma-fieldset input,
-.forma label .forma-fieldset select,
-.forma label .forma-fieldset textarea,
-.forma label .forma-fieldset button {
-    border: 1px solid rgba(var(--black-rgb-color), .1);
-    outline: 4px solid transparent;
+.forma .forma-fieldset .forma-control {
+	border: 1px solid rgba(var(--black), .1);
+	outline: 4px solid transparent;
 }
-.forma label .forma-fieldset input:focus,
-.forma label .forma-fieldset select:focus,
-.forma label .forma-fieldset textarea:focus,
-.forma label .forma-fieldset button:focus {
+.forma .forma-fieldset .forma-control:focus {
 }
-.forma label .forma-fieldset input:focus:valid,
-.forma label .forma-fieldset select:focus:valid,
-.forma label .forma-fieldset textarea:focus:valid,
-.forma label .forma-fieldset button:focus:valid {
+.forma .forma-fieldset .forma-control:focus:valid {
 }
-.forma label .forma-fieldset input:focus:invalid,
-.forma label .forma-fieldset select:focus:invalid,
-.forma label .forma-fieldset textarea:focus:invalid,
-.forma label .forma-fieldset button:focus:invalid {
+.forma .forma-fieldset .forma-control:focus:invalid {
 }
-.forma label .forma-fieldset select {
-    bottom: 0;
+.forma .forma-fieldset select {
+	bottom: 0;
     height: inherit;
     max-height: 4rem;
     position: absolute;
@@ -100,7 +81,7 @@ body {
     width: 100%;
 }
 .forma [type="submit"] {
-    background-color: rgba(var(--black-rgb-color), .1);
+	background-color: rgba(var(--black), .1);
     border: 0;
     cursor: pointer;
     margin: var(--space);
@@ -112,7 +93,7 @@ body {
 .forma [type="submit"]:hover {
 }
 .forma [type="submit"]:disabled {
-    background-color: rgba(var(--black-rgb-color), .2);
-    color: rgba(var(--black-rgb-color), .4);
+	background-color: rgba(var(--black), .2);
+    color: rgba(var(--black), .4);
     cursor: not-allowed;
 }

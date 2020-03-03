@@ -35,7 +35,7 @@ fieldset.forma legend {
   margin-left: 1rem;
   padding: 0 1rem; }
 
-/* _forma-barebone.css */
+/* _forma-base.css */
 .forma .forma-control,
 .forma [type="submit"] {
   font: 400 normal 16px/1.6 "Monaco", "Consolas", "Andale Mono", "Ubuntu Mono", monospace;
@@ -43,6 +43,7 @@ fieldset.forma legend {
 .forma label {
   cursor: pointer;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
   position: relative; }
@@ -57,48 +58,11 @@ fieldset.forma legend {
 .forma .forma-open .forma-fieldset {
   align-items: center;
   display: flex; }
-.forma .forma-open .forma-fieldset:after {
-  align-items: center;
-  content: 'Hit tab';
-  display: flex;
-  font-size: 85%;
-  padding: .3rem;
-  position: absolute;
-  right: 1rem;
-  z-index: 10; }
-.forma .forma-open.forma-manual:before {
-  content: '-'; }
-.forma .forma-manual:before {
-  align-items: center;
-  content: '+';
-  display: flex;
-  flex: 0 0 auto;
-  justify-content: center;
-  order: 99;
-  /* Make sure this is at the end of everything else. */
-  padding: 0 1rem; }
-.forma .forma-fieldset * {
-  width: calc(100% - 2rem - 2px);
-  /* Fix fields width substract border & padding extra spacing. */ }
-.forma .forma-fieldset .forma-control {
-  border: 1px solid rgba(25, 25, 25, 0.1);
-  outline: 4px solid transparent; }
-.forma .forma-fieldset select {
-  bottom: 0;
-  height: inherit;
-  max-height: 4rem;
-  position: absolute;
-  top: 0;
-  width: 100%; }
 .forma [type="submit"] {
   background-color: rgba(25, 25, 25, 0.1);
   border: 0;
   cursor: pointer;
   margin: 1rem;
-  outline: 0;
-  width: calc(100% - 2rem - 2px);
-  /* Fix fields width substract border & padding extra spacing. */ }
-.forma [type="submit"]:disabled {
-  background-color: rgba(25, 25, 25, 0.2);
-  color: rgba(25, 25, 25, 0.4);
-  cursor: not-allowed; }
+  outline: 0; }
+
+/*# sourceMappingURL=forma-base.css.map */

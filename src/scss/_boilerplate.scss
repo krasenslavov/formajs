@@ -1,0 +1,83 @@
+// _boilerplate.scss 
+:root {
+    --font-mono: #{$font-mono};
+    --font-google: #{$font-google};
+    --primary-color: #{$primary};
+    --secondary-color: #{$secondary};
+    --error-color: #{$error};
+    --success-color: #{$success};
+    --warning-color: #{$warning};
+    --info-color: #{$info};
+    --white: #{$white};
+    --black: #{$black};
+    --space: #{$space};
+}
+/* _global.css */
+*,
+*:before,
+*:after {
+			box-sizing: none;
+	   -moz-box-sizing: none;
+	-webkit-box-sizing: none;
+	margin: 0;
+	padding: 0;
+}
+body {
+    font: $font-mono;
+}
+fieldset.forma {
+}
+fieldset.forma legend {
+}
+/* _forma-boilerplate.css */
+.forma {
+	.forma-control,
+    [type="submit"] {
+	}
+	label {
+	}
+	.forma-label {
+	}
+	.forma-valid {
+	}
+	.forma-invalid {
+	}
+	.forma-description {
+	}
+	.forma-input {
+	}
+	.forma-message {
+	}
+	.forma-message:before {
+	}
+	.forma-fieldset {
+	}
+	.forma-open .forma-fieldset {
+	}
+	.forma-open .forma-fieldset:after {
+	}
+	.forma-open.forma-manual:before {
+	}
+	.forma-manual:before {
+	}
+	.forma-fieldset * {
+	}
+	.forma-fieldset .forma-control {
+	}
+	.forma-fieldset .forma-control:focus {
+	}
+	.forma-fieldset .forma-control:focus:valid {
+	}
+	.forma-fieldset .forma-control:focus:invalid {
+	}
+	.forma-fieldset select {
+	}
+	[type="submit"] {
+	}
+	[type="submit"]:focus,
+	[type="submit"]:active,
+	[type="submit"]:hover {
+	}
+	[type="submit"]:disabled {
+	}
+}
