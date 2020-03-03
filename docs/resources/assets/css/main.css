@@ -159,6 +159,9 @@
 		color: rgba(var(--white-rgb-color), 1);
 		padding: var(--space);
 	}
+	.content .bubble-warning {
+		background-color: var(--warning-color);
+	}
 	.content .bubble p:last-of-type {
 		margin-bottom: 0;
 		padding-bottom: 0;		
