@@ -1,0 +1,108 @@
+// _base.scss 
+:root {
+    --font-mono: #{$font-mono};
+    --font-google: #{$font-google};
+    --primary-color: #{$primary};
+    --secondary-color: #{$secondary};
+    --error-color: #{$error};
+    --success-color: #{$success};
+    --warning-color: #{$warning};
+    --info-color: #{$info};
+    --white: #{$white};
+    --black: #{$black};
+    --space: #{$space};
+}
+/* _global.css */
+*,
+*:before,
+*:after {
+			box-sizing: none;
+	   -moz-box-sizing: none;
+	-webkit-box-sizing: none;
+	margin: 0;
+	padding: 0;
+}
+body {
+    font: $font-mono;
+}
+fieldset.forma {
+    border: 1px solid rgba($black, .1);;
+}
+fieldset.forma legend {
+    font-size: 110%;
+    margin-left: $space;
+    padding: 0 $space;
+}
+/* _forma-base.css */
+.forma {
+	.forma-control,
+    [type="submit"] {
+		font: $font-mono;
+   		padding: $space;
+	}
+	label {
+		cursor: pointer;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: space-between;
+	    padding: $space;
+	    position: relative;
+	}
+	.forma-label {
+		flex: 0 0 30%;
+	    order: 1;
+	}
+	.forma-valid {
+	}
+	.forma-invalid {
+	}
+	.forma-description {
+	}
+	.forma-input {
+	}
+	.forma-message {
+	}
+	.forma-message:before {
+	}
+	.forma-fieldset {
+		display: none;
+	    flex: 1 1 auto;
+	    order: 2;
+	    position: relative;
+	}
+	.forma-open .forma-fieldset {
+		align-items: center;
+	    display: flex;
+	}
+	.forma-open .forma-fieldset:after {
+	}
+	.forma-open.forma-manual:before {
+	}
+	.forma-manual:before {
+	}
+	.forma-fieldset * {
+	}
+	.forma-fieldset .forma-control {
+	}
+	.forma-fieldset .forma-control:focus {
+	}
+	.forma-fieldset .forma-control:focus:valid {
+	}
+	.forma-fieldset .forma-control:focus:invalid {
+	}
+	.forma-fieldset select {
+	}
+	[type="submit"] {
+		background-color: rgba($black, .1);
+	    border: 0;
+	    cursor: pointer;
+	    margin: $space;
+	    outline: 0;
+	}
+	[type="submit"]:focus,
+	[type="submit"]:active,
+	[type="submit"]:hover {
+	}
+	[type="submit"]:disabled {
+	}
+}
