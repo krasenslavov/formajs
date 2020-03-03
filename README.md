@@ -61,4 +61,4 @@ Found a bug or want to propose some improvements or bug fixes? Vist our [website
 
 (c) Krasen Slavov | Code released under the [MIT License](https://opensource.org/licenses/MIT).
 
-*(*) This project is still in alpha; use it for live or production environments on your own risk.*
+*(+) This project is still in alpha; use it for live or production environments on your own risk.*
