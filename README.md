@@ -16,14 +16,14 @@ Download the master (or the [latest release](https://github.com/krasenslavov/for
 <link href="path/to/css/forma.css" rel="stylesheet" />
 ```
 
-2. Build your form anywhere inside the `<body>` of you document. 
+2. Build your form anywhere inside the `<body>` of you document. The example below shows up the minimum required attributes for your for elements.
 
 ```html
 <form>
-  <input data-label="Email Address" type="email" />
-  <input data-label="First Name" type="text" />
-  <input data-label="Last Name" type="text" />
-  <textarea data-label="Message" rows="5"></textarea>
+  <input data-label="Email Address" type="email" name="email-address" />
+  <input data-label="First Name" type="text" name="first-name" />
+  <input data-label="Last Name" type="text" name="last-name" />
+  <textarea data-label="Message" rows="5" name="message"></textarea>
   <button type="submit">Send</button>
 </form>
 ```
