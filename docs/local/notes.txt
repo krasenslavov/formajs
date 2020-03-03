@@ -1,8 +1,0 @@
-- README.md (commit/publis new release 0.0.4)
-- Updated docs (move all text into .docs files)
-- Create all examples on single separate test page.
-- Build /docs site with jekyll; Add more examples and update docs with new features. (commit/publish with docs)
-- NPM package update to 0.0.4.
-- Work on Boostrapt integration; Update docs + README.md (commit/publish new release 0.5)
-- NPM package update to 0.0.5.
-- More testing...
