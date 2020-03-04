@@ -29,9 +29,26 @@ fieldset.forma {
     border: 0;
 }
 fieldset.forma legend {
-    font-size: 110%;
-    margin-left: $space;
-    padding: 0 $space;
+  background-color: rgba($black, 0.05);
+  font-size: 110%;
+  margin-left: 1rem;
+  padding: $space;
+  position: relative;
+  width: 100%;
+}
+fieldset.forma legend:after { 
+  border-left: 40rem solid transparent;
+  border-right: 40rem solid transparent;
+  border-top: 40rem solid rgba($black, 0.03);
+  bottom: -40rem;
+  content: ' ';
+  display: block; 
+  height: 0; 
+  height: 0;
+  position: absolute;
+  right: 0;
+  width: 0;
+  z-index: -1;
 }
 /* _forma-docs.css */
 .forma {
