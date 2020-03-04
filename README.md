@@ -47,7 +47,7 @@ Visit our main [website](https://formajs.com/) to learn more about customization
 * [Custom Settings](https://formajs.com/index.html#settings)
 * [Customization and Styling](https://formajs.com/index.html#styling)
 * [Client-side Validation](https://formajs.com/index.html#validation)
-* [CSS](https://formajs.com/prebuilt/index.html)
+* [CSS](https://formajs.com/css/index.html)
 * [SASS/SCSS](https://formajs.com/scss.html)
 * [NPM](https://formajs.com/npm.html)
 * [Examples](https://formajs.com/examples/index.html)
