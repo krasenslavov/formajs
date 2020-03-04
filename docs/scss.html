@@ -1,128 +1,115 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <link href="/favicon.ico" rel="icon" />
-        <title>FormaJS - Create dynamic and interactive forms with a better UX.</title>
-        <link href="/resources/lib/prism/css/prism.css" rel="stylesheet" />
-        <link href="/resources/lib/forma/css/forma-docs.css" rel="stylesheet" />
-        <link href="/resources/assets/css/main.css" rel="stylesheet" />
-    </head>
-    <body>
-        <header class="header">
-            <div class="logo-wrap">
-                <a href="/">
-                    <img src="/resources/assets/img/logo.png" alt="" class="logo" height="75" />
-                </a>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="/favicon.ico" rel="icon" />
+    <title>SASS/SCSS - FormaJS - Quickly and easily create dynamic and interactive forms with a better UX.</title>
+    <link href="/resources/lib/prism/css/prism.css" rel="stylesheet" />
+    
+    <link href="/resources/assets/css/main.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <div class="logo-wrap">
+            <a href="/">
+                <img src="/resources/assets/img/logo.png" alt="" class="logo" height="75" />
+            </a>
+        </div>
+        <nav class="navbar">
+            <h5>Github</h5>
+            <a href="https://github.com/krasenslavov/forma/" target="_blank">Repo</a>
+            <a href="https://github.com/krasenslavov/formajs/releases/download/v0.0.4-alpha/formajs-v0.0.4-alpha-dist.zip" target="_blank">v0.0.4-alpha (latest)</a>
+            <h5>Documentation</h5>
+            <a href="/index.html" class="toplvl ">FormaJS</a>
+            <div class="subnav ">
+                <a href="/index.html#usage">Basic Usage</a>
+                <a href="/index.html#installation">Installation</a>
+                <a href="/index.html#structure">Form Structure</a>
+                <a href="/index.html#settings">Custom Settings</a>
+                <a href="/index.html#styling">Customization and Styling</a>
+                <a href="/index.html#validation">Client-side Validation</a>
+                <a href="/index.html#contribute">Contribute</a>
+                <a href="/index.html#license">License</a>
             </div>
-            <nav class="navbar">
-                <h5>Github</h5>
-                <a href="https://github.com/krasenslavov/forma/" target="_blank">Repo</a>
-                <a href="https://github.com/krasenslavov/formajs/releases/download/v0.0.3-alpha/formajs-v0.0.3-alpha-dist.zip" target="_blank"> v0.0.3-alpha (latest)</a>
-                <h5>Documentation</h5>
-                <a href="/index.html" class="toplvl">FormaJS</a>
-                <div class="subnav">
-                    <a href="/index.html#usage">Basic usage</a>
-                    <a href="/index.html#installation">Installation</a>
-                    <a href="/index.html#structure">Form structure</a>
-                    <a href="/index.html#options">Custom options</a>
-                    <a href="/index.html#style">Styling</a>
-                    <a href="/index.html#validation">Validation</a>
-                    <a href="/index.html#contribute">Contribute</a>
-                    <a href="/index.html#license">License</a>
-                </div>
-                <a href="/prebuilt/index.html" class="toplvl">Pre-built CSS</a>
-                <div class="subnav">
-                    <a href="/prebuilt/css-base.html">Base</a>
-                    <a href="/prebuilt/css-barebone.html">Barebone</a>
-                    <a href="/prebuilt/css-boilerplate.html">Boilerplate</a>
-                    <a href="/prebuilt/css-forma.html">Forma</a>
-                </div>
-                <a href="/scss.html" class="active">SASS/SCSS</a>
-                <h5>Playground</h5>
-                <a href="/examples/index.html" class="toplvl">Basic Examples</a>
-                <div class="subnav">
-                    <a href="/examples/example-no.html">No options</a>
-                    <a href="/examples/example-auto.html">auto:true</a>
-                    <a href="/examples/example-auto-modify.html">auto:true custom</a>
-                    <a href="/examples/example-manual.html">manual:true</a>
-                    <a href="/examples/example-show.html">show:true</a>
-                    <a href="/examples/example-all.html">All options</a>
-                    <a href="/examples/example-disabled-button.html">Disabled button</a>
-                    <a href="/examples/example-builtin-validation.html">Built-in validation</a>
-                    <a href="/examples/example-custom-validation.html">Custom validation</a>
-                    <a href="/examples/example-multiple-forms.html">Multiple forms</a>
-                    <a href="/examples/example-user-defined-support.html">User-defined support</a>
-                    <a href="/examples/login.html">Login form</a>
-                    <a href="/examples/register.html">Register form</a>
-                </div>
-                <a href="/sandbox.html">Code Sandbox</a>
-            </nav>
-        </header>
-        <main class="content">
-            <div class="container">
-                <section class="bubble bubble-warning">
-                    <p><u>Warning</u> The current version of the the documentaion is for the v0.0.3-aplha. Working hand on the new & updated version with v0.0.4 support, there are numerous major changes so keep that in mind when going over the docs.</p>
-                </section>
-                <br />s
-    			<section class="bubble">
-                    <p>You can download the latest <mark>/dist</mark> code directly from the <a href="https://github.com/krasenslavov/formajs/releases/download/v0.0.3-alpha/formajs-v0.0.3-alpha-dist.zip">GitHub repo</a>.</p> 
-                    <p>Don't forget to give us a ⭐ if you think this script is worthwhile and we should continue improving on it.</p>
-                </section>
-                <section>
-                    <h2 id="sass">SASS/SCSS customization</h2>
-                    <p>To speed up your form customization we have added a SCSS support for all of our start up stylesheets. Head over to GitHub <mark>/src/scss</mark> repo and <a href="https://github.com/krasenslavov/forma/tree/master/src/scss" target="_blank">take a look at the files</a>.</p>
-                    <p>The main file <code>forma.scss</code> has some comments if you wonder which is the best start option for you.</p>
-                    <p>No matter which stylesheet you decide to use you have the full freedom and flexibility to extend and customize it to meet you needs.</p>
-                    <p class="bubble">* <u>Note</u>: <mark>_forma-variables.scss</mark> contains all the global variables applied to the <code>:root</code> and avaiable thoughout all the stylesheets.</p>
-                    <h3><mark>forma.scss</mark></h3>
-<pre><code class="language-markup">// forma.scss
+            <a href="/css/index.html" class="toplvl ">CSS</a>
+            <div class="subnav ">
+                <a href="/css/css-barebone.html" class="">Barebone</a>
+                <a href="/css/css-base.html" class="">Base</a>
+                <a href="/css/css-boilerplate.html" class="">Boilerplate</a>
+                <a href="/css/css-forma.html" class="">Forma</a>
+            </div>
+            <a href="/scss.html" class="active">SASS/SCSS</a>
+            <a href="/npm.html" class="">NPM</a>
+            <h5>Playground</h5>
+            <a href="/examples/index.html" class="toplvl ">Examples</a>
+            <div class="subnav ">
+                <a href="/examples/example-no.html" class="">No Options</a>
+                <a href="/examples/example-tab.html" class="">tab:true</a>
+                <a href="/examples/example-auto.html" class="">auto:true</a>
+                <a href="/examples/example-auto-modify.html" class="">auto:true custom</a>
+                <a href="/examples/example-manual.html" class="">manual:true</a>
+                <a href="/examples/example-show.html" class="">show:true</a>
+                <a href="/examples/example-all.html" class="">All Options</a>
+                <a href="/examples/example-disabled-button.html" class="">Disabled Submit Button</a>
+                <a href="/examples/example-builtin-validation.html" class="">Built-in Validation</a>
+                <a href="/examples/example-custom-validation.html" class="">Custom Validation</a>
+                <a href="/examples/example-multiple-forms.html" class="">Multiple Forms</a>
+                <a href="/examples/example-grouped-elements.html" class="">Grouped Elements</a>
+                <a href="/examples/example-supported-elements.html" class="">Supported Elements</a>
+                <a href="/examples/example-user-defined-support.html" class="">User-defined Support</a>
+                <a href="/examples/example-structures-more.html" class="">Structures</a>
+                <a href="/examples/example-two-column-layout.html" class="">2 Column Layout</a>
+                <a href="/examples/login.html" class="">Login Form</a>
+                <a href="/examples/register.html" class="">Register Form</a>
+                <a href="/examples/bootstrap.html" class="">Bootstrap</a>
+            </div>
+            <a href="/sandbox.html" class="">Sandbox</a>
+        </nav>
+    </header>
+    <main class="content">
+        <div class="container">
+            <section class="bubble bubble-info">
+    <p>You can download the latest <mark>/dist</mark> code directly from our GitHub repository <a href="https://github.com/krasenslavov/formajs/releases/download/v0.0.4-alpha/formajs-v0.0.4-alpha-dist.zip" target="_blank">v0.0.4-alpha (latest)</a>.</p> 
+    <p>Don't forget to give us a ⭐ if you think FormaJS is worthwhile and we should continue improving on it.</p>
+</section>
+            <h2>SASS/SCSS Customization</h2>
+            <p>To speed up your form customization we have added a SCSS support with several pre-built SCSS stylesheet templates.</p>
+<p>Each main <code>scss</code> template has some comments added that will guide you which is the best starting option for you.</p>
+<p>No matter which stylesheet template you decide to use you have the full freedom and flexibility to extend and customize it to meet you needs.</p>
 
-// _form-variables.scss
+<p class="bubble">Note: <mark>_variables.scss</mark> contains all the global variables applied to the <mark>:root</mark> and avaiable thoughout all the stylesheets.</p>
+
+<h3><mark>forma.scss</mark> template</h3>
+
+<pre><code class="language language-markup">// _variables.scss
 // Define global variables.
-// @import 'forma-variables';
+@import 'variables';
 
-// _forma-boilerplate.scss
-// Starting from scratch (strcuture only).
-// @import 'forma-boilerplate';
-
-// _forma-barebone.scss
-// Get some structure with limited funcitionality and styling.
-// @import 'forma-barebone';
-
-// _forma-base.scss 
-// Getting a bit more structure, functionality, and styling than _forma-barebone.scss.
-// @import 'forma-base';
-
-// _forma-complete.scss
+// _complete.scss
 // Fully integrated styleheet that can be customized wtih minimal effort and modification.
-// @import 'forma-complete';
+@import 'complete';</code></pre>
 
-// _forma-docs.scss
-// Take a look at our custom stylesheet we use for https://formajs.com/
-// @import 'forma-docs';</code></pre>
-                    <p>Of course to utilize this feature you must have <a href="https://sass-lang.com/install" target="_blank">SASS</a> installed and running on your system.</p>
-                    <hr />
-                    <h3>NPM + SASS</h3>
-                    <p>The following command line sequennce will install the FormaJS with SASS dependency and then you can easily start building/customizing your stylehseets. (assuming you have the latest npm + sass versions installed on your machine)</p>
-<pre><code class="language-markup">mkdir my-project
-cd my-project
-npm init
-npm i aformajs --save
-cd node_modules/aformajs
-sass --watch src/scss:src/scss/css</code></pre>
-                    <p>... and you are all set! Editing <code>src/scss</code> files will generate your custom styles under <code>src/scss/css</code>.</p>
-                </section>
-            </div>
-        </main>
-        <footer class="footer">
-            <p>Copyright &copy; 2020</p>
-        </footer>
-        <script src="/resources/lib/jquery-3.4.1.min.js"></script>
-        <script src="/resources/lib/prism/js/prism.min.js"></script>
-        <script src="/resources/lib/prism/js/prism-autoloader.min.js"></script>
-        <script src="/resources/lib/forma/js/forma.min.js"></script>
-        <script src="/resources/assets/js/main.js"></script>
-    </body>
+<p class="bubble">Note: There are a couple more templates available <code>forma-base.scss, forma-barebone.scss, and forma-boilerplate.scss</code> (take a look at the <mark>/src/scss</mark> folder in the master GitHub repository).</p>
+
+<br />
+
+<p>If you are in the main directory you can run the following command in the terminal to automatically generate your CSS files and watch all the SCSS file changes.</p>
+
+<pre><code class="language language-markup">sass --watch src/scss:src/scss/css</code></pre>
+
+<p>Of course to utilize this feature you must have <a href="https://sass-lang.com/install" target="_blank">SASS</a> installed and running on your system.</p>
+
+        </div>
+    </main>
+    <footer class="footer">
+        <p>Copyright &copy; 2020</p>
+    </footer>
+    <script src="/resources/lib/jquery-3.4.1.min.js"></script>
+    <script src="/resources/lib/prism/js/prism.min.js"></script>
+    <script src="/resources/lib/prism/js/prism-autoloader.min.js"></script>
+    <script src="/resources/lib/forma/js/forma.min.js"></script>
+    <script src="/resources/assets/js/main.js"></script>
+    
+</body>
 </html>

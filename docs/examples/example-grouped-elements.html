@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link href="/favicon.ico" rel="icon" />
-    <title>Examples - No Options - FormaJS - Quickly and easily create dynamic and interactive forms with a better UX.</title>
+    <title>Examples - Grouped Elements - FormaJS - Quickly and easily create dynamic and interactive forms with a better UX.</title>
     <link href="/resources/lib/prism/css/prism.css" rel="stylesheet" />
     <link href="/resources/lib/forma/css/forma-docs.css" rel="stylesheet" />
 
@@ -45,7 +45,7 @@
             <h5>Playground</h5>
             <a href="/examples/index.html" class="toplvl active">Examples</a>
             <div class="subnav active">
-                <a href="/examples/example-no.html" class="active">No Options</a>
+                <a href="/examples/example-no.html" class="">No Options</a>
                 <a href="/examples/example-tab.html" class="">tab:true</a>
                 <a href="/examples/example-auto.html" class="">auto:true</a>
                 <a href="/examples/example-auto-modify.html" class="">auto:true custom</a>
@@ -56,7 +56,7 @@
                 <a href="/examples/example-builtin-validation.html" class="">Built-in Validation</a>
                 <a href="/examples/example-custom-validation.html" class="">Custom Validation</a>
                 <a href="/examples/example-multiple-forms.html" class="">Multiple Forms</a>
-                <a href="/examples/example-grouped-elements.html" class="">Grouped Elements</a>
+                <a href="/examples/example-grouped-elements.html" class="active">Grouped Elements</a>
                 <a href="/examples/example-supported-elements.html" class="">Supported Elements</a>
                 <a href="/examples/example-user-defined-support.html" class="">User-defined Support</a>
                 <a href="/examples/example-structures-more.html" class="">Structures</a>
@@ -74,13 +74,13 @@
     <p>You can download the latest <mark>/dist</mark> code directly from our GitHub repository <a href="https://github.com/krasenslavov/formajs/releases/download/v0.0.4-alpha/formajs-v0.0.4-alpha-dist.zip" target="_blank">v0.0.4-alpha (latest)</a>.</p> 
     <p>Don't forget to give us a ⭐ if you think FormaJS is worthwhile and we should continue improving on it.</p>
 </section>
-            <h2>No Options</h2>
-            <p>The most basic form call without any settings added.</p>
+            <h2>Grouped Elements</h2>
+            <p>Group elements within the same row by adding the additional data attribute <mark>data-group=""</mark> with the same value.</p>
 
 <form class="forma">
     <input data-label="Email Address" type="email" name="email-address" required />
-    <input data-label="First Name" type="text" name="first-name" />
-    <input data-label="Last Name" type="text" name="last-name" />
+    <input data-label="First Name" data-group="full-name" type="text" name="first-name" />
+    <input data-label="Last Name" data-group="full-name" type="text" name="last-name" />
     <textarea data-label="Message" rows="5" name="message"></textarea>
     <button type="submit">Send</button>
 </form>
@@ -91,14 +91,16 @@
 <h3>HTML</h3>
 <pre><code class="language language-markup">&lt;form&gt;
   &lt;input data-label="Email Address" type="email" name="email-address" /&gt;
-  &lt;input data-label="First Name" type="text" name="first-name" /&gt;
-  &lt;input data-label="Last Name" type="text" name="last-name" /&gt;
+  &lt;input data-label="First Name" data-group="full-name" type="text" name="first-name" /&gt;
+  &lt;input data-label="Last Name" data-group="full-name" type="text" name="last-name" /&gt;
   &lt;textarea data-label="Message" rows="5" name="message"&gt;&lt;/textarea&gt;
   &lt;button type="submit"&gt;Send&lt;/button&gt;
 &lt;/form&gt;</code></pre>
 
 <h3>JavaScript</h3>
-<pre><code class="language language-js">forma();</code></pre>
+<pre><code class="language language-js">forma({
+  auto: true
+});</code></pre>
         </div>
     </main>
     <footer class="footer">
@@ -109,7 +111,7 @@
     <script src="/resources/lib/prism/js/prism-autoloader.min.js"></script>
     <script src="/resources/lib/forma/js/forma.min.js"></script>
     <script src="/resources/assets/js/main.js"></script>
-    <script>forma();</script>
+    <script>forma({ auto: true });</script>
 
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link href="/favicon.ico" rel="icon" />
-    <title>Examples - No Options - FormaJS - Quickly and easily create dynamic and interactive forms with a better UX.</title>
+    <title>Examples - Two Column Layout - FormaJS - Quickly and easily create dynamic and interactive forms with a better UX.</title>
     <link href="/resources/lib/prism/css/prism.css" rel="stylesheet" />
     <link href="/resources/lib/forma/css/forma-docs.css" rel="stylesheet" />
 
@@ -45,7 +45,7 @@
             <h5>Playground</h5>
             <a href="/examples/index.html" class="toplvl active">Examples</a>
             <div class="subnav active">
-                <a href="/examples/example-no.html" class="active">No Options</a>
+                <a href="/examples/example-no.html" class="">No Options</a>
                 <a href="/examples/example-tab.html" class="">tab:true</a>
                 <a href="/examples/example-auto.html" class="">auto:true</a>
                 <a href="/examples/example-auto-modify.html" class="">auto:true custom</a>
@@ -60,7 +60,7 @@
                 <a href="/examples/example-supported-elements.html" class="">Supported Elements</a>
                 <a href="/examples/example-user-defined-support.html" class="">User-defined Support</a>
                 <a href="/examples/example-structures-more.html" class="">Structures</a>
-                <a href="/examples/example-two-column-layout.html" class="">2 Column Layout</a>
+                <a href="/examples/example-two-column-layout.html" class="active">2 Column Layout</a>
                 <a href="/examples/login.html" class="">Login Form</a>
                 <a href="/examples/register.html" class="">Register Form</a>
                 <a href="/examples/bootstrap.html" class="">Bootstrap</a>
@@ -74,8 +74,14 @@
     <p>You can download the latest <mark>/dist</mark> code directly from our GitHub repository <a href="https://github.com/krasenslavov/formajs/releases/download/v0.0.4-alpha/formajs-v0.0.4-alpha-dist.zip" target="_blank">v0.0.4-alpha (latest)</a>.</p> 
     <p>Don't forget to give us a ⭐ if you think FormaJS is worthwhile and we should continue improving on it.</p>
 </section>
-            <h2>No Options</h2>
-            <p>The most basic form call without any settings added.</p>
+            <h2>2 Column Layout</h2>
+            <style>
+    .forma label {
+      flex-direction: row;
+    }
+</style>
+
+<p>Turn your form layout from 1 to 2 columns by only adding a single line of CSS.</p>
 
 <form class="forma">
     <input data-label="Email Address" type="email" name="email-address" required />
@@ -86,6 +92,9 @@
 </form>
 
 <h3>CSS</h3>
+<pre><code class="language language-css">.forma label {
+  flex-direction: row;
+}</code></pre>
 <p class="bubble">Using a custom CSS stylesheet build on top of the <mark>forma-boilerplate.css</mark> template. Take a look at <a href="https://github.com/krasenslavov/forma/blob/master/src/css/_forma-boilerplate.css" target="blank">the code</a> on our GitHub repository.</p>
 
 <h3>HTML</h3>
@@ -98,7 +107,10 @@
 &lt;/form&gt;</code></pre>
 
 <h3>JavaScript</h3>
-<pre><code class="language language-js">forma();</code></pre>
+<pre><code class="language language-js">forma({ 
+ show: true,
+ auto: true
+});</code></pre>
         </div>
     </main>
     <footer class="footer">
@@ -109,7 +121,7 @@
     <script src="/resources/lib/prism/js/prism-autoloader.min.js"></script>
     <script src="/resources/lib/forma/js/forma.min.js"></script>
     <script src="/resources/assets/js/main.js"></script>
-    <script>forma();</script>
+    <script>forma({ show: true, auto: true });</script>
 
 </body>
 </html>

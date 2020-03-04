@@ -83,7 +83,7 @@ fieldset.forma legend {
 	    right: 1rem;
 	    z-index: 10;
 	}
-	.forma-open.forma-manual:before {
+	.forma-open .forma-manual:before {
 		content: '-';
 	}
 	.forma-manual:before {

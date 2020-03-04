@@ -1,185 +1,153 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <link href="/favicon.ico" rel="icon" />
-        <title>FormaJS - Create dynamic and interactive forms with a better UX.</title>
-        <link href="/resources/lib/prism/css/prism.css" rel="stylesheet" />
-        <link href="/resources/lib/forma/css/forma-docs.css" rel="stylesheet" />
-        <link href="/resources/assets/css/main.css" rel="stylesheet" />
-    </head>
-    <body>
-        <header class="header">
-            <div class="logo-wrap">
-                <a href="/">
-                    <img src="/resources/assets/img/logo.png" alt="" class="logo" height="75" />
-                </a>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="/favicon.ico" rel="icon" />
+    <title>Examples - Register Form - FormaJS - Quickly and easily create dynamic and interactive forms with a better UX.</title>
+    <link href="/resources/lib/prism/css/prism.css" rel="stylesheet" />
+    <link href="/resources/lib/forma/css/forma-docs.css" rel="stylesheet" />
+
+    <link href="/resources/assets/css/main.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <div class="logo-wrap">
+            <a href="/">
+                <img src="/resources/assets/img/logo.png" alt="" class="logo" height="75" />
+            </a>
+        </div>
+        <nav class="navbar">
+            <h5>Github</h5>
+            <a href="https://github.com/krasenslavov/forma/" target="_blank">Repo</a>
+            <a href="https://github.com/krasenslavov/formajs/releases/download/v0.0.4-alpha/formajs-v0.0.4-alpha-dist.zip" target="_blank">v0.0.4-alpha (latest)</a>
+            <h5>Documentation</h5>
+            <a href="/index.html" class="toplvl ">FormaJS</a>
+            <div class="subnav ">
+                <a href="/index.html#usage">Basic Usage</a>
+                <a href="/index.html#installation">Installation</a>
+                <a href="/index.html#structure">Form Structure</a>
+                <a href="/index.html#settings">Custom Settings</a>
+                <a href="/index.html#styling">Customization and Styling</a>
+                <a href="/index.html#validation">Client-side Validation</a>
+                <a href="/index.html#contribute">Contribute</a>
+                <a href="/index.html#license">License</a>
             </div>
-            <nav class="navbar">
-                <h5>Github</h5>
-                <a href="https://github.com/krasenslavov/forma/" target="_blank">Repo</a>
-                <a href="https://github.com/krasenslavov/formajs/releases/download/v0.0.3-alpha/formajs-v0.0.3-alpha-dist.zip" target="_blank"> v0.0.3-alpha (latest)</a>
-                <h5>Documentation</h5>
-                <a href="/index.html" class="toplvl">FormaJS</a>
-                <div class="subnav">
-                    <a href="/index.html#usage">Basic usage</a>
-                    <a href="/index.html#installation">Installation</a>
-                    <a href="/index.html#structure">Form structure</a>
-                    <a href="/index.html#options">Custom options</a>
-                    <a href="/index.html#style">Styling</a>
-                    <a href="/index.html#validation">Validation</a>
-                    <a href="/index.html#contribute">Contribute</a>
-                    <a href="/index.html#license">License</a>
-                </div>
-                <a href="/prebuilt/index.html" class="toplvl">Pre-built CSS</a>
-                <div class="subnav">
-                    <a href="/prebuilt/css-base.html">Base</a>
-                    <a href="/prebuilt/css-barebone.html">Barebone</a>
-                    <a href="/prebuilt/css-boilerplate.html">Boilerplate</a>
-                    <a href="/prebuilt/css-forma.html">Forma</a>
-                </div>
-                <a href="/scss.html">SASS/SCSS</a>
-                <h5>Playground</h5>
-                <a href="/examples/index.html" class="toplvl active">Basic Examples</a>
-                <div class="subnav active">
-                    <a href="/examples/example-no.html">No options</a>
-                    <a href="/examples/example-auto.html">auto:true</a>
-                    <a href="/examples/example-auto-modify.html">auto:true custom</a>
-                    <a href="/examples/example-manual.html">manual:true</a>
-                    <a href="/examples/example-show.html">show:true</a>
-                    <a href="/examples/example-all.html">All options</a>
-                    <a href="/examples/example-disabled-button.html">Disabled button</a>
-                    <a href="/examples/example-builtin-validation.html">Built-in validation</a>
-                    <a href="/examples/example-custom-validation.html">Custom validation</a>
-                    <a href="/examples/example-multiple-forms.html">Multiple forms</a>
-                    <a href="/examples/example-user-defined-support.html">User-defined support</a>
-                    <a href="/examples/login.html">Login form</a>
-                    <a href="/examples/register.html" class="active">Register form</a>
-                </div>
-                <a href="/sandbox.html">Code Sandbox</a>
-            </nav>
-        </header>
-        <main class="content">
-            <div class="container">
-                <section class="bubble bubble-warning">
-                    <p><u>Warning</u> The current version of the the documentaion is for the v0.0.3-aplha. Working hand on the new & updated version with v0.0.4 support, there are numerous major changes so keep that in mind when going over the docs.</p>
-                </section>
-                <br />
-                <h2>Register form (real-world example)</h2>
-                <p>Generic real-world registration form.<p>
-                <p>With a single line of CSS you can convert the form into a multi-stage input. Prompt only one field at a time to the user, moving to the next using the tab navigation.</p>
-                <p>All this gives the end-user a better UX and adds some additional dynamic to your forms.</p>
-                <p>Once all the fields are complete with valid data the submit button is enabled for submission.</p>
-                <form class="forma forma-register">
-                    <label for="email">
-                        <span>Email address</span>
-                        <div class="forma-fieldset">
-                            <input type="email" name="email" pattern="(\S+@\S+\.\S+)" title="Enter a valid email address." required />
-                        </div>
-                    </label>
-                    <label for="fullname">
-                        <span>Full Name</span>
-                        <div class="forma-fieldset">
-                            <input type="text" name="fullname" pattern="[a-zA-Z ]{3,32}" title="Full name must be between 3 and 32 characters." required />
-                        </div>
-                    </label>
-                    <label for="username">
-                        <span>Username</span>
-                        <div class="forma-fieldset">
-                            <input type="text" name="username" pattern="[a-z]{3,32}" title="Username must be lowercase between 3 and 32 characters." required />
-                        </div>
-                    </label>
-                    <label for="password">
-                        <span>Password</span>
-                        <div class="forma-fieldset">
-                            <input type="password" name="password" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" title="Password must have minimum 8 characters, at least one letter and one number." required />
-                        </div>
-                    </label>
-                    <label for="confirm-password">
-                        <span>Confirm password</span>
-                        <div class="forma-fieldset">
-                            <input type="password" name="confirm-password" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" title="Password must have minimum 8 characters, at least one letter and one number." required />
-                        </div>
-                    </label>
-                    <button type="submit" disabled>Register</button>
-                </form>
-                <h3>CSS</h3>
-                <pre><code class="language-css">.forma-register label:not(.forma-open) {
+            <a href="/css/index.html" class="toplvl ">CSS</a>
+            <div class="subnav ">
+                <a href="/css/css-barebone.html" class="">Barebone</a>
+                <a href="/css/css-base.html" class="">Base</a>
+                <a href="/css/css-boilerplate.html" class="">Boilerplate</a>
+                <a href="/css/css-forma.html" class="">Forma</a>
+            </div>
+            <a href="/scss.html" class="">SASS/SCSS</a>
+            <a href="/npm.html" class="">NPM</a>
+            <h5>Playground</h5>
+            <a href="/examples/index.html" class="toplvl active">Examples</a>
+            <div class="subnav active">
+                <a href="/examples/example-no.html" class="">No Options</a>
+                <a href="/examples/example-tab.html" class="">tab:true</a>
+                <a href="/examples/example-auto.html" class="">auto:true</a>
+                <a href="/examples/example-auto-modify.html" class="">auto:true custom</a>
+                <a href="/examples/example-manual.html" class="">manual:true</a>
+                <a href="/examples/example-show.html" class="">show:true</a>
+                <a href="/examples/example-all.html" class="">All Options</a>
+                <a href="/examples/example-disabled-button.html" class="">Disabled Submit Button</a>
+                <a href="/examples/example-builtin-validation.html" class="">Built-in Validation</a>
+                <a href="/examples/example-custom-validation.html" class="">Custom Validation</a>
+                <a href="/examples/example-multiple-forms.html" class="">Multiple Forms</a>
+                <a href="/examples/example-grouped-elements.html" class="">Grouped Elements</a>
+                <a href="/examples/example-supported-elements.html" class="">Supported Elements</a>
+                <a href="/examples/example-user-defined-support.html" class="">User-defined Support</a>
+                <a href="/examples/example-structures-more.html" class="">Structures</a>
+                <a href="/examples/example-two-column-layout.html" class="">2 Column Layout</a>
+                <a href="/examples/login.html" class="">Login Form</a>
+                <a href="/examples/register.html" class="active">Register Form</a>
+                <a href="/examples/bootstrap.html" class="">Bootstrap</a>
+            </div>
+            <a href="/sandbox.html" class="">Sandbox</a>
+        </nav>
+    </header>
+    <main class="content">
+        <div class="container">
+            <section class="bubble bubble-info">
+    <p>You can download the latest <mark>/dist</mark> code directly from our GitHub repository <a href="https://github.com/krasenslavov/formajs/releases/download/v0.0.4-alpha/formajs-v0.0.4-alpha-dist.zip" target="_blank">v0.0.4-alpha (latest)</a>.</p> 
+    <p>Don't forget to give us a ⭐ if you think FormaJS is worthwhile and we should continue improving on it.</p>
+</section>
+            <h2>Register Form (real-world example)</h2>
+            <style>
+    .forma-register .forma-wrap:not(.forma-open) {
+        display: none;
+    }
+</style>
+
+<p>Generic real-world registration form.</p>
+<p>With a single line of CSS you can convert the form into a multi-stage input form. Prompt only one field at a time to the user, moving to the next by using the tab key.</p>
+<p>All this gives the end-user a better UX and adds some additional interactivity to your forms.</p>
+<p>Once all the fields are completed with valid data the button is enabled automatically for submission.</p>
+
+<form class="forma forma-register">
+    <input data-label="Email Address" type="email" name="email-address" 
+        pattern="(\S+@\S+\.\S+)"
+        title="Email address must contain digits, letters, and @_. characters." required />
+    <input data-label="Full Name" type="text" name="first-name" pattern="[a-zA-Z]{3,32}"
+        title="Full name must contain letters only and cannot exceed 32 characters." required />
+    <input data-label="Username" type="text" name="username" 
+        pattern="[a-z]{3,32}" 
+        title="Username must be lowercase between 3 and 32 characters." required />
+    <input data-label="Password" type="password" name="password" 
+        pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" 
+        title="Password must have minimum 8 characters, at least one letter and one number." required />
+    <input data-label="Confirm Password" type="password" name="confirm-password" 
+        pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" 
+        title="Password must have minimum 8 characters, at least one letter and one number." required />
+    <button type="submit">Send</button>
+</form>
+
+<h3>CSS</h3>
+<pre><code class="language language-css">.forma-register .forma-wrap:not(.forma-open) {
   display: none;
 }</code></pre>
-                <p class="bubble">This form is using a custom stylesheet build upon <mark>forma-boilerplate.css</mark>. Take a look at <a href="https://github.com/krasenslavov/forma/blob/master/src/css/_forma-docs.css" target="_blank">the code on the GitHub</a> repo.</p>
-                <h3>HTML</h3>
-<pre><code class="language-html">&lt;form class="forma forma-register"&gt;
-  &lt;label for="email"&gt;
-    &lt;span&gt;Email address&lt;/span&gt;
-    &lt;div class="forma-fieldset"&gt;
-      &lt;input type="email" name="email" pattern="(\S+@\S+\.\S+)" 
-      title="Enter a valid email address." required /&gt;
-    &lt;/div&gt;
-  &lt;/label&gt;
-  &lt;label for="fullname"&gt;
-    &lt;span&gt;Full Name&lt;/span&gt;
-    &lt;div class="forma-fieldset"&gt;
-      &lt;input type="text" name="fullname" pattern="[a-zA-Z]{3,32}" 
-      title="Full name must be between 3 and 32 characters." required /&gt;
-    &lt;/div&gt;
-  &lt;/label&gt;
-  &lt;label for="username"&gt;
-    &lt;span&gt;Username&lt;/span&gt;
-    &lt;div class="forma-fieldset"&gt;
-      &lt;input type="text" name="username" pattern="[a-z]{3,32}" 
-      title="Username must be lowercase between 3 and 32 characters." required /&gt;
-    &lt;/div&gt;
-  &lt;/label&gt;
-  &lt;label for="password"&gt;
-    &lt;span&gt;Password&lt;/span&gt;
-    &lt;div class="forma-fieldset"&gt;
-      &lt;input type="password" name="password" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" 
-      title="Password must have minimum 8 characters, at least one letter and one number." required /&gt;
-    &lt;/div&gt;
-  &lt;/label&gt;
-  &lt;label for="confirm-password"&gt;
-    &lt;span&gt;Confirm password&lt;/span&gt;
-    &lt;div class="forma-fieldset"&gt;
-      &lt;input type="password" name="confirm-password" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" 
-      title="Password must have minimum 8 characters, at least one letter and one number." required /&gt;
-    &lt;/div&gt;
-  &lt;/label&gt;
-  &lt;button type="submit"&gt;Register&lt;/button&gt;
+<p class="bubble">Using a custom CSS stylesheet build on top of the <mark>forma-boilerplate.css</mark> template. Take a look at <a href="https://github.com/krasenslavov/forma/blob/master/src/css/_forma-boilerplate.css" target="blank">the code</a> on our GitHub repository.</p>
+
+<h3>HTML</h3>
+<pre><code class="language language-markup">&lt;form class="forma forma-register"&gt;
+  &lt;input data-label="Email Address" type="email" name="email-address" 
+      pattern="(\S+@\S+\.\S+)"
+      title="Email address must contain digits, letters, and @_. characters." required /&gt;
+  &lt;input data-label="Full Name" type="text" name="first-name" 
+      pattern="[a-zA-Z]{3,32}"
+      title="Full name must contain letters only and cannot exceed 32 characters." required /&gt;
+  &lt;input data-label="Username" type="text" name="username" 
+    pattern="[a-z]{3,32}" 
+    title="Username must be lowercase between 3 and 32 characters." required /&gt;
+  &lt;input data-label="Password" type="password" name="password" 
+    pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" 
+    title="Password must have minimum 8 characters, at least one letter and one number." required /&gt;
+  &lt;input data-label="Confirm Password" type="password" name="confirm-password" 
+    pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" 
+    title="Password must have minimum 8 characters, at least one letter and one number." required /&gt;
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
 &lt;/form&gt;</code></pre>
-                <h3>JavaScript</h3>
-                <pre><code class="language-js">forma({
+
+<h3>JavaScript</h3>
+<pre><code class="language language-js">forma({
   container: '.forma-register',
   auto: true,
-  submit: true
+  submit: true,
+  tab: true
 });</code></pre>
-                <section class="bubble">
-                    <p>You can download the latest <mark>/dist</mark> code directly from the <a href="https://github.com/krasenslavov/formajs/releases/download/v0.0.3-alpha/formajs-v0.0.3-alpha-dist.zip">GitHub repo</a>.</p> 
-                    <p>Don't forget to give us a ⭐ if you think this script is worthwhile and we should continue improving on it.</p>
-                </section>
-            </div>
-        </main>
-        <footer class="footer">
-            <p>Copyright &copy; 2020</p>
-        </footer>
-        <script src="/resources/lib/jquery-3.4.1.min.js"></script>
-        <script src="/resources/lib/prism/js/prism.min.js"></script>
-        <script src="/resources/lib/prism/js/prism-autoloader.min.js"></script>
-        <script src="/resources/lib/forma/js/forma.min.js"></script>
-        <script src="/resources/assets/js/main.js"></script>
-        <script>
-            forma({
-                container: '.forma-register',
-                auto: true,
-                submit: true,
-            });
-        </script>
-        <style>
-            .forma-register label:not(.forma-open) {
-                display: none;
-            } 
-        </style>
-    </body>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>Copyright &copy; 2020</p>
+    </footer>
+    <script src="/resources/lib/jquery-3.4.1.min.js"></script>
+    <script src="/resources/lib/prism/js/prism.min.js"></script>
+    <script src="/resources/lib/prism/js/prism-autoloader.min.js"></script>
+    <script src="/resources/lib/forma/js/forma.min.js"></script>
+    <script src="/resources/assets/js/main.js"></script>
+    <script>forma({ container: '.forma-register', submit: true, auto: true, tab: true });</script>
+
+</body>
 </html>
-                
