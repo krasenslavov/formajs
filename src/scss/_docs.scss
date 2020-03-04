@@ -26,7 +26,7 @@ body {
     font: $font-mono;
 }
 fieldset.forma {
-    border: 1px solid rgba($black, .1);;
+    border: 0;
 }
 fieldset.forma legend {
     font-size: 110%;
@@ -66,17 +66,21 @@ fieldset.forma legend {
 	}
 	.forma-input {
 	}
+	.forma-invalid .forma-message {
+	  display: block;
+	}
 	.forma-message {
 	    background-color: rgba($white, 1);
 	    border: 1px solid rgba($black, .2);
 	    color: rgba($black, 1);
+	    display: none;
 	    font-size: 85%;
 	    padding: .25rem .5rem;
 	    position: absolute;
 	    right: 1rem;
 	    top: 1rem;
 	}
-	.forma-message:before {
+	.forma-invalid .forma-message:before {
 	    content: 'Hint: ';
 	}
 	.forma-fieldset {
@@ -103,7 +107,7 @@ fieldset.forma legend {
 	    right: 2rem;
 	    z-index: 10;
 	}
-	.forma-open.forma-manual:before {
+	.forma-open .forma-manual:before {
 	    background-color: rgba($black, .05);
 	    content: '-';
 	}

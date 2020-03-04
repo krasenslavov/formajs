@@ -1,129 +1,117 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <link href="/favicon.ico" rel="icon" />
-        <title>FormaJS - Create dynamic and interactive forms with a better UX.</title>
-        <link href="/resources/lib/prism/css/prism.css" rel="stylesheet" />
-        <link href="/resources/lib/forma/css/forma-docs.css" rel="stylesheet" />
-        <link href="/resources/assets/css/main.css" rel="stylesheet" />
-    </head>
-    <body>
-        <header class="header">
-            <div class="logo-wrap">
-                <a href="/">
-                    <img src="/resources/assets/img/logo.png" alt="" class="logo" height="75" />
-                </a>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="/favicon.ico" rel="icon" />
+    <title>Examples - Built-in Validation - FormaJS - Quickly and easily create dynamic and interactive forms with a better UX.</title>
+    <link href="/resources/lib/prism/css/prism.css" rel="stylesheet" />
+    <link href="/resources/lib/forma/css/forma-docs.css" rel="stylesheet" />
+
+    <link href="/resources/assets/css/main.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <div class="logo-wrap">
+            <a href="/">
+                <img src="/resources/assets/img/logo.png" alt="" class="logo" height="75" />
+            </a>
+        </div>
+        <nav class="navbar">
+            <h5>Github</h5>
+            <a href="https://github.com/krasenslavov/forma/" target="_blank">Repo</a>
+            <a href="https://github.com/krasenslavov/formajs/releases/download/v0.0.4-alpha/formajs-v0.0.4-alpha-dist.zip" target="_blank">v0.0.4-alpha (latest)</a>
+            <h5>Documentation</h5>
+            <a href="/index.html" class="toplvl ">FormaJS</a>
+            <div class="subnav ">
+                <a href="/index.html#usage">Basic Usage</a>
+                <a href="/index.html#installation">Installation</a>
+                <a href="/index.html#structure">Form Structure</a>
+                <a href="/index.html#settings">Custom Settings</a>
+                <a href="/index.html#styling">Customization and Styling</a>
+                <a href="/index.html#validation">Client-side Validation</a>
+                <a href="/index.html#contribute">Contribute</a>
+                <a href="/index.html#license">License</a>
             </div>
-            <nav class="navbar">
-                <h5>Github</h5>
-                <a href="https://github.com/krasenslavov/forma/" target="_blank">Repo</a>
-                <a href="https://github.com/krasenslavov/formajs/releases/download/v0.0.3-alpha/formajs-v0.0.3-alpha-dist.zip" target="_blank"> v0.0.3-alpha (latest)</a>
-                <h5>Documentation</h5>
-                <a href="/index.html" class="toplvl">FormaJS</a>
-                <div class="subnav">
-                    <a href="/index.html#usage">Basic usage</a>
-                    <a href="/index.html#installation">Installation</a>
-                    <a href="/index.html#structure">Form structure</a>
-                    <a href="/index.html#options">Custom options</a>
-                    <a href="/index.html#style">Styling</a>
-                    <a href="/index.html#validation">Validation</a>
-                    <a href="/index.html#contribute">Contribute</a>
-                    <a href="/index.html#license">License</a>
-                </div>
-                <a href="/prebuilt/index.html" class="toplvl">Pre-built CSS</a>
-                <div class="subnav">
-                    <a href="/prebuilt/css-base.html">Base</a>
-                    <a href="/prebuilt/css-barebone.html">Barebone</a>
-                    <a href="/prebuilt/css-boilerplate.html">Boilerplate</a>
-                    <a href="/prebuilt/css-forma.html">Forma</a>
-                </div>
-                <a href="/scss.html">SASS/SCSS</a>
-                <h5>Playground</h5>
-                <a href="/examples/index.html" class="toplvl active">Basic Examples</a>
-                <div class="subnav active">
-                    <a href="/examples/example-no.html">No options</a>
-                    <a href="/examples/example-auto.html">auto:true</a>
-                    <a href="/examples/example-auto-modify.html">auto:true custom</a>
-                    <a href="/examples/example-manual.html">manual:true</a>
-                    <a href="/examples/example-show.html">show:true</a>
-                    <a href="/examples/example-all.html">All options</a>
-                    <a href="/examples/example-disabled-button.html">Disabled button</a>
-                    <a href="/examples/example-builtin-validation.html" class="active">Built-in validation</a>
-                    <a href="/examples/example-custom-validation.html">Custom validation</a>
-                    <a href="/examples/example-multiple-forms.html">Multiple forms</a>
-                    <a href="/examples/example-user-defined-support.html">User-defined support</a>
-                    <a href="/examples/login.html">Login form</a>
-                    <a href="/examples/register.html">Register form</a>
-                </div>
-                <a href="/sandbox.html">Code Sandbox</a>
-            </nav>
-        </header>
-        <main class="content">
-            <div class="container">
-                <section class="bubble bubble-warning">
-                    <p><u>Warning</u> The current version of the the documentaion is for the v0.0.3-aplha. Working hand on the new & updated version with v0.0.4 support, there are numerous major changes so keep that in mind when going over the docs.</p>
-                </section>
-                <br />
-                <h2>Built-in validation errors</h2>
-                <p>Validate form fields before submission and get validation error messages displayed to the end-user.</p>
-                <p>Validation are based on the element type (e.g <code>email, password, url, number, date, etc...</code>) or additional attributes (e.g <code>required, minlength, maxlength, min, max, step, etc...</code>)</p>
-                <form class="forma">
-                    <label>
-                        <span>Username</span>
-                        <div class="forma-fieldset">
-                            <input type="text" minlength="3" maxlength="32" required />
-                        </div>
-                    </label>
-                    <label>
-                        <span>Password</span>
-                        <div class="forma-fieldset">
-                            <input type="password" minlength="8" required />
-                        </div>
-                    </label>
-                    <button type="submit">Submit</button>
-                </form>
-                <h3>CSS</h3>
-                <p class="bubble">This form is using a custom stylesheet build upon <mark>forma-boilerplate.css</mark>. Take a look at <a href="https://github.com/krasenslavov/forma/blob/master/src/css/_forma-docs.css" target="_blank">the code on the GitHub</a> repo.</p>
-                <h3>HTML</h3>
-<pre><code class="language-html">&lt;form class="forma"&gt;
-  &lt;label&gt;
-    &lt;span&gt;Username&lt;/span&gt;
-    &lt;div class="forma-fieldset"&gt;
-      &lt;input type="text" minlength="3" maxlength="32" required /&gt;
-    &lt;/div&gt;
-  &lt;/label&gt;
-  &lt;label&gt;
-    &lt;span&gt;Password&lt;/span&gt;
-    &lt;div class="forma-fieldset"&gt;
-      &lt;input type="password" minlength="8" required /&gt;
-    &lt;/div&gt;
-  &lt;/label&gt;
-  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+            <a href="/css/index.html" class="toplvl ">CSS</a>
+            <div class="subnav ">
+                <a href="/css/css-barebone.html" class="">Barebone</a>
+                <a href="/css/css-base.html" class="">Base</a>
+                <a href="/css/css-boilerplate.html" class="">Boilerplate</a>
+                <a href="/css/css-forma.html" class="">Forma</a>
+            </div>
+            <a href="/scss.html" class="">SASS/SCSS</a>
+            <a href="/npm.html" class="">NPM</a>
+            <h5>Playground</h5>
+            <a href="/examples/index.html" class="toplvl active">Examples</a>
+            <div class="subnav active">
+                <a href="/examples/example-no.html" class="">No Options</a>
+                <a href="/examples/example-tab.html" class="">tab:true</a>
+                <a href="/examples/example-auto.html" class="">auto:true</a>
+                <a href="/examples/example-auto-modify.html" class="">auto:true custom</a>
+                <a href="/examples/example-manual.html" class="">manual:true</a>
+                <a href="/examples/example-show.html" class="">show:true</a>
+                <a href="/examples/example-all.html" class="">All Options</a>
+                <a href="/examples/example-disabled-button.html" class="">Disabled Submit Button</a>
+                <a href="/examples/example-builtin-validation.html" class="active">Built-in Validation</a>
+                <a href="/examples/example-custom-validation.html" class="">Custom Validation</a>
+                <a href="/examples/example-multiple-forms.html" class="">Multiple Forms</a>
+                <a href="/examples/example-grouped-elements.html" class="">Grouped Elements</a>
+                <a href="/examples/example-supported-elements.html" class="">Supported Elements</a>
+                <a href="/examples/example-user-defined-support.html" class="">User-defined Support</a>
+                <a href="/examples/example-structures-more.html" class="">Structures</a>
+                <a href="/examples/example-two-column-layout.html" class="">2 Column Layout</a>
+                <a href="/examples/login.html" class="">Login Form</a>
+                <a href="/examples/register.html" class="">Register Form</a>
+                <a href="/examples/bootstrap.html" class="">Bootstrap</a>
+            </div>
+            <a href="/sandbox.html" class="">Sandbox</a>
+        </nav>
+    </header>
+    <main class="content">
+        <div class="container">
+            <section class="bubble bubble-info">
+    <p>You can download the latest <mark>/dist</mark> code directly from our GitHub repository <a href="https://github.com/krasenslavov/formajs/releases/download/v0.0.4-alpha/formajs-v0.0.4-alpha-dist.zip" target="_blank">v0.0.4-alpha (latest)</a>.</p> 
+    <p>Don't forget to give us a ⭐ if you think FormaJS is worthwhile and we should continue improving on it.</p>
+</section>
+            <h2>Built-in Client-side Validation Errors</h2>
+            <p>Validate form fields before submission on the client-side and get validation error messages displayed to the end-user.</p>
+
+<form class="forma">
+    <input data-label="Email Address" type="email" name="email-address" required />
+    <input data-label="First Name" type="text" name="first-name" minlength="3" required />
+    <input data-label="Last Name" type="text" name="last-name" minlength="3" required />
+    <textarea data-label="Message" rows="5" name="message" required></textarea>
+    <button type="submit">Send</button>
+</form>
+
+<h3>CSS</h3>
+<p class="bubble">Using a custom CSS stylesheet build on top of the <mark>forma-boilerplate.css</mark> template. Take a look at <a href="https://github.com/krasenslavov/forma/blob/master/src/css/_forma-boilerplate.css" target="blank">the code</a> on our GitHub repository.</p>
+
+<h3>HTML</h3>
+<pre><code class="language language-markup">&lt;form class="forma"&gt;
+	&lt;input data-label="Email Address" type="email" name="email-address" required /&gt;
+	&lt;input data-label="First Name" type="text" name="first-name" minlength="3" required /&gt;
+	&lt;input data-label="Last Name" type="text" name="last-name" minlength="3" required /&gt;
+	&lt;textarea data-label="Message" rows="5" name="message" required&gt;&lt;/textarea&gt;
+	&lt;button type="submit"&gt;Send&lt;/button&gt;
 &lt;/form&gt;</code></pre>
-                <h3>JavaScript</h3>
-                <pre><code class="language-js">forma({
-  submit: true
+
+<h3>JavaScript</h3>
+<pre><code class="language language-js">forma({ 
+  submit: true 
 });</code></pre>
-                <section class="bubble">
-                    <p>You can download the latest <mark>/dist</mark> code directly from the <a href="https://github.com/krasenslavov/formajs/releases/download/v0.0.3-alpha/formajs-v0.0.3-alpha-dist.zip">GitHub repo</a>.</p> 
-                    <p>Don't forget to give us a ⭐ if you think this script is worthwhile and we should continue improving on it.</p>
-                </section>
-            </div>
-        </main>
-        <footer class="footer">
-            <p>Copyright &copy; 2020</p>
-        </footer>
-        <script src="/resources/lib/jquery-3.4.1.min.js"></script>
-        <script src="/resources/lib/prism/js/prism.min.js"></script>
-        <script src="/resources/lib/prism/js/prism-autoloader.min.js"></script>
-        <script src="/resources/lib/forma/js/forma.min.js"></script>
-        <script src="/resources/assets/js/main.js"></script>
-        <script>
-            forma({
-                submit: true
-            });
-        </script>
-    </body>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>Copyright &copy; 2020</p>
+    </footer>
+    <script src="/resources/lib/jquery-3.4.1.min.js"></script>
+    <script src="/resources/lib/prism/js/prism.min.js"></script>
+    <script src="/resources/lib/prism/js/prism-autoloader.min.js"></script>
+    <script src="/resources/lib/forma/js/forma.min.js"></script>
+    <script src="/resources/assets/js/main.js"></script>
+    <script>forma({ submit: true, auto: true });</script>
+
+</body>
 </html>

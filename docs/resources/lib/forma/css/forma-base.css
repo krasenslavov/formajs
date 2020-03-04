@@ -10,8 +10,8 @@
   --success-color: #008f7a;
   --warning-color: #ff9671;
   --info-color: #0081cf;
-  --white-rgb-color: #fafafa;
-  --black-rgb-color: #191919;
+  --white: #fafafa;
+  --black: #191919;
   --space: 1rem; }
 
 /* _global.css */
@@ -27,11 +27,17 @@
 body {
   font: 400 normal 16px/1.6 "Monaco", "Consolas", "Andale Mono", "Ubuntu Mono", monospace; }
 
+fieldset.forma {
+  border: 1px solid rgba(25, 25, 25, 0.1); }
+
+fieldset.forma legend {
+  font-size: 110%;
+  margin-left: 1rem;
+  padding: 0 1rem; }
+
 /* _forma-base.css */
-.forma input,
-.forma select,
-.forma textarea,
-.forma button {
+.forma .forma-control,
+.forma [type="submit"] {
   font: 400 normal 16px/1.6 "Monaco", "Consolas", "Andale Mono", "Ubuntu Mono", monospace;
   padding: 1rem; }
 .forma label {
@@ -41,15 +47,15 @@ body {
   justify-content: space-between;
   padding: 1rem;
   position: relative; }
-.forma label span {
+.forma .forma-label {
   flex: 0 0 30%;
   order: 1; }
-.forma label .forma-fieldset {
+.forma .forma-fieldset {
   display: none;
   flex: 1 1 auto;
   order: 2;
   position: relative; }
-.forma label.forma-open .forma-fieldset {
+.forma .forma-open .forma-fieldset {
   align-items: center;
   display: flex; }
 .forma [type="submit"] {

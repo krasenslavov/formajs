@@ -19,7 +19,7 @@ Download the master (or the [latest release](https://github.com/krasenslavov/for
 2. Build your form anywhere inside the `<body>` of you document. The example below shows up the minimum required attributes for your form elements.
 
 ```html
-<form>
+<form class="forma">
   <input data-label="Email Address" type="email" name="email-address" />
   <input data-label="First Name" type="text" name="first-name" />
   <input data-label="Last Name" type="text" name="last-name" />
@@ -47,11 +47,11 @@ Visit our main [website](https://formajs.com/) to learn more about customization
 * [Custom Settings](https://formajs.com/index.html#settings)
 * [Customization and Styling](https://formajs.com/index.html#styling)
 * [Client-side Validation](https://formajs.com/index.html#validation)
-* [NPM](https://formajs.com/index.html#npm)
+* [CSS](https://formajs.com/prebuilt/index.html)
 * [SASS/SCSS](https://formajs.com/scss.html)
-* [Pre-built CSS](https://formajs.com/prebuilt/index.html)
+* [NPM](https://formajs.com/npm.html)
 * [Examples](https://formajs.com/examples/index.html)
-* [Code Sandbox](https://formajs.com/sandbox.html)
+* [Sandbox](https://formajs.com/sandbox.html)
 
 ## [Contribute](https://formajs.com/index.html#contribute)
 
@@ -61,4 +61,4 @@ Found a bug or want to propose some improvements or fixes to the documentation? 
 
 (c) Krasen Slavov | Code released under the [MIT License](https://opensource.org/licenses/MIT).
 
-(\*) This project is still in alpha; use it for live or production environments on your own risk.
+\* This project is still in alpha; use it for live or production environments at your own risk.

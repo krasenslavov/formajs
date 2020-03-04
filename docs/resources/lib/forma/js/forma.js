@@ -1,396 +1,510 @@
-/*! FormaJS v0.0.3 | (c) Krasen Slavov | https://formajs.com/#license */
-const formajs = {
-    options: {
-        container: '.forma',
-        prefix: 'Enter ',
-        suffix: '...',
-        tab: true,
-        auto: false,
-        show: false,
-        manual: false,
-        submit: false,
-        support: []
-    },
-    settings: {},
-    form: '',
-    elements: [],
-    support: [
-        'input',
-        'select',
-        'textarea',
-        'button',
-        'input[type="text"]',
-        'input[type="email"]',
-        'input[type="password"]',
-        'select[type="select-one"]',
-        'textarea[type="textarea"]',
-        'button[type="submit"]',
-    ],
-    supportList: '',
-    message: '',
-    // Init.
-    init: function(options) {
+/*! FormaJS v0.0.4 | (c) Krasen Slavov | https://formajs.com/#license */
+// System options.
+const settings = {
+    container: '.forma',
+    tab: false,
+    show: false,
+    auto: false,
+    manual: false,
+    submit: false,
+    prefix: 'Enter',
+    suffix: '...',
+    support: [], // see supported
+    struct: {}, // see strcuture
+    integrate: '' // bootstrap, forma
+};
 
-        // Extend, validate and print errors for user defined options.
-        if (options && !this.extend(options)) {
-            this.message.split(';').map(msg => {
-                if (msg) console.error(msg);
-                return false;
-            });
-            return false;
+const structure = {
+    title: '',
+    abbr: false,
+    wrapper: 'div', // div, section, ul>li
+};
+
+const classes = {
+    control: 'forma-control',
+    group: 'forma-group',
+    fieldset: 'forma-fieldset',
+    wrapper: 'forma-wrap',
+    label: 'forma-label',
+    open: 'forma-open',
+    manual: 'forma-manual',
+    description: 'forma-description',
+    input: 'forma-input',
+    message: 'forma-message',
+    valid: 'forma-valid',
+    invalid: 'forma-invalid'
+};
+
+const supported = [
+    'input',
+    'select',
+    'textarea',
+    'button',
+    'fieldset',
+    'input[type="text"]',
+    // 'input[type="checkbox"]',
+    // 'input[type="radio"]',
+    'input[type="email"]',
+    'input[type="number"]',
+    'input[type="url"]',
+    'input[type="date"]',
+    'input[type="password"]',
+    'select[type="select-one"]',
+    'textarea[type="textarea"]',
+    'button[type="submit"]',
+    'fieldset[type="fieldset"]'
+];
+
+// Forma module.
+const f = (function(WINDOW, SETTINGS, STRUCTURE, CLASSES, SUPPORTED) { // Global variables.
+
+    const forma = {};
+          forma.util = {};
+
+    // Private variables.
+    forma.form = [];
+    forma.elements = [];
+    forma.settings = {};
+    forma.structure = {};
+    forma.classes = {};
+    forma.support = [];
+    forma.supportList = '';
+    forma.message = '';
+
+    // Public.
+    forma.initForma = function(settings) {
+
+        if (settings && !this.extendSettings(settings)) {
+            return this.outputErrorMsg(this.message);
         }
 
-        // This clone user-defined options into settings.
-        // (used when we have multiple forms on the the same page)
-        const settings = Object.assign({}, this.options, options);
+        // We are good with the used-defined and passed settings.
+        this.settings = Object.assign({}, SETTINGS, settings);
 
-        // Assign forma variables.
-        this.form = this.utils._(settings.container);
+        this.form = document.querySelector(this.settings.container);
         this.elements = this.form.elements;
-        this.support = [...new Set([...this.support,...settings.support])];
+        this.structure = Object.assign({}, STRUCTURE, this.settings.struct);
+        this.support = [...new Set([...SUPPORTED, ...this.settings.support])];
         this.supportList = this.support.join(',');
 
-        // Keep forms usable for mobile devices & 
-        // overwrite some of the options.
-        if (this.utils.isMobile()) {
-            settings.tab = false;
-            settings.show = true;
-            settings.manual = false;
-        }
-
-        // When tab & manual are off to make the 
-        // form usable we should turn on the show option.
-        if (!settings.tab && !settings.manual) {
-            settings.show = true;
-        }
-
-        // By default make visible only the first form field.
-        if (settings.show) {
-            this.utils.setProperties(this.utils.__('label', this.form), {'class': 'forma-open'});
+        if (this.settings.integrate === 'bootstrap') {
+            // Add Bootstrap4 compatibility.
+            const bootstrap = {
+                control: 'form-control', // 1
+                group: 'form-group',
+                fieldset: 'form-fieldset m-3 p-3 bg-light border',
+                nextWrapper: 'd-flex', // 1
+                label: 'form-label d-flex flex-column px-3',
+                open: 'form-open', // 1
+                manual: 'flex-fill', // 1
+                description: 'form-description text-dark',
+                input: 'text-success', // 1
+                message: 'text-warning', // 1
+                valid: 'text-success', // 1 
+                invalid: 'text-danger' // 1
+            };
+            this.classes = Object.assign({}, CLASSES, bootstrap);
         } else {
-            this.utils.setProperties(this.utils.__('label', this.form, 1), {'class': 'forma-open'});
+            this.classes = CLASSES;
         }
 
-        // Disable form submit button,  
-        // can be done also within HTML with disabled.
-        if (settings.submit) {
-            this.utils.setProperties(this.utils.__('[type="submit"]', this.form), {'disabled': 'disabled'});
+        // Do some Settings overrides and actions.
+        if (this.isMobile()) {
+            this.settings.tab = false;
+            this.settings.show = true;
+            this.settings.manual = false;
         }
 
-        // Add functionality for the end-user to be able 
-        // to open/close each field manually; works great when tab is on.
-        if (settings.manual) {
+        if (this.settings.show) {
+            this.settings.tab = false;
+        }
 
-            Object.values(this.utils.__('label', this.form)).map(el => {
+        if (!this.settings.tab 
+            && !this.settings.manual) {
+                this.settings.show = true;
+        }
 
-                el.addEventListener('click', event => {
-            
-                    event.preventDefault();
-            
-                    if (event.target !== event.currentTarget) {
-                        return false;
+        if (this.settings.submit) {
+            this.form.querySelector('[type="submit"]')
+                .setAttribute('disabled', 'disabled');
+        }
+
+        Object.values(this.elements).map(element => {
+            if (this.support.indexOf(`${element.localName}[type="${element.type}"]`) === -1) {
+                this.message += `The form field '${element.localName}[type="${element.type}"]' is not supported! Take a look at the documentaion https://formajs.com/.;`;
+            }
+        });
+
+        if (this.message) {
+            return this.outputErrorMsg(this.message);
+        }
+
+        // Now we should have all settings sorted out let us build and execute FormaJS.
+        this.buildForma(Object.values(this.elements));
+        this.listenForma(Object.values(this.elements));
+
+        if (this.settings.show) {
+            const wraps = Object.values(this.form.querySelectorAll(`.${this.classes.wrapper}`));
+            wraps.map(element => element.classList.add(this.classes.open));
+        } else {
+            this.form.querySelectorAll(`.${this.classes.wrapper}`)[0].classList.add(this.classes.wrapper);
+        }
+
+        const firstChild = this.form.querySelectorAll(`.${this.classes.wrapper}`)[0];
+              firstChild.classList.add(this.classes.open);
+
+        // Focus on the first form of the page.
+        const form = document.querySelectorAll('form')[0];
+              form.querySelectorAll(`.${this.classes.wrapper}`)[0]
+                .querySelector(`.${this.classes.control}`).focus();
+    }
+
+    // Private.
+    forma.buildForma = function(elements) {
+
+        let html = row = manual = text = abbr = '';
+        let grouped = false;
+
+
+        elements.map((element, idx) => {
+
+            if (element.type === 'submit' || element.localName === 'button') {
+                html += element.outerHTML;
+                return;
+            }
+
+            let {name, title, dataset} = element;
+
+            if (this.settings.auto) {
+                text = dataset.value 
+                    || `${this.settings.prefix} ${dataset.label.toLowerCase()}${this.settings.suffix}`;
+            }
+
+            if (this.settings.manual) {
+                manual = this.classes.manual;
+            }
+
+            if (this.settings.struct.abbr) {
+
+                if (!title) {
+                    title = dataset.value || `${this.settings.prefix} ${dataset.label.toLowerCase()}${this.settings.suffix}`;
+                }
+
+                abbr = `<abbr title="${title}">*</abbr>`;
+            }
+
+            this.util.updateObject({
+                id: dataset.label.toLowerCase(),
+                className: this.classes.control, // forma-valid
+                tabindex: idx,
+                placeholder: text
+            }, element);
+
+            const groupClassList = (dataset.group) 
+                ? `${this.classes.group} ${this.classes.group}__${dataset.group}` 
+                : '';
+
+            if (!grouped) {
+                row = '';
+            }
+
+            row += `<label class="${manual}">
+                    <span class="${this.classes.label}">
+                        ${dataset.label} ${abbr}
+                        <div class="${this.classes.description}">${text}</div>
+                        <div class="${this.classes.input}"></div>
+                        <div class="${this.classes.message}"></div>
+                    </span>
+                    <div class="${this.classes.fieldset}">
+                        ${element.outerHTML}
+                    </div>
+                </label>`;
+
+            if (dataset.group 
+                && elements[idx + 1] 
+                    && elements[idx + 1].dataset.group === dataset.group) {
+                grouped = true;
+                return;
+            } 
+
+            grouped = false;
+
+            if (this.settings.struct.wrapper === 'ul>li') {
+                html += `<li class="${this.classes.wrapper} ${groupClassList}">${row}</li>`;
+            } else if (this.settings.struct.wrapper === 'section') {
+                html += `<section class="${this.classes.wrapper} ${groupClassList}">${row}</section>`;
+            } else {
+                html += `<div class="${this.classes.wrapper} ${groupClassList}">${row}</div>`; // forma-open
+            }
+        });
+
+        if (this.settings.struct.wrapper === 'ul>li') {
+            this.form.innerHTML = `<fieldset class="forma"><legend>${this.structure.title}</legend><ul>${html}</ul></fieldset>`;
+        } else {
+            this.form.innerHTML = `<fieldset class="forma"><legend>${this.structure.title}</legend>${html}</fieldset>`;
+        }
+    }
+
+    forma.listenForma = function(elements) {
+
+        elements.map((element, idx) => {
+
+            if (this.settings.manual) {
+                // Add manual +/- button on form rows.
+                if (['fieldset','submit'].indexOf(element.type) === -1) {
+
+                    const wrapper = element.closest(`.${this.classes.wrapper}`);
+                    const manual = wrapper.querySelector(`.${this.classes.manual}`);
+
+                    manual.addEventListener('click', event => {
+
+                        if (event.target !== event.currentTarget) {
+                            return false;
+                        }
+
+                        if (wrapper.classList.contains(this.classes.open)) {
+                            this.util.toggleClasses([wrapper], '', this.classes.open);
+                        } else {
+                            this.util.toggleClasses([wrapper], this.classes.open, '');
+                        }
+                    });
+                }
+            }
+
+            ['click','change','keydown','keyup','focus','blur'].map(type => {
+
+                element.addEventListener(type, event => {
+
+                    if (element.type === 'fieldset') {
+                        return;
                     }
 
-                    this.utils.toggleClasses(el, 'forma-open');
-                    this.utils._(this.supportList, el).focus();
+                    if (type === 'keydown') {
+
+                        const key = event.keyCode || event.which;
+
+                        if (key === 9) {
+
+                            event.preventDefault();
+
+                            const wrapper = element.closest(`.${this.classes.wrapper}`);
+                            const nextWrapper = wrapper.nextElementSibling;
+
+                            if (nextWrapper && nextWrapper.classList.contains(this.classes.wrapper)) {
+
+                                if (this.settings.tab) { // ?!? Getting it from the latest defined form.
+                                    this.util.toggleClasses([wrapper], '', this.classes.open);
+                                    this.util.toggleClasses([nextWrapper], this.classes.open, '');
+                                }
+
+                                if (nextWrapper.classList.contains(this.classes.wrapper)) {
+                                    nextWrapper.querySelector(`.${this.classes.control}`).focus();
+                                }
+
+                            } else {
+
+                                // Loop throughout the currently focused form.
+                                const form = element.closest('form');
+
+                                const firstChild = form.querySelectorAll(`.${this.classes.wrapper}`)[0];
+                                      
+                                if (this.settings.tab) { // ?!? Getting it from the latest defined form.
+                                    this.util.toggleClasses([wrapper], '', this.classes.open); // last-child
+                                    this.util.toggleClasses([firstChild], this.classes.open, '');
+                                }
+
+                                firstChild.querySelector(`.${this.classes.control}`).focus();
+                            }
+                        }
+                    } else if (type === 'focus') {
+
+                        // Switch submit button disabled based on form validations.
+                        if (this.settings.submit) { // ?!? Getting it from the latest defined form.
+
+                            if ( this.form.querySelectorAll(`.${this.classes.invalid}`).length === 0 
+                                && !element.validationMessage) {
+                                    this.form.querySelector('[type="submit"]')
+                                        .removeAttribute('disabled');
+                            } else {
+                                this.form.querySelector('[type="submit"]')
+                                    .setAttribute('disabled', 'disabled');
+                            }
+                        }
+                    } else {
+
+                        const {type, validationMessage, value, title, pattern} = element;
+
+                        const wrapper = element.closest(`.${this.classes.wrapper}`);
+                        const label = wrapper.querySelector('label');
+                        const span = label.querySelector('span');
+                        const message = label.querySelector(`div.${this.classes.message}`);
+                        const input = label.querySelector(`div.${this.classes.input}`);
+
+                        if (['checkbox','radio'].indexOf(type) === -1) {
+                            input.innerHTML = value;
+                        }
+
+                        if (type === 'password' && value.length > 0) {
+                            input.innerHTML = value.length + ' characters';
+                        }
+
+                        if (validationMessage) {
+
+                            if (title && pattern) {
+                                message.innerHTML = title;
+                            } else {
+                                message.innerHTML = validationMessage;
+                            }
+
+                            this.util.toggleClasses([span, element], this.classes.invalid, this.classes.valid);
+
+                        } else {
+
+                            // Reset.
+                            message.innerHTML = '';
+                            this.util.toggleClasses([span, element], this.classes.valid, this.classes.invalid);
+                        }
+                    }
                 });
+            });
+        });
+    }
+
+    forma.extendSettings = function(settings) {
+
+        // Check Settings options.
+        Object.keys(settings).map(name => {
+
+            if (Object.keys(SETTINGS).indexOf(name) === -1) {
+                this.message += `Invalid option '${name}'! Take a look at the docs https://formajs.com/`;
+                return false;
+            }
+
+            return true;
+        });
+
+        // Validate Settings option types.
+        Object.keys(settings).map(name => {
+
+            if (!this.checkSettingType(settings, ['container'], name, 'string')
+                || !this.checkSettingType(settings, ['output'], name, 'string')
+                    || !this.checkSettingType(settings, ['prefix','suffix'], name, 'string')
+                        || !this.checkSettingType(settings, ['tab','auto','show','manual','submit'], name, 'boolean')
+                            || !this.checkSettingType(settings, ['support'], name, 'object')) {
+                                return false;                   
+            }
+
+            return true;
+        });
+
+        if (settings.struct) {
+            
+            // Check Structure optoions.
+            Object.keys(settings.struct).map(name => {
+
+                if (Object.keys(STRUCTURE).indexOf(name) === -1) {
+                    this.message += `Invalid structure option '${name}'! Take a look at the docs https://formajs.com/;`;
+                    return false;
+                }
+
                 return true;
             });
+
+            // Validate Sturcture option types.
+            Object.keys(settings.struct).map(name => {
+
+                if (!this.checkSettingType(settings.struct, ['title','wrapper'], name, 'string')
+                    || !this.checkSettingType(settings.struct, ['abbr'], name, 'boolean')) {
+                    return false;
+                }
+
+                return true;
+            });
+
+            if (settings.struct.wrapper 
+                && ['div','section','ul>li'].indexOf(settings.struct.wrapper) === -1) {
+                    this.message += `Invalid wrapper value! Must be either 'div', 'section', or 'ul>li'.;`;
+                    return false;
+            }
         }
 
-        Object.values(this.elements).map((elem, idx) => {
+        // Check target container.
+        if (settings.container 
+            && !document.querySelector(settings.container)) {
+                this.message += `Target form container with '${settings.container}' not found wihtin the DOM.;`;
+        }
 
-            const {
-                localName,
-                type
-            } = elem;
-
-            let elemType = `${localName}[type="${type}"]`
-            let currLabel = elem.closest('label') || '';
-
-            if (currLabel) {
-
-                let spanElem = this.utils._('span', currLabel);
-                let descText = (settings.prefix + spanElem.textContent.toLowerCase() + settings.suffix).trim();
-
-                this.utils.setProperties(elem, {'tabindex': idx, 'placeholder': descText});
-
-                if (settings.auto) {
-                    this.utils.createAndAppend('div', 'forma-description', descText, spanElem);
-                }
-
-                if (settings.manual) {
-                    this.utils.setProperties(currLabel, {'class': currLabel.classList + ' forma-manual'});
-                }
-            }
-
-            if (this.support.indexOf(elemType) === -1) {
-                console.error(`The form field '${elemType}' is not supported! Take a look at the documentaion https://formajs.com/.`);
-                return false;
-            }
-
-            this.listen(elem, currLabel, settings);
-
-            return true;
-        });
-
-        // Auto-focus and highlight first form input element
-        // can be done also within HTML with 'autofocus'.
-        this.elements[0].click();
-        this.elements[0].focus();
-    },
-    // Listen forma.
-    listen: function(elem, currLabel, settings) {
-
-        ['click','change','keyup','keydown','blur','focus'].map(type => {
-
-            elem.addEventListener(type, event => {
-
-                let form = this.utils._(settings.container);
-
-                if (type === 'keydown') {
-                
-                    let key = event.keyCode || event.which;
-
-                    if (key === 9) {
-
-                        event.preventDefault();
-
-                        let currLabel = elem.closest('label') || '';
-                        let nextLabel = currLabel.nextElementSibling;
-                        let nextFieldset = this.utils._('.forma-fieldset', nextLabel);
-
-                        // Apply the show/hide functionality on 
-                        // fields only when the tab option is on.
-                        if (settings.tab) {
-                            Object.values(this.utils.__('label', form)).map(el => 
-                                el.classList.remove('forma-open'));
-                        }
-
-                        if (nextFieldset) {
-                            nextLabel.classList.add('forma-open');
-                            this.utils._(this.supportList, nextFieldset).focus();
-                        }
-
-                        if (nextLabel.localName !== 'label') {
-                            form.firstElementChild.classList.add('forma-open');
-                            this.utils._(this.support, form.firstElementChild).focus();
-                        }  
-                    }
-                } else if (type === 'focus') {
-
-                    // Toggle form submit button state based 
-                    // on input data validation.
-                    if (settings.submit) {
-                        if (this.utils.__('span.forma-invalid', form).length === 0 
-                            && !elem.validationMessage) {
-                            this.utils._('[type="submit"]', form).disabled = false;
-                        } else {
-                            this.utils._('[type="submit"]', form).disabled = true;
-                        }
-                    }
-                } else {
-
-                    const {
-                        type,
-                        validationMessage,
-                        value,
-                        title,
-                        pattern,
-                    } = elem;
-
-                    let currLabel = elem.closest('label') || '';
-                    let currSpan = this.utils._('span', currLabel);
-
-                    this.utils.removeElement('div.forma-input', currSpan);
-                    this.utils.createAndAppend('div', 'forma-input', value, currSpan);
-
-                    // Instead of showing up the live password on screen
-                    // show number of charactes (more secure way!).
-                    if (type === 'password' && value.length > 0) {
-                        this.utils._('div.forma-input', currSpan).innerHTML = value.length + ' characters';
-                    }
-
-                    if (validationMessage) {
-
-                        this.utils.removeElement('div.forma-message', currSpan);
-
-                        if (title && pattern) {
-                            this.utils.createAndAppend('div', 'forma-message', title, currSpan);
-                            // this.utils.createAndAppend('div', 'forma-message', validationMessage + '<br />' + title, currSpan);
-                        } else {
-                            this.utils.createAndAppend('div', 'forma-message', validationMessage, currSpan);
-                        }
-
-                        this.utils.toggleClasses(currSpan, 'forma-valid', 'forma-invalid');
-                    } else {
-                        this.utils.removeElement('div.forma-message', currSpan);
-                        this.utils.toggleClasses(currSpan, 'forma-invalid', 'forma-valid');
-                    }
-                }
-            });
-            return true;
-        });
-    },
-    // Extened, system options with user defined
-    // Do some checks and add error message show in 
-    // the init with console.error.
-    extend(options) {
-
-        Object.keys(options).map(key => {
-
-            if (Object.keys(this.options).indexOf(key) === -1) {
-                this.message += `Invalid option '${key}'! Take a look at the documentaion https://formajs.com/.`;
-                return false;
-            }
-            return true;
-        });
-
-        Object.keys(options).map(key => {
-
-            if (!this.check(options, ['container'], key, 'string')
-                || !this.check(options, ['prefix','suffix'], key, 'string')
-                || !this.check(options, ['tab','auto','show','manual','submit'], key, 'boolean')
-                || !this.check(options, ['support'], key, 'object')) {
-                return false;                   
-            }
-            return true;
-        });
-
-        if (options.container 
-            && !this.utils._(options.container)) {
-            this.message += `Targeted form container with '${options.container}' not found in the DOM.;`;
+        // Check integration framrwork.
+        if (settings.integrate 
+            && ['forma','bootstrap'].indexOf(settings.integrate) === -1) {
+            this.message += `Invalid integration! Currently supported frameworks are 'forma' or 'bootstrap'.;`;
         }
 
         if (this.message) {
             return false;
         }
 
-        // If get here all the validation checks have passed
-        // Let us add the passed user-defined options.
-        // Object.keys(options).map(key => {
-        //     this.options[key] = options[key]; 
-        //     return true;
-        // });
+        return true;
+    }
+
+    forma.checkSettingType = function(settings, nameList, name, type) {
+
+        const passedType = typeof settings[name];
+
+        if (nameList.indexOf(name) > -1 
+            && typeof settings[name] !== type) {
+                this.message += (`Invalid type passed for '${name}, ${passedType} type passed! Must be a ${type}.;`);
+                return false;
+        }
 
         return true;
-    },
-    // Type check used in the options extend function. 
-    check: function(opts, keys, key, type) {
+    }
 
-        if (keys.indexOf(key) > -1 
-            && typeof opts[key] !== type) {
-            this.message += (`Invalid type for the '${key}' options! Must be a ${type} (true|false).;`);
+    forma.outputErrorMsg = function(messages) {
+
+        messages.split(';').map(message => {
+            
+            if (message) console.error(message);
             return false;
-        }
-
-        return true;
-    },
-};
-
-// Utility functions and helpers.
-formajs.utils = {
-    // Basic query selector. 
-    _: function(
-        selector, 
-        context = document) {
-
-        return context.querySelector(selector);
-    },
-    // If first is 1 then we should get only the 1st elem.
-    __: function(
-        selector, 
-        context = document, 
-        first = false) {
-
-        return (first)
-            ? context.querySelectorAll(selector)[0]
-            : context.querySelectorAll(selector);
-    },
-    // Should work with multiple elemens & properties.
-    // If focus is 1 then focus on element (works only for 1 element).
-    setProperties: function(
-        els = {}, 
-        props = {},
-        focus = false) {
-
-        if (Object.keys(els).length > 0) {
-            Object.values(els).map(el => {
-                Object.keys(props).map(propKey => {
-                    el.setAttribute(propKey, props[propKey])
-                    return true;
-                });
-                return true;
-            });
-        } else {
-            Object.keys(props).map(propKey => {
-                els.setAttribute(propKey, props[propKey])
-                return true;
-            });
-        }
-    },
-    // newClassName could be an [] which will add multiple classes to the el.
-    createAndAppend: function(
-        newTag, 
-        newClassName = '', 
-        newContent = '', 
-        appendTo = document) {
+        });
         
-        let newElem = document.createElement(newTag);
+        return false;
+    }
+
+    forma.isMobile = function() {
         
-        if (typeof newClassName === 'string') {
-            newElem.classList.add(newClassName);
-        } else {
-            Object.values(newClassName).map(className => {
-                newElem.classList.add(className)
-                return true;
-            });
-        }
-
-        newElem.innerHTML = newContent;
-
-        appendTo.append(newElem);
-    },
-    // addClassName is not required.
-    toggleClasses: function(
-        el, 
-        removeClassName, 
-        addClassName = '') {
-
-        if (!addClassName) { 
-            addClassName = removeClassName;
-        }
-
-        if (el.classList.contains(removeClassName)) {
-            el.classList.remove(removeClassName);
-        } else {
-            el.classList.add(addClassName);
-        }
-    },
-    // selector must be passed as a string.
-    removeElement: function(
-        selector, 
-        context = document.body) {
-
-        if (typeof selector === 'string' && this._(selector, context)) {
-            this._(selector, context).remove();
-        }
-    },
-    // Detect mobiles devices, some user/system defined 
-    // options must overwritten for form to be usable.
-    isMobile: function() {
-
-        if (navigator.maxTouchPoints 
-            || 'ontouchstart' in document.documentElement) { 
+        if (navigator.maxTouchPoints || 'ontouchstart' in document.documentElement) { 
             return true;
         }    
 
         return false;
-    },
+    }
+
+    // Utility and helpers.
+    forma.util.updateObject = function (props, element) {
+        Object.entries(props).map(([key, value]) => {
+            element[key] = value;
+        });
+    }
+
+    forma.util.toggleClasses = function(elements, add, remove) {
+        elements.map(element => {
+            if (add) element.classList.add(add);
+            if (remove) element.classList.remove(remove);
+        })
+    }   
+
+    // Constructor.
+    return {
+        construct: function constructor(settings) {
+            forma.initForma(settings);
+        }
+    }
+})(this, settings, structure, classes, supported);
+
+// Public init.
+function forma(settings) {
+    return f.construct(settings);
 }
 
-// Run init.
-function forma(options) {
-    return formajs.init(options);
-}
 window.forma = forma;

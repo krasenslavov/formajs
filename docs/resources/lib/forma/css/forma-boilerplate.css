@@ -10,8 +10,8 @@
   --success-color: #008f7a;
   --warning-color: #ff9671;
   --info-color: #0081cf;
-  --white-rgb-color: #fafafa;
-  --black-rgb-color: #191919;
+  --white: #fafafa;
+  --black: #191919;
   --space: 1rem; }
 
 /* _global.css */

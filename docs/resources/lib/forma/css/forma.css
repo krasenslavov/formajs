@@ -10,8 +10,8 @@
   --success-color: #008f7a;
   --warning-color: #ff9671;
   --info-color: #0081cf;
-  --white-rgb-color: #fafafa;
-  --black-rgb-color: #191919;
+  --white: #fafafa;
+  --black: #191919;
   --space: 1rem; }
 
 /* _global.css */
@@ -27,11 +27,17 @@
 body {
   font: 400 normal 16px/1.6 "Monaco", "Consolas", "Andale Mono", "Ubuntu Mono", monospace; }
 
+fieldset.forma {
+  border: 1px solid rgba(25, 25, 25, 0.1); }
+
+fieldset.forma legend {
+  font-size: 110%;
+  margin-left: 1rem;
+  padding: 0 1rem; }
+
 /* _forma-complete.css */
-.forma input,
-.forma select,
-.forma textarea,
-.forma button {
+.forma .forma-control,
+.forma [type="submit"] {
   font: 400 normal 16px/1.6 "Monaco", "Consolas", "Andale Mono", "Ubuntu Mono", monospace;
   padding: 1rem; }
 .forma label {
@@ -40,26 +46,26 @@ body {
   justify-content: space-between;
   padding: 1rem;
   position: relative; }
-.forma label span {
+.forma .forma-label {
   flex: 0 0 30%;
   order: 1; }
-.forma label span.forma-valid {
+.forma .forma-valid {
   color: #008f7a; }
-.forma label span.forma-invalid {
+.forma .forma-invalid {
   color: #fc4444; }
-.forma label span .forma-description {
+.forma .forma-description {
   color: rgba(25, 25, 25, 0.5); }
-.forma label span .forma-message {
+.forma .forma-message {
   font-size: 85%; }
-.forma label .forma-fieldset {
+.forma .forma-fieldset {
   display: none;
   flex: 1 1 auto;
   order: 2;
   position: relative; }
-.forma label.forma-open .forma-fieldset {
+.forma .forma-open .forma-fieldset {
   align-items: center;
   display: flex; }
-.forma label.forma-open .forma-fieldset:after {
+.forma .forma-open .forma-fieldset:after {
   align-items: center;
   background-color: #fafafa;
   border: 1px solid rgba(25, 25, 25, 0.1);
@@ -70,9 +76,9 @@ body {
   position: absolute;
   right: 1rem;
   z-index: 10; }
-.forma label.forma-open.forma-manual:before {
+.forma .forma-open .forma-manual:before {
   content: '-'; }
-.forma label.forma-manual:before {
+.forma .forma-manual:before {
   align-items: center;
   content: '+';
   display: flex;
@@ -81,31 +87,19 @@ body {
   order: 99;
   /* Make sure this is at the end of everything else. */
   padding: 0 1rem; }
-.forma label .forma-fieldset * {
+.forma .forma-fieldset * {
   width: calc(100% - 2rem - 2px);
   /* Fix fields width substract border & padding extra spacing. */ }
-.forma label .forma-fieldset input,
-.forma label .forma-fieldset select,
-.forma label .forma-fieldset textarea,
-.forma label .forma-fieldset button {
+.forma .forma-fieldset .forma-control {
   border: 1px solid rgba(25, 25, 25, 0.1);
   outline: 4px solid transparent; }
-.forma label .forma-fieldset input:focus,
-.forma label .forma-fieldset select:focus,
-.forma label .forma-fieldset textarea:focus,
-.forma label .forma-fieldset button:focus {
+.forma .forma-fieldset .forma-control:focus {
   outline: 4px solid rgba(25, 25, 25, 0.1); }
-.forma label .forma-fieldset input:focus:valid,
-.forma label .forma-fieldset select:focus:valid,
-.forma label .forma-fieldset textarea:focus:valid,
-.forma label .forma-fieldset button:focus:valid {
+.forma .forma-fieldset .forma-control:focus:valid {
   outline: 4px solid #008f7a; }
-.forma label .forma-fieldset input:focus:invalid,
-.forma label .forma-fieldset select:focus:invalid,
-.forma label .forma-fieldset textarea:focus:invalid,
-.forma label .forma-fieldset button:focus:invalid {
+.forma .forma-fieldset .forma-control:focus:invalid {
   outline: 4px solid #fc4444; }
-.forma label .forma-fieldset select {
+.forma .forma-fieldset select.forma-control {
   bottom: 0;
   height: inherit;
   height: 3rem;
