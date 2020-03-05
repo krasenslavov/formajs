@@ -1,7 +1,7 @@
 {
   "name": "aformajs",
-  "version": "0.0.3",
-  "description": "Create dynamic and interactive forms with a better end-user experience.",
+  "version": "0.0.4",
+  "description": "🎉 Create dynamic and interactive forms with minimal markup and better UX.",
   "main": "index.js",
   "directories": {
     "doc": "docs"
