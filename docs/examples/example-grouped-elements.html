@@ -64,6 +64,7 @@
                 <a href="/examples/login.html" class="">Login Form</a>
                 <a href="/examples/register.html" class="">Register Form</a>
                 <a href="/examples/bootstrap.html" class="">Bootstrap</a>
+                <a href="/examples/all.html">All Examples</a>
             </div>
             <a href="/sandbox.html" class="">Sandbox</a>
         </nav>
@@ -75,7 +76,17 @@
     <p>Don't forget to give us a ⭐ if you think FormaJS is worthwhile and we should continue improving on it.</p>
 </section>
             <h2>Grouped Elements</h2>
-            <p>Group elements within the same row by adding the additional data attribute <mark>data-group=""</mark> with the same value.</p>
+            <style>
+  .forma-wrap {
+    display: flex;
+  }
+  .forma-wrap label {
+    flex: 1 1;
+    flex-direction: column;
+  }
+</style>
+
+<p>Group elements within the same row by adding the additional data attribute <mark>data-group=""</mark> with the same value.</p>
 
 <form class="forma">
     <input data-label="Email Address" type="email" name="email-address" required />
@@ -86,6 +97,13 @@
 </form>
 
 <h3>CSS</h3>
+<pre><code class="language language-css">.forma-wrap {
+  display: flex;
+}
+.forma-wrap label {
+  flex: 1 1;
+  flex-direction: column;
+}</code></pre>
 <p class="bubble">Using a custom CSS stylesheet build on top of the <mark>forma-boilerplate.css</mark> template. Take a look at <a href="https://github.com/krasenslavov/forma/blob/master/src/css/_forma-boilerplate.css" target="blank">the code</a> on our GitHub repository.</p>
 
 <h3>HTML</h3>
