@@ -63,6 +63,7 @@
                 <a href="/examples/login.html" class="">Login Form</a>
                 <a href="/examples/register.html" class="">Register Form</a>
                 <a href="/examples/bootstrap.html" class="">Bootstrap</a>
+                <a href="/examples/all.html">All Examples</a>
             </div>
             <a href="/sandbox.html" class="">Sandbox</a>
         </nav>
@@ -145,7 +146,7 @@
 
 <h3>The Latest <mark>/dist</mark> Release</h3>
 
-<p>Download <a href="https://github.com/krasenslavov/formajs/releases/download/" target="_blank">the latest <code>dist</code> files</a> from our GitHub repository and link up the stylesheet template and main library script manually.</p>
+<p>Download <a href="https://github.com/krasenslavov/formajs/releases/" target="_blank">the latest <code>dist</code> files</a> from our GitHub repository and link up the stylesheet template and main library script manually.</p>
 
 <hr />
 
@@ -274,8 +275,12 @@
 
 <h2 id="settings">Custom Settings</h2>
 
-<p class="bubble bubble-warning">This section currently under revision, new content is coming soon!</p>
+<p class="bubble bubble-warning">This section is currently under revision, new content is coming soon!</p>
 <br />
+
+<p>During the initialization of your form you can specify several different settings and additionaly customize its look and feel.</p>
+
+<p>Below are the default values for all the settings with detailed description for each one in the table underneath.</p>
 
 <pre><code class="language language-js">forma({
   container: '.forma',
@@ -292,13 +297,151 @@
     abbr: false,
     wrapper: 'div' // div, section, ul>li
   }, 
-  integrate: '' // bootstrap, forma
+  integrate: 'forma' // bootstrap, forma
 });</code></pre>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th width="50%">Description</th>
+        <th>Type</th>
+        <th>Default Value</th>
+    </tr>
+    <tr>
+        <td align="center"><mark>container</mark></td>
+        <td>
+            <h3>Form target</h3>
+            <p>Usually defined with class attribute but you can also use id or data attributes as well. (useful when you have multiple forms on the same page)</p>
+        </td>
+        <td align="center"><code>string</code></td>
+        <td align="center"><mark>'.forma'</mark></td>
+    </tr>
+    <tr>
+        <td align="center"><mark>tab</mark></td>
+        <td>
+            <h3>Navigate between rows (fields) with tab key</h3>
+            <p>Tab navigation will make visible only the current row (field) and turn off the rest.</p>
+        </td>
+        <td align="center"><code>boolean</code></td>
+        <td align="center"><mark>false</mark></td>
+    </tr>
+    <tr>
+        <td align="center"><mark>show</mark></td>
+        <td>
+            <h3>Auto-open all form rows (fields) on load</h3>
+            <p>By default only 1st field is opened and focused on page load.</p>
+        </td>
+        
+        <td align="center"><code>boolean</code></td>
+        <td align="center"><mark>false</mark></td>
+    </tr>
+    <tr>
+        <td align="center"><mark>auto</mark></td>
+        <td>
+            <h3>Display additional auto-generated text</h3>
+            <p>Show additionally auto-generated description and placeholder text, for each field, using the label text and specified <code>prefix and suffix</code>.</p>
+        </td>
+        <td align="center"><code>boolean</code></td>
+        <td align="center"><mark>false</mark></td>
+    </tr>
+    <tr>
+        <td align="center"><mark>manual</mark></td>
+        <td>
+            <h3>Add an open/close state button for each form row (field)</h3>
+            <p>By default to navigate between fields the user is required to use the tab key with this setting turned on an alternative way will added to access form elements.</p>
+        </td>
+        <td align="center"><code>boolean</code></td>
+        <td align="center"><mark>false</mark></td>
+    </tr>
+    <tr>
+        <td align="center"><mark>submit</mark></td>
+        <td>
+            <h3>Disable the submit button</h3>
+            <p>Disable the submit button until all validations have passed.</p>
+        </td>
+        <td align="center"><code>boolean</code></td>
+        <td align="center"><mark>false</mark></td>
+    </tr>
+    <tr>
+        <td align="center"><mark>prefix</mark></td>
+        <td>
+            <h3>Text added before the auto-generated text</h3>
+            <p>Prepend text when you auto-generate additional text.</p>
+        </td>
+        <td align="center"><code>string</code></td>
+        <td align="center"><mark>Enter</mark></td>
+    </tr>
+    <tr>
+        <td align="center"><mark>suffix</mark></td>
+        <td>
+            <h3>Text added after the auto-generated text</h3>
+            <p>Append text when you auto-generate additional text</p>
+        </td>
+        <td align="center"><code>string</code></td>
+        <td align="center"><mark>...</mark></td>
+    </tr>
+    <tr>
+        <td align="center"><mark>support</mark></td>
+        <td>
+            <h3>Add additional element support</h3>
+            <p>Must be of an array type. You can add other form elements by passing tag name + type.</p>
+            <p>Currently supported elements:</p>
+            <ul>
+                <li>input</li>
+                <li>select</li>
+                <li>textarea</li>
+                <li>button</li>
+                <li>fieldset</li>
+                <li>input[type="text"]</li>
+                <li>input[type="email"]</li>
+                <li>input[type="number"]</li>
+                <li>input[type="url"]</li>
+                <li>input[type="date"]</li>
+                <li>input[type="password"]</li>
+                <li>select[type="select-one"]</li>
+                <li>textarea[type="textarea"]</li>
+                <li>button[type="submit"]</li>
+                <li>fieldset[type="fieldset"]</li>
+            </ul>
+        </td>
+        <td align="center"><code>array</code></td>
+        <td align="center"><mark>[]</mark></td>
+    </tr>
+    <tr>
+        <td align="center"><mark>struct</mark></td>
+        <td>
+            <h3>Change the structure of your forms.</h3>
+            <p>Use different tags to build you forms; add abbr after lables and title into the fieldset legend.</p>
+            <p>Use can use either: <code>div, section or ul>li for wrapper</code></p>
+        </td>
+        <td align="center"><code>object</code></td>
+        <td align="center"><mark>{title: '', abbr: false, wrapper: 'div'}</mark></td>
+    </tr>
+    <tr>
+        <td align="center"><mark>integrate</mark></td>
+        <td>
+            <h3>Integrate with 3rd party frameworks</h3>
+            <p>Have the ability to style and customize your forms by using third party frameworks. Currenlty we only support the default 'forma' and 'bootstrap' (which is still in the works)</p>
+        </td>
+        <td align="center"><code>string</code></td>
+        <td align="center"><mark>'forma'</mark></td>
+    </tr>
+</table>
+
+<p class="bubble">Note: You will get a <mark>console.error</mark> message if any of the settings doesn't meet the type criteria.</p>
 
 <h2 id="styling">Customization and Styling</h2>
 
-<p class="bubble bubble-warning">This section currently under revision, new content is coming soon!</p>
+<p class="bubble bubble-warning">This section is currently under revision, new content is coming soon!</p>
 <br />
+
+<p>There are different ways you can approach your form styling and customization. We have tried to provide a few staring points based on your coding level, abilities, and needs.</p>
+
+<p>The easiest way, is to use the pre-built stylesheet files generated from the <a href="/scss.html">SCSS</a> templates and just include the CDN links inside your document head tag.</p>
+
+<p>Additionally, for some basic customization you can download and save the stylesheet CSS templates locally and edit the <mark>:root</mark> values and add any of the other CSS rules. 
+
+<p>Below you can see the default values for <makr>:root</makr> included in all pre-built CSS templates (these can be found inside the repo <mark>/src/css</mark> folder):</p>
 
 <pre><code class="language language-css">@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 :root {
@@ -314,6 +457,36 @@
   --black: 25, 25, 25; /* #191919 */
   --space: 1rem;
 }</code></pre>
+
+<p class="bubble">Note: Take a look at all the stylesheet files inside <mark>/src/css</mark>, there are several different staring points: <code>base, barebone, boilerplate and forma complete</code>.</p>
+
+<h3>Create custom CSS from template</h3>
+
+<p>As I mentioned above inside the repo  <mark>/src/css</mark> folder you can find a few CSS template files. Each one can be used as a different starting point.</p>
+
+<p>For example, if you only need all the target classes without any values you may want to use the <mark>/src/css/forma-boilerplate.css</mark> template. Go ahead and preview the file code inside the <a href="https://github.com/krasenslavov/forma/blob/master/dist/css/forma-boilerplate.css" target="_blank">GitHub repository</a>.</p>
+
+<hr />
+
+<h3>Extending CSS templates</h3>
+
+<p>Extending the CSS templates and completely changing the form structure is very easy as well.</p>
+
+<p>In one of the examples we have, called <a href="/examples/register.html">Register Form</a>, you can see how with only one CSS rule you can make you form turn into a one at time field form and then you can switch between form fields with the tab key.</p>
+
+<pre><code class="language language-css">.forma-register .forma-wrap:not(.forma-open) {
+  display: none;
+}</code></pre>
+
+<p>Another example would the <a href="/examples/example-two-column-layout.html">2 Column Layout</a> found example section.</p>
+
+<hr />
+
+<h3>Create your own stylesheet from scratch</h3>
+
+<p>This is the most advanced and time-consuming method to style and customize your forms. However, if you feel comfortable with CSS and need fully custom solution you can create your own fully customized stylesheet.</p>
+
+<p class="bubble">Note: Take a look at both <mark>/src/scss/_complete.css</mark> and <mark>/src/scss/_forma-boilerplate.css</mark> first; there are some classes added dynamically with JavaScript you may want target as well.</p>
 
 <h2 id="validation">Client-side Validation</h2>
 

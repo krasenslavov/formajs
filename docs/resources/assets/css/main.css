@@ -129,7 +129,7 @@
     }
     .content h2 {
         border-bottom: 1px solid rgba(var(--black), .1);
-        margin: 0 0 var(--space);
+        margin: calc(3 * var(--space)) 0 var(--space) 0;
     }
     .content p {
         line-height: 2.6;
@@ -178,9 +178,28 @@
     .content .bubble a {
         border-bottom: 3px solid rgba(var(--white), .5);
         color: rgba(var(--white), 1);
-        padding: .var(--space);
         text-decoration: none;
         transition: all .3s;
+    }
+    .content .table {
+        margin-bottom: var(--space);
+    }
+    .content .table th {
+        background-color: rgba(var(--black), .1);
+        border-radius: 4px;
+        font-size: 105%;
+    }
+    .content .table td,
+    .content .table th  {
+        border-bottom: 1px solid rgba(var(--black), .1);
+        padding: var(--space);
+        vertical-align: top;
+    }
+    .content .table td h3 {
+        padding-bottom: 0;
+        padding-top: 0;
+        position: relative;
+        top: -5px;
     }
 /* _footer.css */
     footer.footer {
