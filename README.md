@@ -2,7 +2,7 @@
 
 Quickly and easily create dynamic and interactive forms with a better end-user experience.
 
-FormaJS lets you customize and style your forms in numerous different ways and at the same time gives you the base and strcuture that will save you time and effort while building form prototypes.
+FormaJS lets you customize and style your forms in numerous different ways and at the same time gives you the base and structure that will save you time and effort while building form prototypes.
 
 There are few different ways to use and load up the script and stylesheet templates. Take a look at main website for complete [documentation](https://formajs.com/index.html) with usage, features and [examples](https://formajs.com/examples/index.html).
 
