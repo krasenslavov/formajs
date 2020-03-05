@@ -194,7 +194,7 @@ const f = (function(WINDOW, SETTINGS, STRUCTURE, CLASSES, SUPPORTED) { // Global
             }
 
             this.util.updateObject({
-                id: dataset.label.toLowerCase(),
+                id: dataset.label.toLowerCase().replace(/ /g, '-'),
                 className: this.classes.control, // forma-valid
                 tabindex: idx,
                 placeholder: text
@@ -208,7 +208,7 @@ const f = (function(WINDOW, SETTINGS, STRUCTURE, CLASSES, SUPPORTED) { // Global
                 row = '';
             }
 
-            row += `<label class="${manual}">
+            row += `<label for="${dataset.label.toLowerCase().replace(/ /g, '-')}" class="${manual}">
                     <span class="${this.classes.label}">
                         ${dataset.label} ${abbr}
                         <div class="${this.classes.description}">${text}</div>

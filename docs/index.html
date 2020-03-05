@@ -74,41 +74,302 @@
     <p>Don't forget to give us a ⭐ if you think FormaJS is worthwhile and we should continue improving on it.</p>
 </section>
             <h2>FormaJS*</h2>
-            <section class="bubble bubble-warning">
-    <p>Warning: Working hard on the new &amp; updated documentation for v0.0.4-alpha, there are numerous major changes and new features added to the latest release.</p>
-    <p>Meanwhile, you can check the <a href="/index-old.html">older docs</a> but keep in mind that some of the content is not applicable and outdated.</p>
-</section>
+            <p>FormaJS is easy to setup, customize and at the same time is pretty flexible and robust and can be implemented in many different cases and scenarios.</p>
+
+<p>It uses the minimal markup approach to code your forms and has numerous starting points when it comes to styling and customization.</p>
 
 <h2 id="usage">Basic Usage</h2>
 
-<p>Coming soon...</p>
+<pre><code class="language language-markup">&lt;head&gt;
+  &lt;link href="path/to/css/forma.css" rel="stylesheet" /&gt;
+&lt;/head&gt;
+  ...
+  &lt;form class="forma"&gt;
+    &lt;input data-label="Email Address" type="email" name="email-address" /&gt;
+    &lt;input data-label="First Name" type="text" name="first-name" /&gt;
+    &lt;input data-label="Last Name" type="text" name="last-name" /&gt;
+    &lt;textarea data-label="Message" rows="5" name="message"&gt;&lt;/textarea&gt;
+    &lt;button type="submit"&gt;Send&lt;/button&gt;
+  &lt;/form&gt;
+  ...
+  &lt;script src="path/to/js/forma.min.js"&gt;&lt;/script&gt;
+  &lt;script&gt;forma();&lt;/script&gt;
+&lt;/body&gt;</code></pre>
 
-<h2 id="installation">Installation</h2>
+<p>There are few steps you need to keep in mind when you create your forms and setup the library.</p>
 
-<p>Coming soon...</p>
+<ol>
+	<li>Be sure to include any of the CSS templates from <mark>/dist/css</mark> in your document <mark>&lt;head&gt;</mark>.</li>
+	<li>Make sure that you have added the script <mark>/dist/js/forma.min.js</mark> near the end of your document just before the closing <mark>&lt;/body&gt;</mark> tag.</li>
+	<li>Add your form markup anywhere within the document body by using the minimal markup approach.</li>
+	<li>Initialize the library and specify any additional settings with the <mark>forma()</mark> function.</li>
+	<li>Additionally apply style and customize your form by extending the pre-built CSS templates or create your own using SASS/SCSS templates located inside the <mark>/src/scss</mark> folder.</li>
+</ol>
 
+<hr />
 
-<h2 id="structure">Form Structure</h2>
+<h3>Starter Template</h3>
 
-<p>Coming soon...</p>
+<p>Copy-paste the markup below as your starting point.</p>
 
+<pre><code class="language language-markup">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /&gt;
+  &lt;title&gt;FormaJS - Quickly and easily create dynamic and interactive forms with a better UX.&lt;/title&gt;
+  &lt;!-- Include FormaJS stylesheet template. --&gt;
+  &lt;link href="path/to/css/forma.css" rel="stylesheet" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Add your form structure; use minimal markup approach; class="forma" is recommended. --&gt;
+  &lt;form class="forma"&gt;
+    &lt;input data-label="Name" type="text" name="name" required /&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+  &lt;/form&gt;
+  &lt;!-- Include FormaJS library main script. --&gt;
+  &lt;script src="path/to/js/forma.min.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    forma();
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<h2 id="installation">Setup/Installation</h2>
+
+<p>To setup the FormaJS libary you need to link up the stylesheet template inside your document head; add the main script file near the end of your document, and initialize the library afterwards.</p>
+
+<p>There are a few different ways to do that.</p>
+
+<hr />
+
+<h3>The Latest <mark>/dist</mark> Release</h3>
+
+<p>Download <a href="https://github.com/krasenslavov/formajs/releases/download/" target="_blank">the latest <code>dist</code> files</a> from our GitHub repository and link up the stylesheet template and main library script manually.</p>
+
+<hr />
+
+<h3>CDN</h3>
+
+<p>Load up all FormaJS pre-built stylesheet templates and main library script from a CDN.</p>
+
+<h3>jsdelivr</h3>
+
+<pre><code class="language language-markup">&lt;!-- FormaJS plugin script. --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/aformajs/dist/js/forma.min.js"&gt;&lt;/script&gt;
+&lt;!-- FormaJS stylesheet variation. --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/aformajs/dist/css/forma.css" rel="stylesheet" /&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/aformajs/dist/css/forma-barebone.css" rel="stylesheet" /&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/aformajs/dist/css/forma-base.css" rel="stylesheet" /&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/aformajs/dist/css/forma-boilerplate.css" rel="stylesheet" /&gt;</code></pre>
+
+<h3>unpkg</h3>
+
+<pre><code class="language language-markup">&lt;!-- FormaJS plugin script. --&gt;
+&lt;script src="https://unpkg.com/aformajs/dist/js/forma.min.js"&gt;&lt;/script&gt;
+&lt;!-- FormaJS stylesheet variation. --&gt;
+&lt;link href="https://unpkg.com/aformajs/dist/css/forma.css" rel="stylesheet" /&gt;
+&lt;link href="https://unpkg.com/aformajs/dist/css/forma-barebone.css" rel="stylesheet" /&gt;
+&lt;link href="https://unpkg.com/aformajs/dist/css/forma-base.css" rel="stylesheet" /&gt;
+&lt;link href="https://unpkg.com/aformajs/dist/css/forma-boilerplate.css" rel="stylesheet" /&gt;</code></pre>
+
+<h3>NPM</h3>
+
+<p>Install FormaJS as an NPM package and then include the files into your project. Check out the <a href="/npm.html">NPM section</a> for more details. The package is called <mark>aformajs</mark>.</p>
+
+<pre><code class="language language-markup">npm install aformajs --save</code></pre>
+
+<p class="bubble">Note: There are a couple of SASS development dependencies.</p>
+
+<hr />
+
+<h3>The source <mark>/src</mark> (for development only)</h3>
+
+<p>Head over to our <a href="https://github.com/krasenslavov/formajs/" target="_blank">GitHub repository and download the master</a>. Then look inside the <mark>/src</mark> folder where you will find all the development CSS, SCSS, and JavaScript files.</p>
+
+<h2 id="structure">Form Structure (minimal markup approach)</h2>
+
+<p>Building and creating your actual form is easy and quick. We use the minimal markup approach and all you need to add are the form elements you want to use, the rest is generated and handled by the library.</p>
+
+<p>Below is an example of the input/output of your form markup.</p>
+
+<hr />
+
+<h3>Input (what you write)</h3>
+
+<pre><code class="language language-markup"> &lt;form class="forma"&gt;
+    &lt;input data-label="Email Address" type="email" name="email-address" /&gt;
+    &lt;input data-label="First Name" type="text" name="first-name" /&gt;
+    &lt;input data-label="Last Name" type="text" name="last-name" /&gt;
+    &lt;textarea data-label="Message" rows="5" name="message"&gt;&lt;/textarea&gt;
+    &lt;button type="submit"&gt;Send&lt;/button&gt;
+  &lt;/form&gt;</code></pre>
+
+<h3>Ouput (what is generated by the library)</h3>
+
+<pre><code class="language language-markup">&lt;form class="forma"&gt;
+  &lt;fieldset class="forma"&gt;
+    &lt;legend&gt;&lt;/legend&gt;
+    &lt;div class="forma-wrap forma-open"&gt;
+      &lt;label for="email-address" class=""&gt;
+        &lt;span class="forma-label forma-invalid"&gt;
+          Email Address 
+          &lt;div class="forma-description"&gt;&lt;/div&gt;
+          &lt;div class="forma-input"&gt;&lt;/div&gt;
+          &lt;div class="forma-message"&gt;Please fill in this field.&lt;/div&gt;
+        &lt;/span&gt;
+        &lt;div class="forma-fieldset"&gt;
+          &lt;input data-label="Email Address" type="email" name="email-address" required="" 
+            id="email-address" class="forma-control forma-invalid" placeholder="" /&gt;
+        &lt;/div&gt;
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class="forma-wrap forma-open"&gt;
+      &lt;label for="first-name" class=""&gt;
+        &lt;span class="forma-label"&gt;
+          First Name 
+          &lt;div class="forma-description"&gt;&lt;/div&gt;
+          &lt;div class="forma-input"&gt;&lt;/div&gt;
+          &lt;div class="forma-message"&gt;&lt;/div&gt;
+        &lt;/span&gt;
+        &lt;div class="forma-fieldset"&gt;
+          &lt;input data-label="First Name" type="text" name="first-name" 
+            id="first-name" class="forma-control" placeholder="" /&gt;
+        &lt;/div&gt;
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class="forma-wrap forma-open"&gt;
+      &lt;label for="last-name" class=""&gt;
+        &lt;span class="forma-label"&gt;
+          Last Name 
+          &lt;div class="forma-description"&gt;&lt;/div&gt;
+          &lt;div class="forma-input"&gt;&lt;/div&gt;
+          &lt;div class="forma-message"&gt;&lt;/div&gt;
+        &lt;/span&gt;
+        &lt;div class="forma-fieldset"&gt;
+          &lt;input data-label="Last Name" type="text" name="last-name" 
+            id="last-name" class="forma-control" placeholder="" /&gt;
+        &lt;/div&gt;
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class="forma-wrap forma-open"&gt;
+      &lt;label for="message" class=""&gt;
+        &lt;span class="forma-label"&gt;
+          Message 
+          &lt;div class="forma-description"&gt;&lt;/div&gt;
+          &lt;div class="forma-input"&gt;&lt;/div&gt;
+          &lt;div class="forma-message"&gt;&lt;/div&gt;
+        &lt;/span&gt;
+        &lt;div class="forma-fieldset"&gt;
+          &lt;textarea data-label="Message" rows="5" name="message" 
+            id="message" class="forma-control" placeholder=""&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;button type="submit"&gt;Send&lt;/button&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+
+<p class="bubble">Note: You can preview the above example in our examples secion <a href="/examples/example-no.html">here</a>.</p>
 
 <h2 id="settings">Custom Settings</h2>
 
-<p>Coming soon...</p>
+<p class="bubble bubble-warning">This section currently under revision, new content is coming soon!</p>
+<br />
 
+<pre><code class="language language-js">forma({
+  container: '.forma',
+  tab: false,
+  show: false,
+  auto: false,
+  manual: false,
+  submit: false,
+  prefix: 'Enter',
+  suffix: '...',
+  support: [],
+  struct: {
+    title: '',
+    abbr: false,
+    wrapper: 'div' // div, section, ul>li
+  }, 
+  integrate: '' // bootstrap, forma
+});</code></pre>
 
-<h2 id="">Customization and Styling</h2>
+<h2 id="styling">Customization and Styling</h2>
 
-<p>Coming soon...</p>
+<p class="bubble bubble-warning">This section currently under revision, new content is coming soon!</p>
+<br />
+
+<pre><code class="language language-css">@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+:root {
+  --font-mono: 400 normal 16px/1.6 'Monaco', 'Consolas', 'Andale Mono', 'Ubuntu Mono', monospace;
+  --font-google: 400 normal 16px/1.6 'Source Sans Pro', sans-serif;
+  --primary: #d65bd1;
+  --secondary: #845ec2;
+  --error: #fc4444;
+  --success: #008f7a;
+  --warning: #ff9671;
+  --info: #0081cf;
+  --white: 250, 250, 250; /* #fafafa */
+  --black: 25, 25, 25; /* #191919 */
+  --space: 1rem;
+}</code></pre>
 
 <h2 id="validation">Client-side Validation</h2>
 
-<p>Coming soon...</p>
+<p>There are two types of client-side validation output:</p>
+
+<ul>
+	<li>built-it validation messages</li>
+	<li>custom validation messages</li>
+</ul>
+
+<p>You can add client-side form validation by specifying the element type or by adding additional attributes.</p> 
+
+<p>For example, <mark>&lt;input type="email" minlength="5" /&gt;</mark>. Read more about it at the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email" target="_blank">MDN Web Docs</a>. 
+
+<hr />
+
+<p>Some of the common attributes to invoke client-side validation messages are:</p>
+
+<ul>
+	<li>required</li>
+	<li>minlength or maxlength</li>
+	<li>min, max, and step (for numbers)</li>
+	<li>and others...</li>
+</ul>
+
+<hr />
+
+<h3>Built-in Validation Messages</h3>
+
+<p>These come with the HTML, are specified within your browser and cannot be modified.</p>
+
+<p>For example, if you have <mark>&lt;input type="email" /&gt;</mark> you will be required to enter a valid email address before you continue with the form submission. If you don't have the '@' symbol the auto-generated message will be <mark>Please include an '@' in the email address. '' is missing an '@'.</mark></p>
+
+<p class="bubble">Example: Form with built-in client-side validations can be found <a href="/examples/example-builtin-validation.html">here</a>.</p>
+
+<h3>Custom Validation Messages</h3>
+
+<p>For real-world forms the built-in checks aren't enough so if you want to customize your client-side validation messages and strengthen the validation logic you would need to use some regular expression magic.</p>
+
+<p>To do that you need to add the <mark>pattern</mark> and <mark>title</mark> attributes to your form element. More information on this topic can be found at the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern" target="_blank">MDN Web Docs</a>.</p> 
+
+<pre><code class="language language-markup">&lt;input data-label="Email Address" type="email" name="email-address" 
+  pattern="(\S+@\S+\.\S+)"
+  title="Email address must contain digits, letters, and @_. characters." required /&gt;
+&lt;input data-label="Password" type="password" name="password" 
+  pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" 
+  title="Password must have minimum 8 characters, at least one letter and one number." required /&gt;</code></pre>
+
+<section class="bubble">
+<p>Example: Form with custom client-side validations can be found <a href="/examples/example-custom-validation.html">here</a>.</p>
+<p>Hint: Not good with Regexp? Head over to <a href="https://stackoverflow.com/questions/tagged/regex?sort=MostVotes&edited=true" target="_blank">StackOverflow</a>; 99% of the use cases can be found there.</p>
+</section>
 
 <h2 id="contribute">Contribute</h2>
 
-<p>You can contribute in the several different ways.</p>
+<p>You can contribute in several different ways.</p>
 <p><u>Issues</u>: Provide a detailed report of any bugs you encounter and open an issues on GitHub.</p>
 <p><u>Documentation</u>: If you'd like to fix a typo or improve the docs, you can fork the project (all the documentation is found inside the <mark>/docs</mark> folder), make you changes, and submit a pull request.</p>
 <p><u>Code</u>: Make a fix and submit it as a pull request (all development code is found inside the <mark>/src</mark> folder).</p>
@@ -116,12 +377,11 @@
 <h2 id="license">License</h2>
 
 <p>Copyright &copy; 2020 <a href="https://github.com/krasenslavov" target="_blank">Krasen Slavov</a>.</p>
-
 <p>Code released under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>.</p>
 
 <hr />
 
-<p><em>* This project is still in alpha; use it for live or production environments at your own risk.</em></p>
+<p><em>* This project is still in alpha; use it for live or production environments with caution.</em></p>
         </div>
     </main>
     <footer class="footer">
