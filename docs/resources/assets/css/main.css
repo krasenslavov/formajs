@@ -11,7 +11,7 @@
         --info: #0081cf;
         --white: 250, 250, 250; /* #fafafa */
         --black: 25, 25, 25; /* #191919 */
-        --space: 1rem;
+        --space: 1.15rem;
     }
 /* _global.css */
     *, 
@@ -132,7 +132,7 @@
         margin: 0 0 var(--space);
     }
     .content p {
-        line-height: 1.8;
+        line-height: 2.6;
         padding: 0 var(--space) var(--space);
     }
     .content pre {
