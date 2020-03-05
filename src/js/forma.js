@@ -162,7 +162,7 @@ const f = (function(WINDOW, SETTINGS, STRUCTURE, CLASSES, SUPPORTED) { // Global
     // Private.
     forma.buildForma = function(elements) {
 
-        let html = row = manual = text = abbr = '';
+        let html = row = manual = text = abbr = fid = '';
         let grouped = false;
 
 
@@ -174,6 +174,8 @@ const f = (function(WINDOW, SETTINGS, STRUCTURE, CLASSES, SUPPORTED) { // Global
             }
 
             let {name, title, dataset} = element;
+
+            fid = this.util.stripSpecialChars(dataset.label);
 
             if (this.settings.auto) {
                 text = dataset.value 
@@ -194,7 +196,7 @@ const f = (function(WINDOW, SETTINGS, STRUCTURE, CLASSES, SUPPORTED) { // Global
             }
 
             this.util.updateObject({
-                id: dataset.label.toLowerCase().replace(/ /g, '-'),
+                id: fid.toLowerCase().replace(/ /g, '-'),
                 className: this.classes.control, // forma-valid
                 tabindex: idx,
                 placeholder: text
@@ -208,7 +210,7 @@ const f = (function(WINDOW, SETTINGS, STRUCTURE, CLASSES, SUPPORTED) { // Global
                 row = '';
             }
 
-            row += `<label for="${dataset.label.toLowerCase().replace(/ /g, '-')}" class="${manual}">
+            row += `<label for="${fid.toLowerCase().replace(/ /g, '-')}" class="${manual}">
                     <span class="${this.classes.label}">
                         ${dataset.label} ${abbr}
                         <div class="${this.classes.description}">${text}</div>
@@ -493,6 +495,10 @@ const f = (function(WINDOW, SETTINGS, STRUCTURE, CLASSES, SUPPORTED) { // Global
             if (remove) element.classList.remove(remove);
         })
     }   
+
+    forma.util.stripSpecialChars = function(string) {
+        return string.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
+    }
 
     // Constructor.
     return {
