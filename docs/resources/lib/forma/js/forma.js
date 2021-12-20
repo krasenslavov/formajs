@@ -274,7 +274,7 @@ const f = (function(WINDOW, SETTINGS, STRUCTURE, CLASSES, SUPPORTED) { // Global
             }
 
             ['click','change','keydown','keyup','focus','blur'].map(type => {
-                console.log(element);
+
                 element.addEventListener(type, event => {
 
                     if (element.type === 'fieldset') {
