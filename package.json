@@ -1,6 +1,6 @@
 {
   "name": "aformajs",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "🎉 Create dynamic and interactive forms with minimal markup and better UX.",
   "main": "index.js",
   "directories": {
@@ -16,7 +16,12 @@
     "type": "git",
     "url": "git+https://github.com/krasenslavov/forma.git"
   },
-  "keywords": ["form","dynamic","interactive","front-end"],
+  "keywords": [
+    "form",
+    "dynamic",
+    "interactive",
+    "front-end"
+  ],
   "author": "Krasen Slavov",
   "license": "MIT",
   "bugs": {
