@@ -82,7 +82,7 @@ const f = (function(WINDOW, SETTINGS, STRUCTURE, CLASSES, SUPPORTED) { // Global
         this.settings = Object.assign({}, SETTINGS, settings);
 
         this.form = document.querySelector(this.settings.container);
-        this.elements = this.form.elements;
+        this.elements = this.form;
         this.structure = Object.assign({}, STRUCTURE, this.settings.struct);
         this.support = [...new Set([...SUPPORTED, ...this.settings.support])];
         this.supportList = this.support.join(',');
@@ -164,7 +164,6 @@ const f = (function(WINDOW, SETTINGS, STRUCTURE, CLASSES, SUPPORTED) { // Global
 
         let html = row = manual = text = abbr = fid = '';
         let grouped = false;
-
 
         elements.map((element, idx) => {
 
@@ -250,7 +249,6 @@ const f = (function(WINDOW, SETTINGS, STRUCTURE, CLASSES, SUPPORTED) { // Global
     forma.listenForma = function(elements) {
 
         elements.map((element, idx) => {
-
             if (this.settings.manual) {
                 // Add manual +/- button on form rows.
                 if (['fieldset','submit'].indexOf(element.type) === -1) {
