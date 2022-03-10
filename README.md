@@ -4,7 +4,7 @@ Quickly and easily create dynamic and interactive forms with a better end-user e
 
 FormaJS lets you customize and style your forms in numerous different ways and at the same time gives you the base and structure that will save you time and effort while building form prototypes.
 
-There are few different ways to use and load up the script and stylesheet templates. Take a look at main website for complete [documentation](https://formajs.com/index.html) with usage, features and [examples](https://formajs.com/examples/index.html).
+There are few different ways to use and load up the script and stylesheet templates. Take a look at main website for complete [documentation](https://krasenslavov.formajs.com/index.html) with usage, features and [examples](https://krasenslavov.formajs.com/examples/index.html).
 
 ## Quick Start
 
@@ -41,23 +41,23 @@ Visit our main [website](https://formajs.com/) to learn more about customization
 
 ## [Documentation](https://formajs.com/)
 
-* [Basic Usage](https://formajs.com/index.html)
-* [Installation](https://formajs.com/index.html#installation)
-* [Form Structure](https://formajs.com/index.html#structure)
-* [Custom Settings](https://formajs.com/index.html#settings)
-* [Customization and Styling](https://formajs.com/index.html#styling)
-* [Client-side Validation](https://formajs.com/index.html#validation)
-* [CSS](https://formajs.com/css/index.html)
-* [SASS/SCSS](https://formajs.com/scss.html)
-* [NPM](https://formajs.com/npm.html)
-* [Examples](https://formajs.com/examples/index.html)
-* [Sandbox](https://formajs.com/sandbox.html)
+* [Basic Usage](https://krasenslavov.formajs.com/index.html)
+* [Installation](https://krasenslavov.formajs.com/index.html#installation)
+* [Form Structure](https://krasenslavov.formajs.com/index.html#structure)
+* [Custom Settings](https://krasenslavov.formajs.com/index.html#settings)
+* [Customization and Styling](https://krasenslavov.formajs.com/index.html#styling)
+* [Client-side Validation](https://krasenslavov.formajs.com/index.html#validation)
+* [CSS](https://krasenslavov.formajs.com/css/index.html)
+* [SASS/SCSS](https://krasenslavov.formajs.com/scss.html)
+* [NPM](https://krasenslavov.formajs.com/npm.html)
+* [Examples](https://krasenslavov.formajs.com/examples/index.html)
+* [Sandbox](https://krasenslavov.formajs.com/sandbox.html)
 
 ## [Contribute](https://formajs.com/index.html#contribute)
 
-Found a bug or want to propose some improvements or fixes to the documentation? Vist our [website](https://formajs.com/index.html#contribute) and see all the different ways you can contribute to this project.
+Found a bug or want to propose some improvements or fixes to the documentation? Vist our [website](https://krasenslavov.formajs.com/index.html#contribute) and see all the different ways you can contribute to this project.
 
-## [License](https://formajs.com/index.html#license)
+## [License](https://krasenslavov.formajs.com/index.html#license)
 
 (c) Krasen Slavov | Code released under the [MIT License](https://opensource.org/licenses/MIT).
 
