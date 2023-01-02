@@ -30,6 +30,6 @@
   "homepage": "https://formajs.com",
   "dependencies": {
     "sass": "^1.16.0",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^13.2.0"
   }
 }
