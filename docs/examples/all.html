@@ -1,142 +1,144 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link href="/favicon.ico" rel="icon" />
-    <title>All Examples - FormaJS - 🎉 Create dynamic and interactive forms with minimal markup and better UX.</title>
-    <link href="/resources/lib/forma/css/forma.css" rel="stylesheet" />
-    <style>
-        body {
-            margin: 3rem;
-            max-width: 1200px;
-        }
-        h2 {
-            margin: 2rem 0;
-            padding: 1rem 0;
-            border-bottom: 1px solid #ddd;
-        }
-        a {
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="/favicon.ico" rel="icon" />
+  <title>All Examples - FormaJS - 🎉 Create dynamic and interactive forms with minimal markup and better UX.</title>
+  <link href="/resources/lib/forma/css/forma.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 3rem;
+      max-width: 1200px;
+    }
+
+    h2 {
+      margin: 2rem 0;
+      padding: 1rem 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
 </head>
+
 <body>
 
-    <p>
-        <a href="/">
-            <img src="/resources/assets/img/logo.png" alt="" class="logo" height="75" />
-        </a>
-    </p>
+  <p>
+    <a href="/">
+      <img src="/resources/assets/img/logo.png" alt="" class="logo" height="75" />
+    </a>
+  </p>
 
-    <br />
+  <br />
 
-    <h4>
-        <a href="/examples/index.html">
-            <span>&lsaquo;</span> 
-            <span>Back to examples</span>
-        </a>
-    </h4>
+  <h4>
+    <a href="/examples/index.html">
+      <span>&lsaquo;</span>
+      <span>Back to examples</span>
+    </a>
+  </h4>
 
-    <br />
-    
-    <p>View page source for all the code...</p>
+  <br />
 
-    <section>
-        <h2>No options</h2>
-        <form class="forma">
-            <input data-label="Email Address" type="email" />
-            <input data-label="Password" type="password" />
-            <button type="submit">Login</button>
-        </form>
-    </section>
+  <p>View page source for all the code...</p>
 
-    <section>
-        <h2>tab:true</h2>
-        <form class="forma forma-1">
-            <input data-label="Email Address" type="email" />
-            <input data-label="Password" type="password" />
-            <button type="submit">Login</button>
-        </form>
-    </section>
+  <section>
+    <h2>No options</h2>
+    <form class="forma">
+      <input data-label="Email Address" type="email" />
+      <input data-label="Password" type="password" />
+      <button type="submit">Login</button>
+    </form>
+  </section>
 
-    <section>
-        <h2>auto:true</h2>
-        <form class="forma forma-2">
-            <input data-label="Email Address" type="email" />
-            <input data-label="Password" type="password" />
-            <button type="submit">Login</button>
-        </form>
-    </section>
+  <section>
+    <h2>tab:true</h2>
+    <form class="forma forma-1">
+      <input data-label="Email Address" type="email" />
+      <input data-label="Password" type="password" />
+      <button type="submit">Login</button>
+    </form>
+  </section>
 
-    <section>
-        <h2>auto:true custom</h2>
-        <form class="forma forma-3">
-            <input data-label="Email Address" type="email" />
-            <input data-label="Password" type="password" />
-            <button type="submit">Login</button>
-        </form>
-    </section>
+  <section>
+    <h2>auto:true</h2>
+    <form class="forma forma-2">
+      <input data-label="Email Address" type="email" />
+      <input data-label="Password" type="password" />
+      <button type="submit">Login</button>
+    </form>
+  </section>
 
-    <section>
-        <h2>manual:true</h2>
-        <form class="forma forma-4">
-            <input data-label="Email Address" type="email" />
-            <input data-label="Password" type="password" />
-            <button type="submit">Login</button>
-        </form>
-    </section>
+  <section>
+    <h2>auto:true custom</h2>
+    <form class="forma forma-3">
+      <input data-label="Email Address" type="email" />
+      <input data-label="Password" type="password" />
+      <button type="submit">Login</button>
+    </form>
+  </section>
 
-    <section>
-        <h2>show:true</h2>
-        <form class="forma forma-5">
-            <input data-label="Email Address" type="email" />
-            <input data-label="Password" type="password" />
-            <button type="submit">Login</button>
-        </form>
-    </section>
+  <section>
+    <h2>manual:true</h2>
+    <form class="forma forma-4">
+      <input data-label="Email Address" type="email" />
+      <input data-label="Password" type="password" />
+      <button type="submit">Login</button>
+    </form>
+  </section>
 
-    <section>
-        <h2>Disabled submit</h2>
-        <form class="forma forma-6">
-            <input data-label="Email Address" type="email" />
-            <input data-label="Password" type="password" />
-            <button type="submit">Login</button>
-        </form>
-    </section>
+  <section>
+    <h2>show:true</h2>
+    <form class="forma forma-5">
+      <input data-label="Email Address" type="email" />
+      <input data-label="Password" type="password" />
+      <button type="submit">Login</button>
+    </form>
+  </section>
 
-    <section>
-        <h2>All Options</h2>
-        <form class="forma forma-7">
-            <input data-label="Email Address" type="email" />
-            <input data-label="Password" type="password" />
-            <button type="submit">Login</button>
-        </form>
-    </section>
+  <section>
+    <h2>Disabled submit</h2>
+    <form class="forma forma-6">
+      <input data-label="Email Address" type="email" />
+      <input data-label="Password" type="password" />
+      <button type="submit">Login</button>
+    </form>
+  </section>
 
-    <section>
-        <h2>Built-in validaiton</h2>
-        <form class="forma forma-8">
-            <input data-label="Email Address" type="email" required />
-            <input data-label="Password" type="password" minlength="6" required />
-            <button type="submit">Login</button>
-        </form>
-    </section>
+  <section>
+    <h2>All Options</h2>
+    <form class="forma forma-7">
+      <input data-label="Email Address" type="email" />
+      <input data-label="Password" type="password" />
+      <button type="submit">Login</button>
+    </form>
+  </section>
 
-    <section>
-        <h2>Custom validaiton</h2>
-        <form class="forma forma-9">
-            <input data-label="Email Address" type="email" 
-                pattern="([0-9A-Za-z_@.]+)" 
-                title="Email address must contain digits, letters, and @_. characters." required />
-            <input data-label="Password" type="password" minlength="6" 
-                pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" 
-                title="Password must have minimum 8 characters, at least one letter and one number." required />
-            <button type="submit">Login</button>
-        </form>
-    </section>
+  <section>
+    <h2>Built-in validaiton</h2>
+    <form class="forma forma-8">
+      <input data-label="Email Address" type="email" required />
+      <input data-label="Password" type="password" minlength="6" required />
+      <button type="submit">Login</button>
+    </form>
+  </section>
 
-    <!-- <section>
+  <section>
+    <h2>Custom validaiton</h2>
+    <form class="forma forma-9">
+      <input data-label="Email Address" type="email" pattern="([0-9A-Za-z_@.]+)"
+        title="Email address must contain digits, letters, and @_. characters." required />
+      <input data-label="Password" type="password" minlength="6" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}"
+        title="Password must have minimum 8 characters, at least one letter and one number." required />
+      <button type="submit">Login</button>
+    </form>
+  </section>
+
+  <!-- <section>
         <h2>Multiple forms</h2>
         <form class="forma forma-10">
             <input data-label="Email Address" type="email" />
@@ -145,98 +147,92 @@
         </form>
     </section> -->
 
-    <section>
-        <h2>Grouped elements</h2>
-        <form class="forma forma-11">
-            <input data-label="Email Address" data-group="login" type="email" />
-            <input data-label="Password" data-group="login" type="password" />
-            <button type="submit">Login</button>
-        </form>
-    </section>
+  <section>
+    <h2>Grouped elements</h2>
+    <form class="forma forma-11">
+      <input data-label="Email Address" data-group="login" type="email" />
+      <input data-label="Password" data-group="login" type="password" />
+      <button type="submit">Login</button>
+    </form>
+  </section>
 
-    <section>
-        <h2>Supported Elements</h2>
-        <form class="forma forma-12">
-            <input data-label="Full Name" type="text" />
-            <input data-label="Email Address" type="email" />
-            <input data-label="Age" type="number" />
-            <input data-label="Website" type="url" />
-            <input data-label="Password" type="password" />
-            <input data-label="Birth Date" type="date" />
-            <select data-label="Gender">
-                <option value="">select</option>
-                <option>male</option>
-                <option>female</option>
-            </select>
-            <textarea data-label="Bio" rows="5"></textarea>
-            <button type="submit">Login</button>
-        </form>
-    </section>
+  <section>
+    <h2>Supported Elements</h2>
+    <form class="forma forma-12">
+      <input data-label="Full Name" type="text" />
+      <input data-label="Email Address" type="email" />
+      <input data-label="Age" type="number" />
+      <input data-label="Website" type="url" />
+      <input data-label="Password" type="password" />
+      <input data-label="Birth Date" type="date" />
+      <select data-label="Gender">
+        <option value="">select</option>
+        <option>male</option>
+        <option>female</option>
+      </select>
+      <textarea data-label="Bio" rows="5"></textarea>
+      <button type="submit">Login</button>
+    </form>
+  </section>
 
-    <section>
-        <h2>User-defined support</h2>
-        <form class="forma forma-13">
-            <input data-label="Email Address" type="email" />
-            <input data-label="Password" type="password" />
-            <input data-label="Recaptcha" type="number" minlength="12" maxlength="12" />
-            <button type="submit">Login</button>
-        </form>
-    </section>
+  <section>
+    <h2>User-defined support</h2>
+    <form class="forma forma-13">
+      <input data-label="Email Address" type="email" />
+      <input data-label="Password" type="password" />
+      <input data-label="Recaptcha" type="number" minlength="12" maxlength="12" />
+      <button type="submit">Login</button>
+    </form>
+  </section>
 
-    <section>
-        <h2>Structures</h2>
-        <form class="forma forma-14">
-            <input data-label="Email Address" type="email" />
-            <input data-label="Password" type="password" />
-            <button type="submit">Login</button>
-        </form>
-    </section>
+  <section>
+    <h2>Structures</h2>
+    <form class="forma forma-14">
+      <input data-label="Email Address" type="email" />
+      <input data-label="Password" type="password" />
+      <button type="submit">Login</button>
+    </form>
+  </section>
 
-    <section>
-        <h2>1 column layout</h2>
-        <form class="forma forma-15">
-            <input data-label="Email Address" type="email" />
-            <input data-label="Password" type="password" />
-            <button type="submit">Login</button>
-        </form>
-    </section>
+  <section>
+    <h2>1 column layout</h2>
+    <form class="forma forma-15">
+      <input data-label="Email Address" type="email" />
+      <input data-label="Password" type="password" />
+      <button type="submit">Login</button>
+    </form>
+  </section>
 
-    <section>
-        <h2>Login form</h2>
-        <form class="forma forma-16">
-            <input data-label="Email Address" type="email" name="email-address" 
-                pattern="(\S+@\S+\.\S+)"
-                title="Email address must contain digits, letters, and @_. characters." required />
-            <input data-label="Password" type="password" name="password" 
-                pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" 
-                title="Password must have minimum 8 characters, at least one letter and one number." required />
-            <button type="submit">Login</button>
-        </form>
-    </section>
+  <section>
+    <h2>Login form</h2>
+    <form class="forma forma-16">
+      <input data-label="Email Address" type="email" name="email-address" pattern="(\S+@\S+\.\S+)"
+        title="Email address must contain digits, letters, and @_. characters." required />
+      <input data-label="Password" type="password" name="password" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}"
+        title="Password must have minimum 8 characters, at least one letter and one number." required />
+      <button type="submit">Login</button>
+    </form>
+  </section>
 
-    <section>
-        <h2>Register form</h2>
-        <form class="forma forma-17">
-            <input data-label="Email Address" type="email" name="email-address" 
-                pattern="(\S+@\S+\.\S+)"
-                title="Email address must contain digits, letters, and @_. characters." required />
-            <input data-label="Full Name" type="text" name="first-name" 
-                pattern="[a-zA-Z]{3,32}"
-                title="Full name must contain letters only and cannot exceed 32 characters." required />
-            <input data-label="Username" type="text" name="username" 
-                pattern="[a-z]{3,32}" 
-                title="Username must be lowercase between 3 and 32 characters." required />
-            <input data-label="Password" type="password" name="password" 
-                pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" 
-                title="Password must have minimum 8 characters, at least one letter and one number." required />
-            <input data-label="Confirm Password" type="password" name="confirm-password" 
-                pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" 
-                title="Password must have minimum 8 characters, at least one letter and one number." required />
-            <button type="submit">Register</button>
-        </form>
-    </section>
+  <section>
+    <h2>Register form</h2>
+    <form class="forma forma-17">
+      <input data-label="Email Address" type="email" name="email-address" pattern="(\S+@\S+\.\S+)"
+        title="Email address must contain digits, letters, and @_. characters." required />
+      <input data-label="Full Name" type="text" name="first-name" pattern="[a-zA-Z]{3,32}"
+        title="Full name must contain letters only and cannot exceed 32 characters." required />
+      <input data-label="Username" type="text" name="username" pattern="[a-z]{3,32}"
+        title="Username must be lowercase between 3 and 32 characters." required />
+      <input data-label="Password" type="password" name="password" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}"
+        title="Password must have minimum 8 characters, at least one letter and one number." required />
+      <input data-label="Confirm Password" type="password" name="confirm-password"
+        pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}"
+        title="Password must have minimum 8 characters, at least one letter and one number." required />
+      <button type="submit">Register</button>
+    </form>
+  </section>
 
-    <!-- <section>
+  <!-- <section>
         <h2>Bootstrap</h2>
         <form class="forma forma-18">
             <input data-label="Email Address" data-group="login" type="email" />
@@ -245,124 +241,128 @@
         </form>
     </section> -->
 
-    <script src="/resources/lib/forma/js/forma.min.js"></script>
-    <script>
-        // No options.
-        forma();
-        // tab:true.
-        forma({
-            container: '.forma-1',
-            tab: true
-        });
-        // auto:true.
-        forma({
-            container: '.forma-2',
-            auto: true
-        });
-        // auto:true.
-        forma({
-            container: '.forma-3',
-            auto: true,
-            prefix: 'Fill in your',
-            suffix: ''
-        });
-        // manual:true.
-        forma({
-            container: '.forma-4',
-            manual: true
-        });
-        // show:true.
-        forma({
-            container: '.forma-5',
-            show: true
-        });
-        // Disabled submit.
-        forma({
-            container: '.forma-6',
-            submit: true
-        });
-        // All options.
-        forma({
-            container: '.forma-7',
-            auto: true,
-            tab: true,
-            manual: true,
-            show: true,
-            submit: true,
-            prefix: 'Fill in your',
-            suffix: ''
-        });
-        // Built-in validaiton
-        forma({
-            container: '.forma-8'
-        });
-        // Custom validaiton
-        forma({
-            container: '.forma-9'
-        });
-        // Multiple forms
-        // forma({
-        //     container: '.forma-10'
-        // });
-        // Grouped elements
-        forma({
-            container: '.forma-11'
-        });
-        // Supported elements
-        forma({
-            container: '.forma-12'
-        });
-        // User-defined support
-        forma({
-            container: '.forma-13',
-            support: ['input["type=number"]']
-        });
-        // Structures
-        forma({
-            container: '.forma-14',
-            struct: {
-                title: 'My form title...',
-                abbr: true,
-                wrapper: 'section'
-            }
-        });
-        // 1 column layout
-        forma({
-            container: '.forma-15'
-        });
-        // Login form
-        forma({
-            container: '.forma-16',
-            auto: true,
-            show: true,
-            submit: true
-        });
-        // Register form
-        forma({
-            container: '.forma-17',
-            auto: true,
-            submit: true,
-            tab: true
-        });
-        // Bootstrap
-        // forma({
-        //     container: '.forma-18'
-        // });
-    </script>
-    <style>
-        .forma-15 label {
-            flex-direction: column;
-        }
-        .forma-17 .forma-wrap:not(.forma-open) {
-            display: none;
-        }
-        .forma-11 .forma-wrap {
-            display: flex;
-        }
-        .forma-11 .forma-wrap label {
-            flex: 1 1;
-            flex-direction: column;
-        }
-    </style>
+  <script src="/resources/lib/forma/js/forma.min.js"></script>
+  <script>
+    // No options.
+    forma();
+    // tab:true.
+    forma({
+      container: '.forma-1',
+      tab: true
+    });
+    // auto:true.
+    forma({
+      container: '.forma-2',
+      auto: true
+    });
+    // auto:true.
+    forma({
+      container: '.forma-3',
+      auto: true,
+      prefix: 'Fill in your',
+      suffix: ''
+    });
+    // manual:true.
+    forma({
+      container: '.forma-4',
+      manual: true
+    });
+    // show:true.
+    forma({
+      container: '.forma-5',
+      show: true
+    });
+    // Disabled submit.
+    forma({
+      container: '.forma-6',
+      submit: true
+    });
+    // All options.
+    forma({
+      container: '.forma-7',
+      auto: true,
+      tab: true,
+      manual: true,
+      show: true,
+      submit: true,
+      prefix: 'Fill in your',
+      suffix: ''
+    });
+    // Built-in validaiton
+    forma({
+      container: '.forma-8'
+    });
+    // Custom validaiton
+    forma({
+      container: '.forma-9'
+    });
+    // Multiple forms
+    // forma({
+    //     container: '.forma-10'
+    // });
+    // Grouped elements
+    forma({
+      container: '.forma-11'
+    });
+    // Supported elements
+    forma({
+      container: '.forma-12'
+    });
+    // User-defined support
+    forma({
+      container: '.forma-13',
+      support: ['input["type=number"]']
+    });
+    // Structures
+    forma({
+      container: '.forma-14',
+      struct: {
+        title: 'My form title...',
+        abbr: true,
+        wrapper: 'section'
+      }
+    });
+    // 1 column layout
+    forma({
+      container: '.forma-15'
+    });
+    // Login form
+    forma({
+      container: '.forma-16',
+      auto: true,
+      show: true,
+      submit: true
+    });
+    // Register form
+    forma({
+      container: '.forma-17',
+      auto: true,
+      submit: true,
+      tab: true
+    });
+    // Bootstrap
+    // forma({
+    //     container: '.forma-18'
+    // });
+  </script>
+  <style>
+    .forma-15 label {
+      flex-direction: column;
+    }
+
+    .forma-17 .forma-wrap:not(.forma-open) {
+      display: none;
+    }
+
+    .forma-11 .forma-wrap {
+      display: flex;
+    }
+
+    .forma-11 .forma-wrap label {
+      flex: 1 1;
+      flex-direction: column;
+    }
+  </style>
 </body>
+
 </html>

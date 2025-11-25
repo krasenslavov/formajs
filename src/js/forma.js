@@ -1,4 +1,4 @@
-/*! FormaJS v0.0.4 | (c) Krasen Slavov | https://formajs.com/#license */
+/*! FormaJS v0.0.6 | (c) Krasen Slavov | https://formajs.com/#license */
 // System options.
 const settings = {
     container: '.forma',
