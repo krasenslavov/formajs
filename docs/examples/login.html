@@ -1,96 +1,104 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link href="/favicon.ico" rel="icon" />
-    <title>Examples - Login Form - FormaJS - 🎉 Create dynamic and interactive forms with minimal markup and better UX.</title>
-    <link href="/resources/lib/prism/css/prism.css" rel="stylesheet" />
-    <link href="/resources/lib/forma/css/forma-docs.css" rel="stylesheet" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="/favicon.ico" rel="icon" />
+  <title>Examples - Login Form - FormaJS - 🎉 Create dynamic and interactive forms with minimal markup and better UX.
+  </title>
+  <link href="/resources/lib/prism/css/prism.css" rel="stylesheet" />
+  <link href="/resources/lib/forma/css/forma-docs.css" rel="stylesheet" />
 
-    <link href="/resources/assets/css/main.css" rel="stylesheet" />
+  <link href="/resources/assets/css/main.css" rel="stylesheet" />
 </head>
+
 <body>
-    <header class="header">
-        <div class="logo-wrap">
-            <a href="/">
-                <img src="/resources/assets/img/logo.png" alt="" class="logo" height="75" />
-            </a>
-        </div>
-        <nav class="navbar">
-            <h5>Github</h5>
-            <a href="https://github.com/krasenslavov/forma/" target="_blank">Repo</a>
-            <a href="https://github.com/krasenslavov/formajs/releases/download/v0.0.4-alpha/formajs-v0.0.4-alpha-dist.zip" target="_blank">v0.0.4-alpha (latest)</a>
-            <h5>Documentation</h5>
-            <a href="/index.html" class="toplvl ">FormaJS</a>
-            <div class="subnav ">
-                <a href="/index.html#usage">Basic Usage</a>
-                <a href="/index.html#installation">Installation</a>
-                <a href="/index.html#structure">Form Structure</a>
-                <a href="/index.html#settings">Custom Settings</a>
-                <a href="/index.html#styling">Customization and Styling</a>
-                <a href="/index.html#validation">Client-side Validation</a>
-                <a href="/index.html#contribute">Contribute</a>
-                <a href="/index.html#license">License</a>
-            </div>
-            <a href="/css/index.html" class="toplvl ">CSS</a>
-            <div class="subnav ">
-                <a href="/css/css-barebone.html" class="">Barebone</a>
-                <a href="/css/css-base.html" class="">Base</a>
-                <a href="/css/css-boilerplate.html" class="">Boilerplate</a>
-                <a href="/css/css-forma.html" class="">Forma</a>
-            </div>
-            <a href="/scss.html" class="">SASS/SCSS</a>
-            <a href="/npm.html" class="">NPM</a>
-            <h5>Playground</h5>
-            <a href="/examples/index.html" class="toplvl active">Examples</a>
-            <div class="subnav active">
-                <a href="/examples/example-no.html" class="">No Options</a>
-                <a href="/examples/example-tab.html" class="">tab:true</a>
-                <a href="/examples/example-auto.html" class="">auto:true</a>
-                <a href="/examples/example-auto-modify.html" class="">auto:true custom</a>
-                <a href="/examples/example-manual.html" class="">manual:true</a>
-                <a href="/examples/example-show.html" class="">show:true</a>
-                <a href="/examples/example-all.html" class="">All Options</a>
-                <a href="/examples/example-disabled-button.html" class="">Disabled Submit Button</a>
-                <a href="/examples/example-builtin-validation.html" class="">Built-in Validation</a>
-                <a href="/examples/example-custom-validation.html" class="">Custom Validation</a>
-                <a href="/examples/example-multiple-forms.html" class="">Multiple Forms</a>
-                <a href="/examples/example-grouped-elements.html" class="">Grouped Elements</a>
-                <a href="/examples/example-supported-elements.html" class="">Supported Elements</a>
-                <a href="/examples/example-user-defined-support.html" class="">User-defined Support</a>
-                <a href="/examples/example-structures-more.html" class="">Structures</a>
-                <a href="/examples/example-two-column-layout.html" class="">2 Column Layout</a>
-                <a href="/examples/login.html" class="active">Login Form</a>
-                <a href="/examples/register.html" class="">Register Form</a>
-                <a href="/examples/bootstrap.html" class="">Bootstrap</a>
-                <a href="/examples/all.html">All Examples</a>
-            </div>
-            <a href="/sandbox.html" class="">Sandbox</a>
-        </nav>
-    </header>
-    <main class="content">
-        <div class="container">
-            <section class="bubble bubble-info">
-    <p>You can download the latest <mark>/dist</mark> code directly from our GitHub repository <a href="https://github.com/krasenslavov/formajs/releases/download/v0.0.4-alpha/formajs-v0.0.4-alpha-dist.zip" target="_blank">v0.0.4-alpha (latest)</a>.</p> 
-    <p>Don't forget to give us a ⭐ if you think FormaJS is worthwhile and we should continue improving on it.</p>
-</section>
-            <h2>Login Form (real-world example)</h2>
-            <p>Generic real-world login form.</p>
+  <header class="header">
+    <div class="logo-wrap">
+      <a href="/">
+        <img src="/resources/assets/img/logo.png" alt="" class="logo" height="75" />
+      </a>
+    </div>
+    <nav class="navbar">
+      <h5>Github</h5>
+      <a href="https://github.com/krasenslavov/forma/" target="_blank">Repo</a>
+      <a href="https://github.com/krasenslavov/formajs/releases/download/v0.0.6-alpha/formajs-v0.0.6-alpha-dist.zip"
+        target="_blank">v0.0.6-alpha (latest)</a>
+      <h5>Documentation</h5>
+      <a href="/index.html" class="toplvl ">FormaJS</a>
+      <div class="subnav ">
+        <a href="/index.html#usage">Basic Usage</a>
+        <a href="/index.html#installation">Installation</a>
+        <a href="/index.html#structure">Form Structure</a>
+        <a href="/index.html#settings">Custom Settings</a>
+        <a href="/index.html#styling">Customization and Styling</a>
+        <a href="/index.html#validation">Client-side Validation</a>
+        <a href="/index.html#contribute">Contribute</a>
+        <a href="/index.html#license">License</a>
+      </div>
+      <a href="/css/index.html" class="toplvl ">CSS</a>
+      <div class="subnav ">
+        <a href="/css/css-barebone.html" class="">Barebone</a>
+        <a href="/css/css-base.html" class="">Base</a>
+        <a href="/css/css-boilerplate.html" class="">Boilerplate</a>
+        <a href="/css/css-forma.html" class="">Forma</a>
+      </div>
+      <a href="/scss.html" class="">SASS/SCSS</a>
+      <a href="/npm.html" class="">NPM</a>
+      <h5>Playground</h5>
+      <a href="/examples/index.html" class="toplvl active">Examples</a>
+      <div class="subnav active">
+        <a href="/examples/example-no.html" class="">No Options</a>
+        <a href="/examples/example-tab.html" class="">tab:true</a>
+        <a href="/examples/example-auto.html" class="">auto:true</a>
+        <a href="/examples/example-auto-modify.html" class="">auto:true custom</a>
+        <a href="/examples/example-manual.html" class="">manual:true</a>
+        <a href="/examples/example-show.html" class="">show:true</a>
+        <a href="/examples/example-all.html" class="">All Options</a>
+        <a href="/examples/example-disabled-button.html" class="">Disabled Submit Button</a>
+        <a href="/examples/example-builtin-validation.html" class="">Built-in Validation</a>
+        <a href="/examples/example-custom-validation.html" class="">Custom Validation</a>
+        <a href="/examples/example-multiple-forms.html" class="">Multiple Forms</a>
+        <a href="/examples/example-grouped-elements.html" class="">Grouped Elements</a>
+        <a href="/examples/example-supported-elements.html" class="">Supported Elements</a>
+        <a href="/examples/example-user-defined-support.html" class="">User-defined Support</a>
+        <a href="/examples/example-structures-more.html" class="">Structures</a>
+        <a href="/examples/example-two-column-layout.html" class="">2 Column Layout</a>
+        <a href="/examples/login.html" class="active">Login Form</a>
+        <a href="/examples/register.html" class="">Register Form</a>
+        <a href="/examples/bootstrap.html" class="">Bootstrap</a>
+        <a href="/examples/all.html">All Examples</a>
+      </div>
+      <a href="/sandbox.html" class="">Sandbox</a>
+    </nav>
+  </header>
+  <main class="content">
+    <div class="container">
+      <section class="bubble bubble-info">
+        <p>You can download the latest <mark>/dist</mark> code directly from our GitHub repository <a
+            href="https://github.com/krasenslavov/formajs/releases/download/v0.0.6-alpha/formajs-v0.0.6-alpha-dist.zip"
+            target="_blank">v0.0.6-alpha (latest)</a>.</p>
+        <p>Don't forget to give us a ⭐ if you think FormaJS is worthwhile and we should continue improving on it.</p>
+      </section>
+      <h2>Login Form (real-world example)</h2>
+      <p>Generic real-world login form.</p>
 
-<form class="forma forma-login">
-    <input data-label="Email Address" type="email" name="email-address" pattern="(\S+@\S+\.\S+)"
-        title="Email address must contain digits, letters, and @_. characters." required />
-    <input data-label="Password" type="password" name="password" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" 
-      title="Password must have minimum 8 characters, at least one letter and one number." required />
-    <button type="submit">Login</button>
-</form>
+      <form class="forma forma-login">
+        <input data-label="Email Address" type="email" name="email-address" pattern="(\S+@\S+\.\S+)"
+          title="Email address must contain digits, letters, and @_. characters." required />
+        <input data-label="Password" type="password" name="password" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}"
+          title="Password must have minimum 8 characters, at least one letter and one number." required />
+        <button type="submit">Login</button>
+      </form>
 
-<h3>CSS</h3>
-<p class="bubble">Using a custom CSS stylesheet build on top of the <mark>forma-boilerplate.css</mark> template. Take a look at <a href="https://github.com/krasenslavov/forma/blob/master/src/css/_forma-boilerplate.css" target="blank">the code</a> on our GitHub repository.</p>
+      <h3>CSS</h3>
+      <p class="bubble">Using a custom CSS stylesheet build on top of the <mark>forma-boilerplate.css</mark> template.
+        Take a look at <a href="https://github.com/krasenslavov/forma/blob/master/src/css/_forma-boilerplate.css"
+          target="blank">the code</a> on our GitHub repository.</p>
 
-<h3>HTML</h3>
-<pre><code class="language language-markup">&lt;form class="forma forma-login"&gt;
+      <h3>HTML</h3>
+      <pre><code class="language language-markup">&lt;form class="forma forma-login"&gt;
   &lt;input data-label="Email Address" type="email" name="email-address" 
       pattern="(\S+@\S+\.\S+)"
       title="Email address must contain digits, letters, and @_. characters." required /&gt;
@@ -100,32 +108,33 @@
   &lt;button type="submit"&gt;Login&lt;/button&gt;
 &lt;/form&gt;</code></pre>
 
-<h3>JavaScript</h3>
-<pre><code class="language language-js">forma({
+      <h3>JavaScript</h3>
+      <pre><code class="language language-js">forma({
   container: '.forma-login',
   auto: true,
   show: true,
   submit: true
 });</code></pre>
-        </div>
-    </main>
-    <footer class="footer">
-        <p>Copyright &copy; 2020</p>
-    </footer>
-    <script src="/resources/lib/jquery-3.4.1.min.js"></script>
-    <script src="/resources/lib/prism/js/prism.min.js"></script>
-    <script src="/resources/lib/prism/js/prism-autoloader.min.js"></script>
-    <script src="/resources/lib/forma/js/forma.min.js"></script>
-    <script src="/resources/assets/js/main.js"></script>
-    <script>forma({ container: '.forma-login', auto: true, show: true, submit: true });</script>
+    </div>
+  </main>
+  <footer class="footer">
+    <p>Copyright &copy; 2020</p>
+  </footer>
+  <script src="/resources/lib/jquery-3.7.1.min.js"></script>
+  <script src="/resources/lib/prism/js/prism.min.js"></script>
+  <script src="/resources/lib/prism/js/prism-autoloader.min.js"></script>
+  <script src="/resources/lib/forma/js/forma.min.js"></script>
+  <script src="/resources/assets/js/main.js"></script>
+  <script>forma({ container: '.forma-login', auto: true, show: true, submit: true });</script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107913964-6"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-107913964-6');
-    </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107913964-6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-107913964-6');
+  </script>
 </body>
+
 </html>

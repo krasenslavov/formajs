@@ -1,6 +1,6 @@
 {
   "name": "aformajs",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "🎉 Create dynamic and interactive forms with minimal markup and better UX.",
   "main": "index.js",
   "directories": {
@@ -29,7 +29,22 @@
   },
   "homepage": "https://formajs.com",
   "dependencies": {
-    "sass": "^1.16.0",
-    "sass-loader": "^7.1.0"
+    "sass": "^1.80.0",
+    "sass-loader": "^16.0.0"
+  },
+  "devDependencies": {},
+  "overrides": {
+    "terser": "^5.36.0",
+    "minimatch": "^9.0.5",
+    "loader-utils": "^3.3.1",
+    "decode-uri-component": "^0.4.1",
+    "json5": "^2.2.3",
+    "semver": "^7.6.3",
+    "browserify-sign": "^4.2.3",
+    "braces": "^3.0.3",
+    "elliptic": "^6.6.0",
+    "micromatch": "^4.0.8",
+    "pbkdf2": "^3.1.3",
+    "cipher-base": "^1.0.6"
   }
 }

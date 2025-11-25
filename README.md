@@ -1,10 +1,22 @@
-# FormaJS*
+# FormaJS v0.0.6
 
 Quickly and easily create dynamic and interactive forms with a better end-user experience.
 
 FormaJS lets you customize and style your forms in numerous different ways and at the same time gives you the base and structure that will save you time and effort while building form prototypes.
 
+**Latest Release:** v0.0.6 - Security hardened with all vulnerabilities resolved (0 CVEs)
+
 There are few different ways to use and load up the script and stylesheet templates. Take a look at main website for complete [documentation](https://formajs.krasenslavov.com/index.html) with usage, features and [examples](https://formajs.krasenslavov.com/examples/index.html).
+
+## What's New in v0.0.6
+
+- All security vulnerabilities fixed (22 CVEs resolved)
+- Updated jQuery from 3.4.1 to 3.7.1
+- Modernized build dependencies (sass, sass-loader)
+- Zero npm audit vulnerabilities
+- Reduced dependency footprint to 20 packages
+
+For detailed changes, see [CHANGELOG.md](CHANGELOG.md).
 
 ## Quick Start
 
@@ -53,12 +65,23 @@ Visit our main [website](https://formajs.com/) to learn more about customization
 * [Examples](https://formajs.krasenslavov.com/examples/index.html)
 * [Sandbox](https://formajs.krasenslavov.com/sandbox.html)
 
+## Security
+
+FormaJS v0.0.6 has been thoroughly audited and all known security vulnerabilities have been resolved. For details, see [SECURITY-FIXES.md](SECURITY-FIXES.md).
+
+```bash
+npm audit
+# Result: found 0 vulnerabilities ✅
+```
+
 ## [Contribute](https://krasenslavov.formajs.com/index.html#contribute)
 
-Found a bug or want to propose some improvements or fixes to the documentation? Vist our [website](https://formajs.krasenslavov.com/index.html#contribute) and see all the different ways you can contribute to this project.
+Found a bug or want to propose some improvements or fixes to the documentation? Visit our [website](https://formajs.krasenslavov.com/index.html#contribute) and see all the different ways you can contribute to this project.
 
 ## [License](https://formajs.krasenslavov.com/index.html#license)
 
 (c) Krasen Slavov | Code released under the [MIT License](https://opensource.org/licenses/MIT).
 
-\* This project is still in alpha; use it for live or production environments with caution.
+## Project Status
+
+This project is in alpha development. v0.0.6 represents a significant security milestone with all known vulnerabilities resolved, making it safer for evaluation and testing environments.

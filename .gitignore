@@ -1,1 +1,7 @@
+.claude/
 node_modules/
+CHANGELOG.md
+MERGE-CONFLICT-RESOLUTION.md
+SECURITY-FIXES.md
+VERSION-0.0.6-SUMMARY.md
+package-lock.json
