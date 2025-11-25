@@ -1,5 +1,6 @@
 /* _font.css */
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+
 /* _root.css */
 :root {
   --font-mono: 400 normal 16px/1.6 Monaco, Consolas, Andale Mono, Ubuntu Mono, monospace;
@@ -12,7 +13,8 @@
   --info-color: #0081cf;
   --white: #fafafa;
   --black: #191919;
-  --space: 1rem; }
+  --space: 1rem;
+}
 
 /* _global.css */
 *,
@@ -22,41 +24,55 @@
   -moz-box-sizing: none;
   -webkit-box-sizing: none;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 body {
-  font: 400 normal 16px/1.6 "Monaco", "Consolas", "Andale Mono", "Ubuntu Mono", monospace; }
+  font: 400 normal 16px/1.6 "Monaco", "Consolas", "Andale Mono", "Ubuntu Mono", monospace;
+}
 
 fieldset.forma {
-  border: 1px solid rgba(25, 25, 25, 0.1); }
+  border: 1px solid rgba(25, 25, 25, 0.1);
+}
 
 fieldset.forma legend {
   font-size: 110%;
   margin-left: 1rem;
-  padding: 0 1rem; }
+  padding: 0 1rem;
+}
 
 /* _forma-barebone.css */
 .forma .forma-control,
 .forma [type="submit"] {
   font: 400 normal 16px/1.6 "Monaco", "Consolas", "Andale Mono", "Ubuntu Mono", monospace;
-  padding: 1rem; }
+  padding: 1rem;
+}
+
 .forma label {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  position: relative; }
+  position: relative;
+}
+
 .forma .forma-label {
   flex: 0 0 30%;
-  order: 1; }
+  order: 1;
+}
+
 .forma .forma-fieldset {
   display: none;
   flex: 1 1 auto;
   order: 2;
-  position: relative; }
+  position: relative;
+}
+
 .forma .forma-open .forma-fieldset {
   align-items: center;
-  display: flex; }
+  display: flex;
+}
+
 .forma .forma-open .forma-fieldset:after {
   align-items: center;
   content: 'Hit tab';
@@ -65,9 +81,13 @@ fieldset.forma legend {
   padding: .3rem;
   position: absolute;
   right: 1rem;
-  z-index: 10; }
+  z-index: 10;
+}
+
 .forma .forma-open .forma-manual:before {
-  content: '-'; }
+  content: '-';
+}
+
 .forma .forma-manual:before {
   align-items: center;
   content: '+';
@@ -76,20 +96,28 @@ fieldset.forma legend {
   justify-content: center;
   order: 99;
   /* Make sure this is at the end of everything else. */
-  padding: 0 1rem; }
+  padding: 0 1rem;
+}
+
 .forma .forma-fieldset * {
   width: calc(100% - 2rem - 2px);
-  /* Fix fields width substract border & padding extra spacing. */ }
+  /* Fix fields width substract border & padding extra spacing. */
+}
+
 .forma .forma-fieldset .forma-control {
   border: 1px solid rgba(25, 25, 25, 0.1);
-  outline: 4px solid transparent; }
+  outline: 4px solid transparent;
+}
+
 .forma .forma-fieldset select {
   bottom: 0;
   height: inherit;
   max-height: 4rem;
   position: absolute;
   top: 0;
-  width: 100%; }
+  width: 100%;
+}
+
 .forma [type="submit"] {
   background-color: rgba(25, 25, 25, 0.1);
   border: 0;
@@ -97,8 +125,11 @@ fieldset.forma legend {
   margin: 1rem;
   outline: 0;
   width: calc(100% - 2rem - 2px);
-  /* Fix fields width substract border & padding extra spacing. */ }
+  /* Fix fields width substract border & padding extra spacing. */
+}
+
 .forma [type="submit"]:disabled {
   background-color: rgba(25, 25, 25, 0.2);
   color: rgba(25, 25, 25, 0.4);
-  cursor: not-allowed; }
+  cursor: not-allowed;
+}
