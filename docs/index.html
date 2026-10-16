@@ -20,9 +20,9 @@
     </div>
     <nav class="navbar">
       <h5>Github</h5>
-      <a href="https://github.com/krasenslavov/forma/" target="_blank">Repo</a>
-      <a href="https://github.com/krasenslavov/formajs/releases/download/v0.0.6-alpha/formajs-v0.0.6-alpha-dist.zip"
-        target="_blank">v0.0.6-alpha (latest)</a>
+      <a href="https://github.com/krasenslavov/formajs/" target="_blank">Repo</a>
+      <a href="https://github.com/krasenslavov/formajs/releases/download/v1.0.0/formajs-v1.0.0-dist.zip"
+        target="_blank">v1.0.0 (latest)</a>
       <h5>Documentation</h5>
       <a href="/index.html" class="toplvl active">FormaJS</a>
       <div class="subnav active">
@@ -75,8 +75,8 @@
     <div class="container">
       <section class="bubble bubble-info">
         <p>You can download the latest <mark>/dist</mark> code directly from our GitHub repository <a
-            href="https://github.com/krasenslavov/formajs/releases/download/v0.0.6-alpha/formajs-v0.0.6-alpha-dist.zip"
-            target="_blank">v0.0.6-alpha (latest)</a>.</p>
+            href="https://github.com/krasenslavov/formajs/releases/download/v1.0.0/formajs-v1.0.0-dist.zip"
+            target="_blank">v1.0.0 (latest)</a>.</p>
         <p>Don't forget to give us a ⭐ if you think FormaJS is worthwhile and we should continue improving on it.</p>
       </section>
       <h2>FormaJS*</h2>
@@ -232,56 +232,56 @@
       &lt;label for="email-address" class=""&gt;
         &lt;span class="forma-label forma-invalid"&gt;
           Email Address 
-          &lt;div class="forma-description"&gt;&lt;/div&gt;
-          &lt;div class="forma-input"&gt;&lt;/div&gt;
-          &lt;div class="forma-message"&gt;Please fill in this field.&lt;/div&gt;
+          &lt;span class="forma-description"&gt;&lt;/span&gt;
+          &lt;span class="forma-input"&gt;&lt;/span&gt;
+          &lt;span class="forma-message"&gt;Please fill in this field.&lt;/span&gt;
         &lt;/span&gt;
-        &lt;div class="forma-fieldset"&gt;
+        &lt;span class="forma-fieldset"&gt;
           &lt;input data-label="Email Address" type="email" name="email-address" required="" 
             id="email-address" class="forma-control forma-invalid" placeholder="" /&gt;
-        &lt;/div&gt;
+        &lt;/span&gt;
       &lt;/label&gt;
     &lt;/div&gt;
     &lt;div class="forma-wrap forma-open"&gt;
       &lt;label for="first-name" class=""&gt;
         &lt;span class="forma-label"&gt;
           First Name 
-          &lt;div class="forma-description"&gt;&lt;/div&gt;
-          &lt;div class="forma-input"&gt;&lt;/div&gt;
-          &lt;div class="forma-message"&gt;&lt;/div&gt;
+          &lt;span class="forma-description"&gt;&lt;/span&gt;
+          &lt;span class="forma-input"&gt;&lt;/span&gt;
+          &lt;span class="forma-message"&gt;&lt;/span&gt;
         &lt;/span&gt;
-        &lt;div class="forma-fieldset"&gt;
+        &lt;span class="forma-fieldset"&gt;
           &lt;input data-label="First Name" type="text" name="first-name" 
             id="first-name" class="forma-control" placeholder="" /&gt;
-        &lt;/div&gt;
+        &lt;/span&gt;
       &lt;/label&gt;
     &lt;/div&gt;
     &lt;div class="forma-wrap forma-open"&gt;
       &lt;label for="last-name" class=""&gt;
         &lt;span class="forma-label"&gt;
           Last Name 
-          &lt;div class="forma-description"&gt;&lt;/div&gt;
-          &lt;div class="forma-input"&gt;&lt;/div&gt;
-          &lt;div class="forma-message"&gt;&lt;/div&gt;
+          &lt;span class="forma-description"&gt;&lt;/span&gt;
+          &lt;span class="forma-input"&gt;&lt;/span&gt;
+          &lt;span class="forma-message"&gt;&lt;/span&gt;
         &lt;/span&gt;
-        &lt;div class="forma-fieldset"&gt;
+        &lt;span class="forma-fieldset"&gt;
           &lt;input data-label="Last Name" type="text" name="last-name" 
             id="last-name" class="forma-control" placeholder="" /&gt;
-        &lt;/div&gt;
+        &lt;/span&gt;
       &lt;/label&gt;
     &lt;/div&gt;
     &lt;div class="forma-wrap forma-open"&gt;
       &lt;label for="message" class=""&gt;
         &lt;span class="forma-label"&gt;
           Message 
-          &lt;div class="forma-description"&gt;&lt;/div&gt;
-          &lt;div class="forma-input"&gt;&lt;/div&gt;
-          &lt;div class="forma-message"&gt;&lt;/div&gt;
+          &lt;span class="forma-description"&gt;&lt;/span&gt;
+          &lt;span class="forma-input"&gt;&lt;/span&gt;
+          &lt;span class="forma-message"&gt;&lt;/span&gt;
         &lt;/span&gt;
-        &lt;div class="forma-fieldset"&gt;
+        &lt;span class="forma-fieldset"&gt;
           &lt;textarea data-label="Message" rows="5" name="message" 
             id="message" class="forma-control" placeholder=""&gt;&lt;/textarea&gt;
-        &lt;/div&gt;
+        &lt;/span&gt;
       &lt;/label&gt;
     &lt;/div&gt;
     &lt;button type="submit"&gt;Send&lt;/button&gt;
@@ -464,7 +464,7 @@
         edit the <mark>:root</mark> values and add any of the other CSS rules.
 
       <p>Below you can see the default values for <makr>:root</makr> included in all pre-built CSS templates (these can
-        be found inside the repo <mark>/src/css</mark> folder):</p>
+        be found inside the repo <mark>/dist/css</mark> folder):</p>
 
       <pre><code class="language language-css">@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 :root {
@@ -481,17 +481,17 @@
   --space: 1rem;
 }</code></pre>
 
-      <p class="bubble">Note: Take a look at all the stylesheet files inside <mark>/src/css</mark>, there are several
+      <p class="bubble">Note: Take a look at all the stylesheet files inside <mark>/dist/css</mark>, there are several
         different staring points: <code>base, barebone, boilerplate and forma complete</code>.</p>
 
       <h3>Create custom CSS from template</h3>
 
-      <p>As I mentioned above inside the repo <mark>/src/css</mark> folder you can find a few CSS template files. Each
+      <p>As I mentioned above inside the repo <mark>/dist/css</mark> folder you can find a few CSS template files. Each
         one can be used as a different starting point.</p>
 
       <p>For example, if you only need all the target classes without any values you may want to use the
-        <mark>/src/css/forma-boilerplate.css</mark> template. Go ahead and preview the file code inside the <a
-          href="https://github.com/krasenslavov/forma/blob/master/dist/css/forma-boilerplate.css" target="_blank">GitHub
+        <mark>/src/scss/_boilerplate.scss</mark> template. Go ahead and preview the file code inside the <a
+          href="https://github.com/krasenslavov/formajs/blob/master/dist/css/forma-boilerplate.css" target="_blank">GitHub
           repository</a>.</p>
 
       <hr />
@@ -601,7 +601,7 @@
 
       <hr />
 
-      <p><em>* This project is still in alpha; use it for live or production environments with caution.</em></p>
+      <p><em>FormaJS 1.0.0 is the first stable release. See the <a href="https://github.com/krasenslavov/formajs/blob/master/CHANGELOG.md" target="_blank">changelog</a>.</em></p>
     </div>
   </main>
   <footer class="footer">
@@ -612,15 +612,6 @@
   <script src="/resources/lib/prism/js/prism-autoloader.min.js"></script>
   <script src="/resources/lib/forma/js/forma.min.js"></script>
   <script src="/resources/assets/js/main.js"></script>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107913964-6"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'UA-107913964-6');
-  </script>
 </body>
 
 </html>

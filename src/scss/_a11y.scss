@@ -1,0 +1,19 @@
+// _a11y.scss
+// Row parts are inline elements (valid inside <label>), so lay them out as blocks.
+.forma .forma-description,
+.forma .forma-input,
+.forma .forma-message {
+    display: block;
+}
+// Keep a visible keyboard focus indicator.
+.forma .forma-control:focus-visible,
+.forma [type="submit"]:focus-visible {
+    outline: 3px solid $info;
+    outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+    .forma * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

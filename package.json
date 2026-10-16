@@ -1,50 +1,65 @@
 {
   "name": "aformajs",
-  "version": "0.0.6",
-  "description": "🎉 Create dynamic and interactive forms with minimal markup and better UX.",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
+  "version": "1.0.0",
+  "description": "Create dynamic and interactive forms with minimal markup and better UX.",
+  "type": "module",
+  "main": "dist/js/forma.cjs",
+  "module": "dist/js/forma.esm.js",
+  "types": "index.d.ts",
+  "unpkg": "dist/js/forma.min.js",
+  "jsdelivr": "dist/js/forma.min.js",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./dist/js/forma.esm.js",
+      "require": "./dist/js/forma.cjs"
+    },
+    "./css/*": "./dist/css/*",
+    "./package.json": "./package.json"
   },
+  "files": [
+    "dist",
+    "index.d.ts",
+    "src/scss",
+    "!src/scss/css"
+  ],
+  "sideEffects": false,
   "scripts": {
-    "dev": "npm run development",
-    "prod": "npm run production",
-    "watch": "npm run development -- --watch",
-    "watch-poll": "npm run watch -- --watch-poll"
+    "build": "npm run clean && npm run build:js && npm run build:css && npm run build:docs",
+    "build:js": "node scripts/build-js.mjs",
+    "build:css": "node scripts/build-css.mjs",
+    "build:docs": "node scripts/build-docs.mjs",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "watch": "node scripts/build-js.mjs --watch",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build && npm test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/krasenslavov/forma.git"
+    "url": "git+https://github.com/krasenslavov/formajs.git"
   },
   "keywords": [
     "form",
+    "forms",
+    "form-validation",
+    "validation",
+    "ux",
     "dynamic",
     "interactive",
-    "front-end"
+    "front-end",
+    "vanilla-js",
+    "no-dependencies"
   ],
   "author": "Krasen Slavov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/krasenslavov/forma/issues"
+    "url": "https://github.com/krasenslavov/formajs/issues"
   },
-  "homepage": "https://formajs.com",
-  "dependencies": {
+  "homepage": "https://formajs.krasenslavov.com",
+  "devDependencies": {
+    "esbuild": "^0.28.0",
+    "jsdom": "^26.0.0",
     "sass": "^1.80.0",
-    "sass-loader": "^16.0.0"
-  },
-  "devDependencies": {},
-  "overrides": {
-    "terser": "^5.36.0",
-    "minimatch": "^9.0.5",
-    "loader-utils": "^3.3.1",
-    "decode-uri-component": "^0.4.1",
-    "json5": "^2.2.3",
-    "semver": "^7.6.3",
-    "browserify-sign": "^4.2.3",
-    "braces": "^3.0.3",
-    "elliptic": "^6.6.0",
-    "micromatch": "^4.0.8",
-    "pbkdf2": "^3.1.3",
-    "cipher-base": "^1.0.6"
+    "vitest": "^5.0.5"
   }
 }

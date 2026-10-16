@@ -1,9 +1,7 @@
 // _variables.scss
-/* _font.css */
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 /* _root.css */
 $font-mono: 400 normal 16px/1.6 'Monaco', 'Consolas', 'Andale Mono', 'Ubuntu Mono', monospace;
-$font-google: 400 normal 16px/1.6 'Source Sans Pro', sans-serif;
+$font-google: 400 normal 16px/1.6 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 $primary: #d65bd1;
 $secondary: #845ec2;
 $error: #fc4444;

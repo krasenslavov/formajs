@@ -5,6 +5,38 @@ All notable changes to FormaJS will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0] - 2026-10-16
+
+First stable release. The public API (`forma(options)` and its options) is unchanged.
+
+### Added
+- ESM, CommonJS and minified browser builds with an `exports` map; TypeScript types (`index.d.ts`)
+- esbuild/Sass build scripts, Vitest + jsdom test suite and GitHub Actions CI/release workflows
+- `:focus-visible` styles and `prefers-reduced-motion` handling in all stylesheets
+
+### Changed
+- Each `forma()` call now keeps its own state, so multiple forms on a page work independently
+- Row markup is valid HTML (inline elements inside `label`), with `aria-labelledby`, `aria-describedby`, `aria-invalid` and a live message region
+- `tab: true` is the only mode that intercepts Tab; Shift+Tab is never intercepted and Tab on the last row moves on to the submit button
+- Touch detection uses `(pointer: coarse)` instead of any touch capability
+- `submit: true` enables the button only when the whole form is valid
+- SCSS in `src/scss` is the single stylesheet source; compiled CSS lives in `dist/css`
+- Removed the Google Fonts import (system font stack) and the invalid `box-sizing: none` declarations
+- `sass` is now a dev dependency; the package ships no runtime dependencies
+
+### Fixed
+- Implicit globals and values leaking between rows (`text`, `abbr`, `manual`)
+- Typed values and error messages were written with `innerHTML` (self-XSS); labels and titles are now escaped
+- Errors from a failed call no longer poison later calls
+- Crashes with a missing submit button, `data-label` or `.forma-wrap`
+- Focus went to the first form on the page instead of the configured container
+- Duplicate element ids when several forms share labels; positive `tabindex` values
+- `main` pointed to a non-existent file; repository, bugs and homepage URLs were wrong
+
+### Removed
+- Stale copies of the library (`docs/.../forma.js` v0.0.4), duplicate `src/css`, and internal process notes
+- Dead Universal Analytics snippet from the docs
+
 ## [0.0.6] - 2025-11-25
 
 ### Security

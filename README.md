@@ -1,22 +1,55 @@
-# FormaJS v0.0.6
+# FormaJS v1.0.0
 
 Quickly and easily create dynamic and interactive forms with a better end-user experience.
 
 FormaJS lets you customize and style your forms in numerous different ways and at the same time gives you the base and structure that will save you time and effort while building form prototypes.
 
-**Latest Release:** v0.0.6 - Security hardened with all vulnerabilities resolved (0 CVEs)
+**Latest Release:** v1.0.0 – the first stable release.
 
 There are few different ways to use and load up the script and stylesheet templates. Take a look at main website for complete [documentation](https://formajs.krasenslavov.com/index.html) with usage, features and [examples](https://formajs.krasenslavov.com/examples/index.html).
 
-## What's New in v0.0.6
+## What's New in v1.0.0
 
-- All security vulnerabilities fixed (22 CVEs resolved)
-- Updated jQuery from 3.4.1 to 3.7.1
-- Modernized build dependencies (sass, sass-loader)
-- Zero npm audit vulnerabilities
-- Reduced dependency footprint to 20 packages
+- First stable release, installable from npm (`aformajs`) with ESM, CommonJS and browser builds plus TypeScript types
+- Several forms on one page now work independently
+- Safer rendering: typed values and labels are never injected as HTML
+- Better accessibility: `aria-invalid`, `aria-describedby`, live error messages, valid markup, no keyboard trap
+- Tab only intercepted when `tab: true`; Tab on the last row moves on to the submit button
+- Test suite and CI
 
 For detailed changes, see [CHANGELOG.md](CHANGELOG.md).
+
+## Install
+
+```bash
+npm i aformajs
+```
+
+```js
+import forma from 'aformajs';
+import 'aformajs/css/forma.css'; // or forma-base, forma-barebone, forma-boilerplate
+
+forma({container: '.forma', auto: true});
+```
+
+CommonJS (`require('aformajs')`) and a browser build (`dist/js/forma.min.js`, exposing `window.forma`) are included. It is also on jsDelivr/unpkg: `https://cdn.jsdelivr.net/npm/aformajs@1.0.0/dist/js/forma.min.js`.
+
+## Options
+
+| Option | Default | Description |
+|---|---|---|
+| `container` | `'.forma'` | CSS selector of the form |
+| `tab` | `false` | Tab moves between rows, one open at a time |
+| `show` | `false` | Show all rows |
+| `auto` | `false` | Generate placeholders and descriptions from the labels |
+| `manual` | `false` | Add a +/- toggle to each row |
+| `submit` | `false` | Disable the submit button until the form is valid |
+| `prefix` / `suffix` | `'Enter'` / `'...'` | Text around the label in auto mode |
+| `support` | `[]` | Extra supported elements, e.g. `'input[type="tel"]'` |
+| `struct` | `{}` | `{title, abbr, wrapper: 'div' \| 'section' \| 'ul>li'}` |
+| `integrate` | `''` | `'forma'` or `'bootstrap'` (Bootstrap 4) |
+
+On touch-first devices (`pointer: coarse`) all rows are shown and `tab`/`manual` are ignored.
 
 ## Quick Start
 
@@ -49,9 +82,9 @@ Download the master (or the [latest release](https://github.com/krasenslavov/for
 <script>forma();</script>
 ```
 
-Visit our main [website](https://formajs.com/) to learn more about customization, client-side validations, custom settings and a whole lot more.
+Visit our main [website](https://formajs.krasenslavov.com/) to learn more about customization, client-side validations, custom settings and a whole lot more.
 
-## [Documentation](https://formajs.com/)
+## [Documentation](https://formajs.krasenslavov.com/)
 
 * [Basic Usage](https://formajs.krasenslavov.com/index.html)
 * [Installation](https://formajs.krasenslavov.com/index.html#installation)
@@ -67,14 +100,9 @@ Visit our main [website](https://formajs.com/) to learn more about customization
 
 ## Security
 
-FormaJS v0.0.6 has been thoroughly audited and all known security vulnerabilities have been resolved. For details, see [SECURITY-FIXES.md](SECURITY-FIXES.md).
+The library ships with zero runtime dependencies. See [SECURITY.md](SECURITY.md) to report a vulnerability.
 
-```bash
-npm audit
-# Result: found 0 vulnerabilities ✅
-```
-
-## [Contribute](https://krasenslavov.formajs.com/index.html#contribute)
+## [Contribute](https://formajs.krasenslavov.com/index.html#contribute)
 
 Found a bug or want to propose some improvements or fixes to the documentation? Visit our [website](https://formajs.krasenslavov.com/index.html#contribute) and see all the different ways you can contribute to this project.
 
@@ -82,6 +110,10 @@ Found a bug or want to propose some improvements or fixes to the documentation? 
 
 (c) Krasen Slavov | Code released under the [MIT License](https://opensource.org/licenses/MIT).
 
-## Project Status
+## Development
 
-This project is in alpha development. v0.0.6 represents a significant security milestone with all known vulnerabilities resolved, making it safer for evaluation and testing environments.
+```bash
+npm install
+npm run build   # dist/js (esm, cjs, iife) + dist/css + docs copy
+npm test
+```
